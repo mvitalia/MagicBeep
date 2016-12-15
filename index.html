@@ -1018,11 +1018,11 @@ $('#cancellaTutteNotifiche').click(function(){
 });
 
 
-$(document).on("click", ".SalvaNotifica", function () {
-     var id = $(this).parents("div").data("itemid");
+$(document).on("click", ".chiudiNotifica", function () {
+     var id = $(this).parents("div").data("item");
     $('.box_n'+id+'').hide();
 })
-
+/*
 $(document).on("click", ".ApriNotifica", function () {
      var id = $(this).parents("div").data("itemid");
      localStorage.setItem('Id_notifica', id);
