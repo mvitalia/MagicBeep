@@ -15,6 +15,8 @@
 
 .box_notifica{
     position: fixed;
-    bottom: 0;
+   bottom: 135px;
+     width: 100%;
+    z-index: 200;
    
 }
