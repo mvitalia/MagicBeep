@@ -386,7 +386,7 @@ function startScan()
 														
 															var div = "";
 															var btn = "";
-															div+="<div id='modal"+ID_notizia+" modal bottom-sheet'>";
+															div+="<div id='modal"+ID_notizia+"' class='modal bottom-sheet'>";
 															div+="<div class='modal-content'>";
 															div+="<h4>"+titolo_n+"</h4>";
 															div+="<p>"+date+"</p></div>";
