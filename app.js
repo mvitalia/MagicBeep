@@ -385,13 +385,16 @@ function startScan()
 															"</div>";*/	
 														
 															var div = "";
+															var btn = "";
 															div+="<div id='modal"+ID_notizia+" modal bottom-sheet'>";
 															div+="<div class='modal-content'>";
 															div+="<h4>"+titolo_n+"</h4>";
 															div+="<p>"+date+"</p></div>";
 															div+="<div class='modal-footer'><button data-role='none' class=' modal-action modal-close waves-effect waves-green btn-flat' onclick='apriNotifica("+ID_notizia+")' >Apri</button></div>";
-															div+="</div></div> <a style='display:none' id='opens' class='waves-effect waves-light btn-large modal-trigger primary-color width-100 m-b-20' href='#modal"+ID_notizia+"'>Bottom Sheet</a>"
+															div+="</div></div>";
+															btn="<a style='display:none' id='opens' class='waves-effect waves-light btn-large modal-trigger primary-color width-100 m-b-20' href='#modal"+ID_notizia+"'>Bottom Sheet</a>";
 															$(".appendiPopup").append(div);
+															$(".fadeinup").append(btn);
 															$(".opens").click();
 																	
 																
