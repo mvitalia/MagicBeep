@@ -388,7 +388,7 @@ function startScan()
 															popNitfiche+="<button onclick='salvaNotifica("+ID_notizia+")'  class='close-notification no-smoothState chiudiNotifica'><i  class='ion-android-close'></i></button>"
 															popNitfiche+="<p>"+titolo_n+"</p>";
 															popNitfiche+="<span>"+date+"</span></a></div>";
-															//$(".container_page").append(popNitfiche);
+															$(".container_page").append(popNitfiche);
 												
 														}
 												
