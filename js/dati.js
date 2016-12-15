@@ -465,6 +465,7 @@ function recuperoPassword(email)
 function caricaNotificheFiltrate () {
        $("#lista_datiJson").html("");
    var searchFiled = $("#search").val();
+   alert(searchFiled);
    // Faccio query
     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
                        db.transaction(
@@ -490,6 +491,7 @@ function caricaNotificheFiltrate () {
                                                             li_dati+="<div class='clr'></div></div>";
                                                         }
                                              }
+                                             alert(li_dati);
                                                $("#lista_datiJson").append(li_dati);
 
                                          },
