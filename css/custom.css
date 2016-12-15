@@ -1,0 +1,14 @@
+/* Button*/
+.box_submit_button input{
+    background: none !important;
+    border: none !important;
+    font-style: normal !important;
+}
+
+.p-20 {
+    margin-top: 40px;
+}
+
+.margin-bottom-5{
+    margin-bottom: 5px;
+}
