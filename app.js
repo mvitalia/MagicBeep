@@ -383,26 +383,13 @@ function startScan()
 															"<button  class='ui-btn ApriNotifica' onclick='apriNotifica("+ID_notizia+")' >Apri</button>"+
 															"<button  class='ui-btn SalvaNotifica' onclick='salvaNotifica("+ID_notizia+")' >Salva</button>"+
 															"</div>";*/	
-														
 															var popNitfiche = "";
-															var btnPopNotifiche = "";
-															popNitfiche+="<div id='modal"+ID_notizia+"' class='modal bottom-sheet'>";
-															popNitfiche+="<div class='modal-content'>";
-															popNitfiche+="<h4>"+titolo_n+"</h4>";
-															popNitfiche+="<p>"+date+"</p></div>";
-															popNitfiche+="<div class='modal-footer'><button data-role='none' class=' modal-action modal-close waves-effect waves-green btn-flat' onclick='apriNotifica("+ID_notizia+")' >Apri</button></div>";
-															popNitfiche+="</div></div>";
-															btnPopNotifiche="<a style='display:none' id='opens"+IDnotizia+"' class='waves-effect waves-light btn-large modal-trigger primary-color width-100 m-b-20' href='#modal"+ID_notizia+"'>Bottom Sheet</a>";
-															//$(".appendiPopup").append(popNitfiche);
-															//$("#modalDemo").attr("id") = "modal"+ID_notizia;
-															$("#modalTitolo").val(titolo_n);
-															$("#modalData").val(date);
-															//$("#modalApriPopup").attr("href") = "#modal"+ID_notizia;
-															//$(".fadeinup").append(btnPopNotifiche);
-															$("#modalDemo").click();
-																	
-																
-							 
+															popNitfiche+="<div class='notification notification-info box_notifica'>";
+															popNitfiche+="<a class='close-notification no-smoothState'><i class='ion-android-close'></i></a>"
+															popNitfiche+="<p>"+titolo_n+"</p>";
+															popNitfiche+="<span>"+date+"</span></div>";
+															$("home").append(popNitfiche);
+												
 														}
 												
 														/* "<button  class='ui-btn' id='ApriNotifica' onclick='apri_notifica(this," + ID_notizia + ")'>Apri</button>"+
