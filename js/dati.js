@@ -366,7 +366,7 @@ function apriNotifica(id)
 
 function salvaNotifica(id)
 {
-    alert("ok");
+    
       $('#'+id+'').hide();
 }
 
