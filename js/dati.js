@@ -465,7 +465,7 @@ function recuperoPassword(email)
 function caricaNotificheFiltrate () {
        $("#lista_datiJson").html("");
    var searchFiled = $("#search").val();
-   alert(searchFiled);
+  // alert(searchFiled);
    // Faccio query
     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
                        db.transaction(
@@ -474,7 +474,7 @@ function caricaNotificheFiltrate () {
                                          tx.executeSql("SELECT * FROM notizie WHERE titolo like '% = "+searchFiled+"%' AND descrizione like '%"+searchFiled+"%'",[],
                                          function(tx,dati){
                                             var len = dati.rows.length;
-                                            var li_dati;
+                                            var li_dati="";
                                             if(len!=0)
                                             {
                                                         for(var i=0; i<len; i++)
