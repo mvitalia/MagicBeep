@@ -471,7 +471,7 @@ function caricaNotificheFiltrate () {
                        db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
-                                         tx.executeSql("SELECT * FROM notizie WHERE titolo like '%"+searchFiled+"%' AND descrizione like '%"+searchFiled+"%'",[],
+                                         tx.executeSql("SELECT C.ID as ID_notifica,  N.*, C.* FROM notizie as N, notifiche as C WHERE C.ID_notizia=N.ID AND titolo like '%"+searchFiled+"%' AND descrizione like '%"+searchFiled+"%'",[],
                                          function(tx,dati){
                                             var len = dati.rows.length;
                                            
@@ -505,4 +505,4 @@ function caricaNotificheFiltrate () {
                                          });
     });
 }
- 
+ //SELECT C.ID as ID_notifica,  N.*, C.* FROM notizie as N, notifiche as C WHERE C.ID_notizia=N.ID
