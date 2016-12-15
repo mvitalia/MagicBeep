@@ -471,9 +471,10 @@ function caricaNotificheFiltrate () {
                        db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
-                                         tx.executeSql("SELECT * FROM notizie WHERE titolo like '% = "+searchFiled+"%' AND descrizione like '%"+searchFiled+"%'",[],
+                                         tx.executeSql("SELECT * FROM notizie WHERE titolo like '%"+searchFiled+"%' AND descrizione like '%"+searchFiled+"%'",[],
                                          function(tx,dati){
                                             var len = dati.rows.length;
+                                            alert(len);
                                             var li_dati="";
                                             if(len!=0)
                                             {
