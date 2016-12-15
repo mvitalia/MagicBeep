@@ -767,7 +767,11 @@
     </div> 
 
     <div class="container_page">
-            
+                    <div class="notification notification-info  box_notifica">
+            <button class="close-notification no-smoothState"><i class="ion-android-close"></i></button>
+            <p>Watch sports</p>
+            <span>7 - 10 pm</span>
+          </div>  
       </div>  
   
 <script>
@@ -1018,15 +1022,15 @@ $('#cancellaTutteNotifiche').click(function(){
 });
 
 
-$(document).on("click", ".chiudiNotifica", function () {
+/*$(document).on("click", ".chiudiNotifica", function () {
      var id = $(this).parents("div").data("item");
     $('.box_n'+id+'').hide();
-})
-/*
-$(document).on("click", ".ApriNotifica", function () {
-     var id = $(this).parents("div").data("itemid");
+})*/
+
+$(document).on("click", ".apriNotificaDettaglio", function () {
+     var id = $(this).parents("div").data("item");
      localStorage.setItem('Id_notifica', id);
-       $('.'+id+'').hide();
+    $('#box_n'+id+'').hide();
     $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
 
 });*/

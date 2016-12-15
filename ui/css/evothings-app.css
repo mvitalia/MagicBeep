@@ -373,7 +373,7 @@ input.btn-group + label,
 
 	box-shadow: none;
 
-	background-color: #b9b9b9; /* Default color: "Charcoal" */
+	background-color:#D9EDF7; /* Default color: "Charcoal" */
 }
 body > button,
 body > input.btn-group + label,

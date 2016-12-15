@@ -384,11 +384,11 @@ function startScan()
 															"<button  class='ui-btn SalvaNotifica' onclick='salvaNotifica("+ID_notizia+")' >Salva</button>"+
 															"</div>";*/	
 															var popNitfiche = "";
-															popNitfiche+="<div data-item='"+ID_notizia+"' class='notification notification-info box_notifica box_n"+ID_notizia+"'>";
+															popNitfiche+="<div data-item='"+ID_notizia+"' id='box_n"+ID_notizia+"' class='notification notification-info box_notifica '><a class='apriNotificaDettaglio'>";
 															popNitfiche+="<button onclick='salvaNotifica("+ID_notizia+")'  class='close-notification no-smoothState chiudiNotifica'><i  class='ion-android-close'></i></button>"
 															popNitfiche+="<p>"+titolo_n+"</p>";
-															popNitfiche+="<span>"+date+"</span></div>";
-															$(".container_page").append(popNitfiche);
+															popNitfiche+="<span>"+date+"</span></a></div>";
+															//$(".container_page").append(popNitfiche);
 												
 														}
 												
