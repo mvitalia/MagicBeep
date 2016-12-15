@@ -13,3 +13,8 @@
     margin-bottom: 5px;
 }
 
+.box_notifica{
+    position: fixed;
+    bottom: 0;
+   
+}
