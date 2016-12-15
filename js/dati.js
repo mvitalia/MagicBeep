@@ -463,7 +463,7 @@ function recuperoPassword(email)
 }
 
 function caricaNotificheFiltrate () {
-       $("#lista_datiJson").html("");
+     
    var searchFiled = $("#search").val();
   // alert(searchFiled);
    // Faccio query
@@ -478,10 +478,10 @@ function caricaNotificheFiltrate () {
                                             var li_dati="";
                                             if(len!=0)
                                             {
-                                                alert(len);
+                                               
                                                         for(var i=0; i<len; i++)
                                                         {
-                                                             alert(dati.rows.item(i).titolo);
+                                                        
                                                             var data = dati.rows.item(i).data_ora;
                                                             var splitarray = new Array();
                                                             splitarray = data.split(" ");
@@ -489,10 +489,10 @@ function caricaNotificheFiltrate () {
                                                             var arrayData = new Array ();
                                                             arrayData = dataDue.split("-");
                                                             var dataCorretta = arrayData[2] + "-" + arrayData[1] + "-" + arrayData[0] + " " + splitarray[1];
-                                                            
                                                             li_dati+="<div id="+dati.rows.item(i).ID_notifica+" data-itemid="+dati.rows.item(i).ID_notizia+" class='single-news animated fadeinright delay-2'><h4 class='single-news-title'><a class='detail' href='#' >"+dati.rows.item(i).titolo+"</a>";
                                                             li_dati+="</h4><div class='margin-bottom-5'><span class='single-news-category'>"+dataCorretta+"</span></div><div class='single-news-channel'>"+dati.rows.item(i).descrizione+"</div>";
                                                             li_dati+="<div class='clr'></div></div>";
+                                                            $("#lista_datiJson").html("");
                                                             $("#lista_datiJson").append(li_dati);
                                                         }
                                              }
