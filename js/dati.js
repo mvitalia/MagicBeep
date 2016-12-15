@@ -473,6 +473,7 @@ function caricaNotificheFiltrate () {
                                          tx.executeSql("SELECT * FROM notizie WHERE titolo like '% = "+searchFiled+"%' AND descrizione like '%"+searchFiled+"%'",[],
                                          function(tx,dati){
                                             var len = dati.rows.length;
+                                            var li_dati;
                                             if(len!=0)
                                             {
                                                         for(var i=0; i<len; i++)
