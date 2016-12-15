@@ -384,18 +384,18 @@ function startScan()
 															"<button  class='ui-btn SalvaNotifica' onclick='salvaNotifica("+ID_notizia+")' >Salva</button>"+
 															"</div>";*/	
 														
-															var div = "";
-															var btn = "";
-															div+="<div id='modal"+ID_notizia+"' class='modal bottom-sheet'>";
-															div+="<div class='modal-content'>";
-															div+="<h4>"+titolo_n+"</h4>";
-															div+="<p>"+date+"</p></div>";
-															div+="<div class='modal-footer'><button data-role='none' class=' modal-action modal-close waves-effect waves-green btn-flat' onclick='apriNotifica("+ID_notizia+")' >Apri</button></div>";
-															div+="</div></div>";
-															btn="<a style='display:none' id='opens"+IDnotizia+"' class='waves-effect waves-light btn-large modal-trigger primary-color width-100 m-b-20' href='#modal"+ID_notizia+"'>Bottom Sheet</a>";
-															$(".appendiPopup").append(div);
-															$(".fadeinup").append(btn);
-															$("#opens"+IDnotizia).click();
+															var popNitfiche = "";
+															var btnPopNotifiche = "";
+															popNitfiche+="<div id='modal"+ID_notizia+"' class='modal bottom-sheet'>";
+															popNitfiche+="<div class='modal-content'>";
+															popNitfiche+="<h4>"+titolo_n+"</h4>";
+															popNitfiche+="<p>"+date+"</p></div>";
+															popNitfiche+="<div class='modal-footer'><button data-role='none' class=' modal-action modal-close waves-effect waves-green btn-flat' onclick='apriNotifica("+ID_notizia+")' >Apri</button></div>";
+															popNitfiche+="</div></div>";
+															btnPopNotifiche="<a style='display:none' id='opens"+IDnotizia+"' class='waves-effect waves-light btn-large modal-trigger primary-color width-100 m-b-20' href='#modal"+ID_notizia+"'>Bottom Sheet</a>";
+															$(".appendiPopup").append(popNitfiche);
+															//$(".fadeinup").append(btnPopNotifiche);
+															//$("#opens"+IDnotizia).click();
 																	
 																
 							 
