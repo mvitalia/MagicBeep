@@ -393,13 +393,13 @@ function startScan()
 															popNitfiche+="<div class='modal-footer'><button data-role='none' class=' modal-action modal-close waves-effect waves-green btn-flat' onclick='apriNotifica("+ID_notizia+")' >Apri</button></div>";
 															popNitfiche+="</div></div>";
 															btnPopNotifiche="<a style='display:none' id='opens"+IDnotizia+"' class='waves-effect waves-light btn-large modal-trigger primary-color width-100 m-b-20' href='#modal"+ID_notizia+"'>Bottom Sheet</a>";
-															$(".appendiPopup").append(popNitfiche);
-															$("#modalDemo").attr("id") = "modal"+ID_notizia;
+															//$(".appendiPopup").append(popNitfiche);
+															//$("#modalDemo").attr("id") = "modal"+ID_notizia;
 															$("#modalTitolo").val(titolo_n);
 															$("#modalData").val(date);
-															$("#modalApriPopup").attr("href") = "#modal"+ID_notizia;
+															//$("#modalApriPopup").attr("href") = "#modal"+ID_notizia;
 															//$(".fadeinup").append(btnPopNotifiche);
-															$("#modalApriPopup").click();
+															$("#modalDemo").click();
 																	
 																
 							 
