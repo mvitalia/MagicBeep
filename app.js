@@ -388,7 +388,7 @@ function startScan()
 															popNitfiche+="<a class='close-notification no-smoothState'><i class='ion-android-close'></i></a>"
 															popNitfiche+="<p>"+titolo_n+"</p>";
 															popNitfiche+="<span>"+date+"</span></div>";
-															$("#home").append(popNitfiche);
+															$(".container_page").append(popNitfiche);
 												
 														}
 												
