@@ -489,7 +489,7 @@ blockquote {
     bottom: 71px;
     color: #fff;
     opacity: 0.6;
-    "
+    
 
 }
 /* Page Header */
@@ -517,7 +517,7 @@ blockquote {
 /* Page Body */
 
 .page-content {
-    padding: 30px 20px;
+    padding: 15px 20px;
 }
 .content {
     overflow: auto;
@@ -1143,9 +1143,12 @@ li.your-comment {
     top: 0;
 }
 .post-author span {
-    padding-left: 0px;
-    padding-top: 4px;
+  color: #2196f3;
     display: block;
+    font-size: 13px;
+    font-weight: 600;
+    padding-left: 0;
+    padding-top: 4px;
 }
 /* Calendar */
 
