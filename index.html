@@ -70,7 +70,7 @@
         <li><a href="#home" class="no-child"><i class="ion-android-home"></i>Home</a></li>
         <li><a href="#login"  data-transition="slide" class="no-child"><i class="ion-android-contact"></i>User/Login</a></li>
         <li><a href="#database" class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
-        <li><a href="#" class="no-child"><i class="ion-map"></i>Posizioni</a></li>
+        <li><a href="#lostPassword" class="no-child"><i class="ion-map"></i>Posizioni</a></li>
         <li><a href="#" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
         <li><a href="#infoMvitalia" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
       </ul>
@@ -731,7 +731,112 @@
         </div>-->
     </div>
       <div data-role="page" id="lostPassword">
-        <div data-role="header" class="header" data-position="fixed" data-add-back-btn="true">
+            <div class="m-scene"> <!-- Main Container -->
+
+      <!-- Sidebars -->
+      <!-- Right Sidebar -->
+      <ul id="prova" class="side-nav">
+       <li>
+          <div class="sidenav-header primary-color">
+            <div class="nav-social">
+              <i class="ion-social-facebook"></i>
+              <i class="ion-social-twitter"></i>
+              <i class="ion-social-tumblr"></i>
+            </div>
+            <div class="nav-avatar">
+              <img class="circle avatar" src="img/user.jpg" alt="">
+              <div class="avatar-body">
+                <h3>Halo</h3>
+                <p>Material Mobile</p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="#home" class="no-child"><i class="ion-android-home"></i>Home</a></li>
+        <li><a href="#login"  data-transition="slide" class="no-child"><i class="ion-android-contact"></i>User/Login</a></li>
+        <li><a href="#database" class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
+        <li><a href="#" class="no-child"><i class="ion-map"></i>Posizioni</a></li>
+        <li><a href="#" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
+        <li><a href="#infoMvitalia" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
+      </ul>
+      <!-- End of Sidebars -->
+
+      <!-- Page Content -->
+      <div class="content">
+
+        <!-- Toolbar -->
+        <div  class="toolbar halo-nav box-shad-none">
+          <div class="open-right" id="open-right-quattro" data-activates="prova">
+            <i class="ion-android-menu"></i>
+          </div>
+          <span class="title none">Magin Beep</span>
+        </div>
+        
+        <!-- Hero Header -->
+        <div class="h-banner animated fadeindown">
+          <div id="box_img_notifica" class="parallax bg-2">
+               
+            <div class="floating-button animated bouncein delay-3">
+            <span class="btn-floating resize btn-large waves-effect waves-light accent-color btn z-depth-1">
+              <i class="ion-android-bookmark"></i>
+            </span>
+          </div>
+            <div class="banner-title">Magic Beep</div>
+          </div>
+         </div>
+
+        <!-- Article Content -->
+        <div class="animated fadeinup delay-1">
+          <div class="page-content">
+              <div class="appendDettaglioNotifica">
+                   <h2 class="uppercase">drawing a single stroke</h2>
+            <div class="post-author">
+              <img src="img/user2.jpg" alt="" class="avatar circle">
+              <span>Lora Bell</span>
+            </div>
+            <p class="text-flow"><span class="dropcap">A</span> wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. 
+            A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+            <blockquote class="primary-border">"The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog."</blockquote>
+            
+            <p class="text-flow"><b>I am alone:</b> and feel the charm of existence in thisspot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.</p>
+            </div>
+            <!-- Share -->
+            <div class="share center-align m-t-30">
+              <h3 class="uppercase">Share it!</h3>
+              <i class="ion-social-facebook p-20 blue-text text-darken-4"></i>
+              <i class="ion-social-twitter p-20 blue-text"></i>
+              <i class="ion-social-pinterest p-20 red-text"></i>
+            </div>
+          </div>
+        </div> 
+        <!-- Footer -->
+        <footer class="page-footer primary-color">
+        <div class="container">
+          <div class="row">
+            <div class="col s12">
+              <p class="center-align grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              <div class="center-align">
+                <i class="ion-social-facebook m-10 white-text"></i>
+                <i class="ion-social-twitter m-10 white-text"></i>
+                <i class="ion-social-pinterest m-10 white-text"></i>
+                <i class="ion-social-dribbble m-10 white-text"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright blue darken-1">
+          <div class="container">
+          2016 Codnauts
+          <a class="grey-text text-lighten-4 right" href="#!">Privacy Policy</a>
+          </div>
+        </div>
+      </footer>
+      
+       
+    </div> <!-- End of Page Content -->
+
+    </div> <!-- End of Page Container -->
+       <!-- <div data-role="header" class="header" data-position="fixed" data-add-back-btn="true">
             <h1 id="app-title">Password Dimenticata</h1>
              <div class="wrapper">
             <img class="logoApp" src="img/search.jpg"/>    
@@ -753,7 +858,7 @@
                   </form>
         </div>
         <div data-role="footer" data-position="fixed">
-            <!--Tab bar jquery mobile-->
+            <!--Tab bar jquery mobile
             <div data-role="navbar" data-iconpos="top">
                  <ul>
                     <li><a href="#home" data-icon="home"  data-transition="slide">Home</a></li>
@@ -763,7 +868,7 @@
                        <li ><a href="#mappa" data-icon="location"   data-transition="slide">Info</a></li>
                 </ul>
             </div>
-        </div>
+        </div>-->
     </div> 
 
     <div class="container_page">
