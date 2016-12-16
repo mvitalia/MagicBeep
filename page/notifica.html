@@ -10,10 +10,10 @@
 	<title>Magic Beep</title>
 
 	<style>
-		@import 'ui/css/evothings-app.css';
+		@import '../ui/css/evothings-app.css';
 	</style>
-     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css"/>
-     <link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons.min.css"/>
+     <link rel="stylesheet" type="text/css" href="../css/jquery.mobile-1.4.5.min.css"/>
+     <link rel="stylesheet" type="text/css" href="../css/jquery.mobile.icons.min.css"/>
        <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
     <!-- Icons -->
@@ -40,10 +40,11 @@
     <div  data-role="page" class="container_page" id="Notifica" >
    <div class="m-scene"> <!-- Main Container -->
 
-      <!-- Sidebars -->
-      <!-- Right Sidebar -->
-      <ul id="prova" class="side-nav">
-       <li>
+         <div class="m-scene"> <!-- Main Container -->
+        <!-- Sidebars -->
+        <!-- Right Sidebar -->
+        <ul id="slide-out-3" class="side-nav collapsible">
+        <li>
           <div class="sidenav-header primary-color">
             <div class="nav-social">
               <i class="ion-social-facebook"></i>
@@ -67,16 +68,15 @@
         <li><a href="#infoMvitalia" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
       </ul>
       <!-- End of Sidebars -->
-
       <!-- Page Content -->
-      <div class="content">
-
+      <div class="content bg-v-2">
+       
         <!-- Toolbar -->
-        <div  class="toolbar halo-nav box-shad-none">
-          <div class="open-right" id="open-right-quattro" data-activates="prova">
+        <div  class="toolbar primary-color">
+          <span class="title">Magic Beep</span>
+          <div class="open-right" id="open-right-due" data-activates="slide-out-3">
             <i class="ion-android-menu"></i>
           </div>
-          <span class="title none">Magin Beep</span>
         </div>
         
         <!-- Hero Header -->
