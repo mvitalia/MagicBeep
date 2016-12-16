@@ -32,23 +32,6 @@
 	// Redirect console.log to Evothings Workbench.
 	if (window.hyper && window.hyper.log) { console.log = hyper.log }
 	</script>
-    <script>
-       function dettail(id){
-
-       localStorage.setItem("cus", id);
-
-        //emulate a refresh by switching to an empty page div (and then back to this  page again)
-        $.mobile.changePage(
-          '#empty_page_content',
-          {
-             allowSamePageTransition : true,
-             transition              : 'none',
-             showLoadMsg             : false,
-             reloadPage              : false
-       }
-    );
-  }
-       </script>
 	<script src="cordova.js"></script>
 	<script src="libs/jquery/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
@@ -887,46 +870,16 @@
             </div>
         </div>-->
     </div> 
-<div data-role="page" id="empty_page_content" data-theme="b" data-content-theme="b"></div>
+
     <div class="container_page">
        
       </div>  
   
 <script>
 
-$(function() {
-
-        $(document).on("pageshow", "#empty_page_content", function() {
-            //console.log('pageshow event - #empty_page_content only');
-
-            // return to #page whenever this page is loaded
-            // The return url is hardcoded in this example but it could be switched to a variable if different return pages are needed
 
 
-
-            $.mobile.changePage(
-              '#lostPassword',
-              {
-                allowSamePageTransition : true,
-                transition              : 'none',
-                showLoadMsg             : false,
-                reloadPage              : false
-               }
-            );
-
-        });
-
- });
-
- $(function() {
-
-        $(document).on("pageshow", "#lostPassword", function() {
-            //console.log('pageshow event - #page');
-            // .. do stuff here, such as look for a stored id value and update the content of the #page accordingly
-   caricaNotifica(); 
-        });
-
-  });
+ 
 
  $(document).on("pagebeforeshow", "#home", function () {
      
@@ -975,7 +928,7 @@ $(function() {
          selezionoDati ();
     });
 
-     $(document).on("pageshow", "#Notifica", function () {
+     $(document).on("pageshow", "#lostPassword", function () {
            $(".schedaNotifica").html("");
      caricaNotifica(); 
      });
