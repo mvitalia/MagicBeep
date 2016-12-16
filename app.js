@@ -332,7 +332,7 @@ function startScan()
 											//alert(notification.id);
 											 localStorage.removeItem("Id_notifica");
 											 localStorage.setItem('Id_notifica', notification.id);
-											 $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
+											 $( ":mobile-pagecontainer" ).pagecontainer( "change", "#notifica", {    transition: "flip", reload:false } );
 										});
 																							
 												

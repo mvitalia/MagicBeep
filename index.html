@@ -967,7 +967,7 @@ $(document).on("click", ".detail", function () {
      var id = $(this).parents("div").data("itemid");
      localStorage.removeItem("Id_notifica");
      localStorage.setItem('Id_notifica', id);
-     $( ":mobile-pagecontainer" ).pagecontainer( "change", "#notifica", {    transition: "flip", reload:false } );
+     $( ":mobile-pagecontainer" ).pagecontainer( "change", "#notifica", {    transition: "flip", reload:false, allowSamePageTransition:true } );
      
 });
 
