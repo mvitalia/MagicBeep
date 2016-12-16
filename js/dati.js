@@ -223,7 +223,7 @@ function successoSelectNotifica(tx,dati)
             var dataDue = splitarray[0];
             var arrayData = new Array ();
             arrayData = dataDue.split("-");
-            var data_attivo_da = arrayData[2] + "-" + arrayData[1] + "-" + arrayData[0] + " " + splitarray[1];
+            var data_attivo_da = arrayData[2] + "-" + arrayData[1] + "-" + arrayData[0]; //+ " " + splitarray[1];
             // Data giusta attivo_a
             var dataTre = dati.rows.item(0).attivo_a;
             var splitarrayUno = new Array();
@@ -231,11 +231,11 @@ function successoSelectNotifica(tx,dati)
             var dataQuattro = splitarrayUno[0];
             var arrayDataDue = new Array ();
             arrayDataDue = dataQuattro.split("-");
-            var data_attivo_a = arrayDataDue[2] + "-" + arrayDataDue[1] + "-" + arrayDataDue[0] + " " + splitarrayUno[1];
+            var data_attivo_a = arrayDataDue[2] + "-" + arrayDataDue[1] + "-" + arrayDataDue[0]; //+ " " + splitarrayUno[1];
            sessionStorage.setItem('titolo_notifica',dati.rows.item(0).titolo);
            var immagineNot ="<img src='http://magicbeep.mvclienti.com/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"' alt=''>";
            li_dati+="<h2 class='uppercase'>"+dati.rows.item(0).titolo+"</h2>";
-           li_dati+="<div class='post-author'><span>Attivo da: "+data_attivo_da+" a "+data_attivo_a+"</span></div>";
+           li_dati+="<div class='post-author'><span>Attivo dal "+data_attivo_da+" al "+data_attivo_a+"</span></div>";
            li_dati+=" <p class='text-flow'>"+dati.rows.item(0).descrizione+"</p><hr>";
            if(dati.rows.item(0).link!="")
            {
