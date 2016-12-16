@@ -254,6 +254,7 @@ function successoSelectNotifica(tx,dati)
            li_dati+="<hr>";*/
         
           // $("#box_img_notifica").append(immagineNot);
+           $(".appendDettaglioNotifica").html("");
            $(".appendDettaglioNotifica").append(li_dati);
         }
        // Permette di "appendere" il codice html creato in dinamico con i dati
