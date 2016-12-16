@@ -322,8 +322,8 @@ function inviaInformazione(privacy,nome,cognome,email,richiesta)
 		},
 		error: function(e){
 			//console.log(data);
-			alert('Errore'+e.status);
-            alert('Errore2'+e.statusTest);
+			//alert('Errore'+e.status);
+            //alert('Errore2'+e.statusTest);
 		}
      	});
 }
@@ -444,8 +444,8 @@ function recuperoPassword(email)
 		},
 		error: function(e){
 			//console.log(data);
-			alert('Errore'+e.status);
-            alert('Errore2'+e.statusTest);
+		//	alert('Errore'+e.status);
+         //   alert('Errore2'+e.statusTest);
 		}
      	});
 }
