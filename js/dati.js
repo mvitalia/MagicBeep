@@ -393,21 +393,10 @@ function condividiNotifica ()
                            
                             
                     
-  // 
-}
-
-/*	
-function salva_notifica(obj,id) {
-    $('.'+id+'').hide();
 
 }
-/*
-function apri_notifica(obj,id) {
-     localStorage.setItem('Id_notifica', id);
-       $('#'+id+'').hide();
-    $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:true } );
 
-}*/
+
 
 function recuperoPassword(email)
 {

@@ -385,7 +385,7 @@ function startScan()
 															"</div>";*/	
 															var popNitfiche = "";
 															popNitfiche+="<div id="+ID_notizia+" class='notification notification-info box_notifica '>";
-															popNitfiche+="<button onclick='salvaNotifica("+ID_notizia+")'  class='close-notification no-smoothState'><i  class='ion-android-close'></i></button>"
+															popNitfiche+="<div onclick='salvaNotifica("+ID_notizia+")'  class='close-notification no-smoothState'><i  class='ion-android-close'></i></div>"
 															popNitfiche+="<div  class='allargaNot' onclick='apriNotifica("+ID_notizia+")' ><p>"+titolo_n+"</p>";
 															popNitfiche+="<span>"+date+"</span></div></div>";
 															$(".container_page").append(popNitfiche);
