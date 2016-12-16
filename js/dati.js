@@ -233,9 +233,11 @@ function successoSelectNotifica(tx,dati)
             var data_attivo_a = arrayDataDue[2] + "-" + arrayDataDue[1] + "-" + arrayDataDue[0] + " " + splitarrayUno[1];
            
            sessionStorage.setItem('titolo_notifica',dati.rows.item(0).titolo);
-           li_dati+="<h1 class='titolo_notizia'>"+dati.rows.item(0).titolo+"</h1>";
-           li_dati+="<p class='notizia_data'>Attivo dal "+data_attivo_da+" al "+data_attivo_a+"</p>";
-           li_dati+="<div class='wrapper_notizia'><img class='immagine_notizia' src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"'/></div><hr>";
+           var url = "http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).immagine;
+           $("#box_img_notifica").css("background","url("+url+")");
+           li_dati+="<h2 class='uppercase'>"+dati.rows.item(0).titolo+"</h2>";
+           li_dati+="<div class='post-author'><img src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"' alt='' class='avatar circle'><span>Attivo dal "+data_attivo_da+" al "+data_attivo_a+"</span></div>";
+         /*  li_dati+="<div class='wrapper_notizia'><img class='immagine_notizia' src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"'/></div><hr>";
            li_dati+="<div class='notizia'>"+dati.rows.item(0).descrizione+"</div>";
            if(dati.rows.item(0).link!="")
            {
@@ -249,13 +251,23 @@ function successoSelectNotifica(tx,dati)
            {
            li_dati+="<div class='notizia'><b  class='titolo_notizia'>ID_utente: </b>"+dati.rows.item(0).ID_utente+"</div>";
            }
-           li_dati+="<hr>";
-           $(".schedaNotifica").append(li_dati);
+           li_dati+="<hr>";*/
+           $(".appendDettaglioNotifica").append(li_dati);
         }
        // Permette di "appendere" il codice html creato in dinamico con i dati
       /* $("#lista_datiJson").append(li_dati).promise().done(function () {
          $(this).listview("refresh");
         });*/
+       /* <h2 class="uppercase">drawing a single stroke</h2>
+            <div class="post-author">
+              <img src="img/user2.jpg" alt="" class="avatar circle">
+              <span>Lora Bell</span>
+            </div>
+            <p class="text-flow"><span class="dropcap">A</span> wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. 
+            A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+            <blockquote class="primary-border">"The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog."</blockquote>
+            
+            <p class="text-flow"><b>I am alone:</b> and feel the charm of existence in thisspot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.</p>*/
 }
 
 function cancellaNotifica ()

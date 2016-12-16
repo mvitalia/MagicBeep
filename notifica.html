@@ -14,6 +14,17 @@
 	</style>
      <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css"/>
      <link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons.min.css"/>
+       <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <!-- Icons -->
+    <link href="css/ionicons.min.css" media="all" rel="stylesheet" type="text/css">
+    <!-- Styles -->
+    <link href="css/keyframes.css" rel="stylesheet" type="text/css">
+    <link href="css/materialize.min.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper.css" rel="stylesheet" type="text/css">
+    <link href="css/swipebox.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+     <link href="css/custom.css" rel="stylesheet" type="text/css">
 	<script>
 	// Redirect console.log to Evothings Workbench.
 	if (window.hyper && window.hyper.log) { console.log = hyper.log }
@@ -29,7 +40,103 @@
 </head>
 
 <body>
-     <div  data-role="page" class="container_page" id="Notifica" >
+   <div class="m-scene" id="main"> <!-- Main Container -->
+
+      <!-- Sidebars -->
+      <!-- Right Sidebar -->
+      <ul id="slide-out" class="side-nav">
+       <li>
+          <div class="sidenav-header primary-color">
+            <div class="nav-social">
+              <i class="ion-social-facebook"></i>
+              <i class="ion-social-twitter"></i>
+              <i class="ion-social-tumblr"></i>
+            </div>
+            <div class="nav-avatar">
+              <img class="circle avatar" src="img/user.jpg" alt="">
+              <div class="avatar-body">
+                <h3>Halo</h3>
+                <p>Material Mobile</p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="#home" class="no-child"><i class="ion-android-home"></i>Home</a></li>
+        <li><a href="#login"  data-transition="slide" class="no-child"><i class="ion-android-contact"></i>User/Login</a></li>
+        <li><a href="#database" class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
+        <li><a href="#" class="no-child"><i class="ion-map"></i>Posizioni</a></li>
+        <li><a href="#" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
+        <li><a href="#infoMvitalia" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
+      </ul>
+      <!-- End of Sidebars -->
+
+      <!-- Page Content -->
+      <div id="content">
+
+        <!-- Toolbar -->
+        <div  class="toolbar halo-nav box-shad-none">
+          <div class="open-right" id="open-right" data-activates="slide-out">
+            <i class="ion-android-menu"></i>
+          </div>
+          <span class="title none">Magin Beep</span>
+        </div>
+        
+        <!-- Hero Header -->
+        <div class="h-banner animated fadeindown">
+          <div id="box_img_notifica" class="parallax bg-2">
+            <div class="floating-button animated bouncein delay-3">
+            <span class="btn-floating resize btn-large waves-effect waves-light accent-color btn z-depth-1">
+              <i class="ion-android-bookmark"></i>
+            </span>
+          </div>
+            <div class="banner-title">Magic Beep</div>
+          </div>
+         </div>
+
+        <!-- Article Content -->
+        <div class="animated fadeinup delay-1">
+          <div class="page-content">
+              <div class="appendDettaglioNotifica">
+           
+            </div>
+            <!-- Share -->
+            <div class="share center-align m-t-30">
+              <h3 class="uppercase">Share it!</h3>
+              <i class="ion-social-facebook p-20 blue-text text-darken-4"></i>
+              <i class="ion-social-twitter p-20 blue-text"></i>
+              <i class="ion-social-pinterest p-20 red-text"></i>
+            </div>
+          </div>
+        </div> 
+        <!-- Footer -->
+        <footer class="page-footer primary-color">
+        <div class="container">
+          <div class="row">
+            <div class="col s12">
+              <p class="center-align grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              <div class="center-align">
+                <i class="ion-social-facebook m-10 white-text"></i>
+                <i class="ion-social-twitter m-10 white-text"></i>
+                <i class="ion-social-pinterest m-10 white-text"></i>
+                <i class="ion-social-dribbble m-10 white-text"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright blue darken-1">
+          <div class="container">
+          2016 Codnauts
+          <a class="grey-text text-lighten-4 right" href="#!">Privacy Policy</a>
+          </div>
+        </div>
+      </footer>
+      
+       
+    </div> <!-- End of Page Content -->
+
+    </div> <!-- End of Page Container -->
+    
+     <!--<div  data-role="page" class="container_page" id="Notifica" >
         <div data-role="header" class="header" data-position="fixed" data-add-back-btn="true">
             <h1 id="app-title">Notifica</h1>
              <div class="wrapper">
@@ -48,7 +155,7 @@
             <div  id="btnCondividi" class="ui-btn ui-shadow ui-corner-all btn_scheda" onclick="condividiNotifica()">Condividi</div>
         </div>
         <div data-role="footer" data-position="fixed">
-            <!--Tab bar jquery mobile-->
+            <!--Tab bar jquery mobile
             <div data-role="navbar" data-iconpos="top">
                  <ul>
                     <li><a href="#home" data-icon="home"  data-transition="slide">Home</a></li>
@@ -62,8 +169,16 @@
     
 <script>
 
-</script>
-
+</script>-->
+<script src="app.js"></script>
+<script type="text/javascript" src="js/dati.js"></script>
+<script src="js/jquery.swipebox.min.js"></script>   
+<script src="js/materialize.min.js"></script> 
+<script src="js/swiper.min.js"></script>  
+<script src="js/jquery.mixitup.min.js"></script>
+<script src="js/masonry.min.js"></script>
+<script src="js/chart.min.js"></script>
+<script src="js/functions.js"></script>
 
 </body>
 
