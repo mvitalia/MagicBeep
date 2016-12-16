@@ -254,7 +254,7 @@ function successoSelectNotifica(tx,dati)
            li_dati+="<hr>";*/
         
           // $("#box_img_notifica").append(immagineNot);
-          // $(".appendDettaglioNotifica").append(li_dati);
+           $(".appendDettaglioNotifica").append(li_dati);
         }
        // Permette di "appendere" il codice html creato in dinamico con i dati
       /* $("#lista_datiJson").append(li_dati).promise().done(function () {
@@ -376,7 +376,7 @@ function apriNotifica(id)
     var prova = id;
      localStorage.setItem('Id_notifica', prova);
     $('.'+id+'').hide();
-    $( ":mobile-pagecontainer" ).pagecontainer( "change", "#lostPassword", {    transition: "flip", reload:false, allowSamePageTransition:true } );
+    $( ":mobile-pagecontainer" ).pagecontainer( "change", "#notifica", {    transition: "flip", reload:false, allowSamePageTransition:true } );
 }
 
 function salvaNotifica(id)
