@@ -236,26 +236,25 @@ function successoSelectNotifica(tx,dati)
            sessionStorage.setItem('titolo_notifica',dati.rows.item(0).titolo);
            var immagineNot ="<img src='http://magicbeep.mvclienti.com/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"' alt=''>";
            li_dati+="<h2 class='uppercase'>"+dati.rows.item(0).titolo+"</h2>";
-           li_dati+="<div class='post-author'><img src='http://magicbeep.mvclienti.com//public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"' alt='' class='avatar circle'><span>Attivo dal "+data_attivo_da+" al "+data_attivo_a+"</span></div>";
+           li_dati+="<div class='post-author'><span>Attivo da"+data_attivo_da+" a "+data_attivo_a+"</span></div>";
            li_dati+=" <p class='text-flow'>"+dati.rows.item(0).descrizione+"</p>";
            if(dati.rows.item(0).link!="")
            {
            li_dati+="<blockquote class='primary-border'>Link: <a href='http://"+dati.rows.item(0).link+"'>"+dati.rows.item(0).link+"</a> </blockquote>"
            }
-           /*
+           
            if(dati.rows.item(0).allegato!="")
            {
-           li_dati+="<div class='notizia'><b  class='titolo_notizia'>Allegato: </b><a href='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).allegato+"' target='_blank'>"+dati.rows.item(0).allegato+"</a></div>";
+           li_dati+="<blockquote class='primary-border'>Allegato: <a href='http://magicbeep.mvclienti.com/public/upload_gallery/immagini/"+dati.rows.item(0).allegato+"' target='_blank'>"+dati.rows.item(0).allegato+"</a>  </blockquote>"
            }
-            if(dati.rows.item(0).ID_utente!=null)
+         /*   if(dati.rows.item(0).ID_utente!=null)
            {
            li_dati+="<div class='notizia'><b  class='titolo_notizia'>ID_utente: </b>"+dati.rows.item(0).ID_utente+"</div>";
-           }
-           li_dati+="<hr>";*/
+           }*/
           $(".appendDettaglioNotifica").html("");
           $("#box_img_notifica").html("");
           $("#box_img_notifica").append(immagineNot);
-           $(".appendDettaglioNotifica").append(li_dati);
+          $(".appendDettaglioNotifica").append(li_dati);
         }
        // Permette di "appendere" il codice html creato in dinamico con i dati
       /* $("#lista_datiJson").append(li_dati).promise().done(function () {
