@@ -376,7 +376,7 @@ function apriNotifica(id)
     var prova = id;
      localStorage.setItem('Id_notifica', prova);
     $('.'+id+'').hide();
-   window.location.href="page/notifica.html";
+ $( ":mobile-pagecontainer" ).pagecontainer( "change", "#lostPassword", {    transition: "flip", reload:true } );
 }
 
 function salvaNotifica(id)
