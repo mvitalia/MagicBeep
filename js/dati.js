@@ -235,7 +235,6 @@ function successoSelectNotifica(tx,dati)
            
            sessionStorage.setItem('titolo_notifica',dati.rows.item(0).titolo);
            var immagineNot ="<img src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"' alt=''>";
-           $("#box_img_notifica").addClass(classe);
            li_dati+="<h2 class='uppercase'>"+dati.rows.item(0).titolo+"</h2>";
            li_dati+="<div class='post-author'><img src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"' alt='' class='avatar circle'><span>Attivo dal "+data_attivo_da+" al "+data_attivo_a+"</span></div>";
          /*  li_dati+="<div class='wrapper_notizia'><img class='immagine_notizia' src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"'/></div><hr>";
