@@ -234,7 +234,7 @@ function successoSelectNotifica(tx,dati)
             var data_attivo_a = arrayDataDue[2] + "-" + arrayDataDue[1] + "-" + arrayDataDue[0] + " " + splitarrayUno[1];
            
            sessionStorage.setItem('titolo_notifica',dati.rows.item(0).titolo);
-           var classe =".immagineNotifica{background: rgba(0,0,0,0)url('http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"' no-repeat scroll center center / cover !important;}";
+           var immagineNot ="<img src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"' alt=''>";
            $("#box_img_notifica").addClass(classe);
            li_dati+="<h2 class='uppercase'>"+dati.rows.item(0).titolo+"</h2>";
            li_dati+="<div class='post-author'><img src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"' alt='' class='avatar circle'><span>Attivo dal "+data_attivo_da+" al "+data_attivo_a+"</span></div>";
@@ -253,6 +253,8 @@ function successoSelectNotifica(tx,dati)
            li_dati+="<div class='notizia'><b  class='titolo_notizia'>ID_utente: </b>"+dati.rows.item(0).ID_utente+"</div>";
            }
            li_dati+="<hr>";*/
+        
+           $("#box_img_notifica").append(immagineNot);
            $(".appendDettaglioNotifica").append(li_dati);
         }
        // Permette di "appendere" il codice html creato in dinamico con i dati
