@@ -780,9 +780,10 @@
               <i class="ion-social-twitter"></i>
               <i class="ion-social-tumblr"></i>
             </div>
-            <div class="nav-avatar">
+             <div class="nav-avatar">
+          
               <div class="avatar-body">
-                <h3>Magic Beep</h3>
+                <h3>Halo</h3>
                 <p>Material Mobile</p>
               </div>
             </div>
@@ -1107,7 +1108,7 @@ $(document).on("click", ".detail", function () {
      var id = $(this).parents("div").data("itemid");
      localStorage.removeItem("Id_notifica");
      localStorage.setItem('Id_notifica', id);
-     $( ":mobile-pagecontainer" ).pagecontainer( "change", "notifica.html", {    transition: "flip", reload:false } );
+     $( ":mobile-pagecontainer" ).pagecontainer( "change", "#notifica", {    transition: "flip", reload:false } );
      
 });
 

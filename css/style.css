@@ -701,6 +701,7 @@ footer.page-footer {
 }
 .sidenav-header .avatar-body {
     flex: 1;
+     margin-left: 120px;
 }
 .sidenav-header .avatar-body h3 {
     color: #fff;
@@ -713,7 +714,7 @@ footer.page-footer {
     margin: 0;
 }
 .sidenav-header .nav-social {
-    padding: 20px 20px 0 20px;
+    padding: 60px 20px 0 20px;
 }
 .sidenav-header .nav-social i {
     font-size: 16px;
