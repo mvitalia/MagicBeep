@@ -252,10 +252,10 @@ function successoSelectNotifica(tx,dati)
            li_dati+="<div class='notizia'><b  class='titolo_notizia'>ID_utente: </b>"+dati.rows.item(0).ID_utente+"</div>";
            }
            li_dati+="<hr>";*/
-         // $(".appendDettaglioNotifica").html("");
+          $(".appendDettaglioNotifica").html("");
           $("#box_img_notifica").html("");
-        //  $("#box_img_notifica").append(immagineNot);
-        //   $(".appendDettaglioNotifica").append(li_dati);
+          $("#box_img_notifica").append(immagineNot);
+           $(".appendDettaglioNotifica").append(li_dati);
         }
        // Permette di "appendere" il codice html creato in dinamico con i dati
       /* $("#lista_datiJson").append(li_dati).promise().done(function () {
