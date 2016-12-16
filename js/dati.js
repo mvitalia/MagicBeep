@@ -140,7 +140,7 @@ function aggiungiUtente(nome,cognome,email,luogoN,dataN,citta,username,password,
        $.ajax({
         type: "POST",
 		data: '{nome:"'+nome+'",cognome:"'+cognome+'",email:"'+email+'",luogo_nascita:"'+luogoN+'",data_nascita:"'+dataN+'",citta:"'+citta+'",username:"'+username+'",password:"'+password+'",privacy:"'+privacy+'"}',
-		url: 'http://89.36.209.130/scan_dispositivi/webservices/CS_aggiungiCliente.aspx/prova',
+		url: 'http://magicbeep.mvclienti.com/webservices/CS_aggiungiCliente.aspx/prova',
         contentType: "application/json; charset=utf-8",
         dataType: 'json',
 		success: function(data){
@@ -169,7 +169,7 @@ function loginUtente(usernameLogin,passLogin)
        $.ajax({
         type: "POST",
 		data: '{userLogin:"'+usernameLogin+'",passLogin:"'+passLogin+'"}',
-		url: 'http://89.36.209.130/scan_dispositivi/webservices/CS_loginUtente.aspx/login',
+		url: 'http://magicbeep.mvclienti.com/webservices/CS_loginUtente.aspx/login',
         contentType: "application/json; charset=utf-8",
         dataType: 'json',
 		success: function(data){
@@ -223,7 +223,7 @@ function successoSelectNotifica(tx,dati)
             var dataDue = splitarray[0];
             var arrayData = new Array ();
             arrayData = dataDue.split("-");
-            var data_attivo_da = arrayData[2] + "-" + arrayData[1] + "-" + arrayData[0]; //+ " " + splitarray[1];
+            var data_attivo_da = arrayData[2] + "-" + arrayData[1] + "-" + arrayData[0]; //aggiungere anche ora + " " + splitarray[1];
             // Data giusta attivo_a
             var dataTre = dati.rows.item(0).attivo_a;
             var splitarrayUno = new Array();
@@ -231,7 +231,7 @@ function successoSelectNotifica(tx,dati)
             var dataQuattro = splitarrayUno[0];
             var arrayDataDue = new Array ();
             arrayDataDue = dataQuattro.split("-");
-            var data_attivo_a = arrayDataDue[2] + "-" + arrayDataDue[1] + "-" + arrayDataDue[0]; //+ " " + splitarrayUno[1];
+            var data_attivo_a = arrayDataDue[2] + "-" + arrayDataDue[1] + "-" + arrayDataDue[0]; // aggiungere anche ora + " " + splitarrayUno[1];
            sessionStorage.setItem('titolo_notifica',dati.rows.item(0).titolo);
            var immagineNot ="<img src='http://magicbeep.mvclienti.com/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"' alt=''>";
            li_dati+="<h2 class='uppercase'>"+dati.rows.item(0).titolo+"</h2>";
@@ -308,7 +308,7 @@ function inviaInformazione(privacy,nome,cognome,email,richiesta)
    $.ajax({
         type: "POST",
 		data: '{nome:"'+nome+'",cognome:"'+cognome+'",email:"'+email+'",richiesta:"'+richiesta+'",privacy:"'+privacy+'",notizia:"'+ sessionStorage.getItem('titolo_notifica')+'"}',
-		url: 'http://89.36.209.130/scan_dispositivi/webservices/CS_inviaInfo.aspx/invia',
+		url: 'http://magicbeep.mvclienti.com/webservices/CS_inviaInfo.aspx/invia',
         contentType: "application/json; charset=utf-8",
         dataType: 'json',
 		success: function(data){
@@ -334,7 +334,7 @@ function inviaInformazioneMv(pMv,nMv,cMv,eMv,rMv)
   $.ajax({
         type: "POST",
 		data: '{nome:"'+nMv+'",cognome:"'+cMv+'",email:"'+eMv+'",richiesta:"'+rMv+'",privacy:"'+pMv+'",notizia:""}',
-		url: 'http://89.36.209.130/scan_dispositivi/webservices/CS_inviaInfoMv.aspx/invia',
+		url: 'http://magicbeep.mvclienti.com/webservices/CS_inviaInfoMv.aspx/invia',
         contentType: "application/json; charset=utf-8",
         dataType: 'json',
 		success: function(data){
@@ -348,8 +348,8 @@ function inviaInformazioneMv(pMv,nMv,cMv,eMv,rMv)
 		},
 		error: function(e){
 			//console.log(data);
-			alert('Errore'+e.status);
-            alert('Errore2'+e.statusTest);
+		//	alert('Errore'+e.status);
+          //  alert('Errore2'+e.statusTest);
 		}
      	});
 }
@@ -381,7 +381,7 @@ function condividiNotifica ()
                                             var len = dati.rows.length;
                                             if(len!=0)
                                             {
-                                                var immagine = "http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"";
+                                                var immagine = "http://magicbeep.mvclienti.com/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"";
                                                 var notifica = "Notifica:"+dati.rows.item(0).titolo+"Descrizione:"+dati.rows.item(0).descrizione;
                                                 window.plugins.socialsharing.share(notifica, 'The subject',immagine);
                                             }
@@ -415,7 +415,7 @@ function recuperoPassword(email)
    $.ajax({
         type: "POST",
 		data: '{email:"'+email+'"}',
-		url: 'http://89.36.209.130/scan_dispositivi/webservices/CS_recuperoPassword.aspx/recupera',
+		url: 'http://magicbeep.mvclienti.com/webservices/CS_recuperoPassword.aspx/recupera',
         contentType: "application/json; charset=utf-8",
         dataType: 'json',
 		success: function(data){
@@ -441,7 +441,7 @@ function recuperoPassword(email)
    $.ajax({
         type: "POST",
 		data: '{email:"'+email+'"}',
-		url: 'http://89.36.209.130/scan_dispositivi/webservices/CS_recuperoPassword.aspx/recupera',
+		url: 'http://magicbeep.mvclienti.com/webservices/CS_recuperoPassword.aspx/recupera',
         contentType: "application/json; charset=utf-8",
         dataType: 'json',
 		success: function(data){

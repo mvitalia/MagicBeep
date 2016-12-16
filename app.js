@@ -88,7 +88,7 @@ var app = (function()
          						)
 		 // Fine della creazione delle tabella db 
 		 // Prelevo dati dal server e salvo nel db
-		  $.getJSON("http://89.36.209.130/scan_dispositivi/webservices/sync_notizie.aspx", function (dati) {
+		  $.getJSON("http://magicbeep.mvclienti.com/webservices/sync_notizie.aspx", function (dati) {
                     var li_dati = "";
                     $.each(dati, function (i, name) {
                         // Inserisco dati nel db sqllite dell' App
@@ -241,7 +241,7 @@ function startScan()
          						)
 		 // Fine della creazione delle tabella db 
 		 // Prelevo dati dal server e salvo nel db
-		  $.getJSON("http://89.36.209.130/scan_dispositivi/webservices/sync_dispositivi.aspx", function (dati) {
+		  $.getJSON("http://magicbeep.mvclienti.com/webservices/sync_dispositivi.aspx", function (dati) {
                     var li_dati = "";
                     $.each(dati, function (i, name) {
                         // Inserisco dati nel db sqllite dell' App
@@ -495,11 +495,11 @@ function salvaLettura (proximity,dispositivo,notizia)
 		{
 			//alert("ok");
 			 datiInviare = '{proximity:"'+proximity+'",Id_dispositivo:"'+dispositivo+'",Id_notizia:"'+notizia+'",Id_utente:"'+localStorage.getItem('Id_login')+'"}';
-			urlCorretto = 'http://89.36.209.130/scan_dispositivi/webservices/CS_aggiungiLettura.aspx/letturaUtente';
+			urlCorretto = 'http://magicbeep.mvclienti.com/webservices/CS_aggiungiLettura.aspx/letturaUtente';
 		}else{
 			//alert("Nullo");
 		    datiInviare = '{proximity:"'+proximity+'",Id_dispositivo:"'+dispositivo+'",Id_notizia:"'+notizia+'"}';
-			urlCorretto = 'http://89.36.209.130/scan_dispositivi/webservices/CS_aggiungiLettura.aspx/lettura';
+			urlCorretto = 'http://magicbeep.mvclienti.com/webservices/CS_aggiungiLettura.aspx/lettura';
 		}
 	
 		$.ajax({
