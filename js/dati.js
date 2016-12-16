@@ -246,30 +246,13 @@ function successoSelectNotifica(tx,dati)
            {
            li_dati+="<blockquote class='primary-border'>Allegato: <a href='http://magicbeep.mvclienti.com/public/upload_gallery/immagini/"+dati.rows.item(0).allegato+"' target='_blank'>"+dati.rows.item(0).allegato+"</a>  </blockquote>"
            }
-         /*   if(dati.rows.item(0).ID_utente!=null)
-           {
-           li_dati+="<div class='notizia'><b  class='titolo_notizia'>ID_utente: </b>"+dati.rows.item(0).ID_utente+"</div>";
-           }*/
-           li_dati+="<hr>";
+          li_dati+="<hr>";
           $(".appendDettaglioNotifica").html("");
           $("#box_img_notifica").html("");
           $("#box_img_notifica").append(immagineNot);
           $(".appendDettaglioNotifica").append(li_dati);
         }
-       // Permette di "appendere" il codice html creato in dinamico con i dati
-      /* $("#lista_datiJson").append(li_dati).promise().done(function () {
-         $(this).listview("refresh");
-        });*/
-       /* <h2 class="uppercase">drawing a single stroke</h2>
-            <div class="post-author">
-              <img src="img/user2.jpg" alt="" class="avatar circle">
-              <span>Lora Bell</span>
-            </div>
-            <p class="text-flow"><span class="dropcap">A</span> wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. 
-            A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-            <blockquote class="primary-border">"The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog."</blockquote>
-            
-            <p class="text-flow"><b>I am alone:</b> and feel the charm of existence in thisspot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.</p>*/
+     
 }
 
 function cancellaNotifica ()
@@ -375,7 +358,7 @@ function apriNotifica(id)
 {
     var prova = id;
      localStorage.setItem('Id_notifica', prova);
-    $('.'+id+'').hide();
+    $('#'+id+'').hide();
     $( ":mobile-pagecontainer" ).pagecontainer( "change", "#notifica", {    transition: "flip", reload:false, allowSamePageTransition:true } );
 }
 
