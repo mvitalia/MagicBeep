@@ -234,8 +234,8 @@ function successoSelectNotifica(tx,dati)
             var data_attivo_a = arrayDataDue[2] + "-" + arrayDataDue[1] + "-" + arrayDataDue[0] + " " + splitarrayUno[1];
            
            sessionStorage.setItem('titolo_notifica',dati.rows.item(0).titolo);
-           var url = "http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).immagine;
-           $("#box_img_notifica").css("background","url("+url+")");
+           var classe =".immagineNotifica{background: rgba(0,0,0,0)url('http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"' no-repeat scroll center center / cover !important;}";
+           $("#box_img_notifica").addClass(classe);
            li_dati+="<h2 class='uppercase'>"+dati.rows.item(0).titolo+"</h2>";
            li_dati+="<div class='post-author'><img src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"' alt='' class='avatar circle'><span>Attivo dal "+data_attivo_da+" al "+data_attivo_a+"</span></div>";
          /*  li_dati+="<div class='wrapper_notizia'><img class='immagine_notizia' src='http://89.36.209.130/scan_dispositivi/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"'/></div><hr>";
