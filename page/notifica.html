@@ -12,7 +12,8 @@
 	<style>
 		@import '../ui/css/evothings-app.css';
 	</style>
-   
+     <link rel="stylesheet" type="text/css" href="../css/jquery.mobile-1.4.5.min.css"/>
+     <link rel="stylesheet" type="text/css" href="../css/jquery.mobile.icons.min.css"/>
        <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
     <!-- Icons -->
@@ -29,13 +30,14 @@
 	if (window.hyper && window.hyper.log) { console.log = hyper.log }
 	</script>
 	<script src="../libs/jquery/jquery.js"></script>
+	<script type="text/javascript" src="../js/jquery.mobile-1.4.5.min.js"></script>
 	<script src="../libs/evothings/evothings.js"></script>
 	<script src="../libs/evothings/ui/ui.js"></script>
 
 </head>
 
 <body>
-   
+    <div  data-role="page" class="container_page" id="Notifica" >
   
 
          <div class="m-scene"> <!-- Main Container -->
@@ -141,7 +143,7 @@
     </div> <!-- End of Page Content -->
 
     </div> <!-- End of Page Container -->
-    
+    </div>
      <!--<div  data-role="page" class="container_page" id="Notifica" >
         <div data-role="header" class="header" data-position="fixed" data-add-back-btn="true">
             <h1 id="app-title">Notifica</h1>
