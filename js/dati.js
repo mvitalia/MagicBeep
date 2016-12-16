@@ -215,7 +215,7 @@ function successoSelectNotifica(tx,dati)
         var li_dati="";
         if(len!=0)
         {
-            alert(len);
+            
             // Data giusta attivo_da
             var data = dati.rows.item(0).attivo_da;
             var splitarray = new Array();
@@ -232,12 +232,11 @@ function successoSelectNotifica(tx,dati)
             var arrayDataDue = new Array ();
             arrayDataDue = dataQuattro.split("-");
             var data_attivo_a = arrayDataDue[2] + "-" + arrayDataDue[1] + "-" + arrayDataDue[0] + " " + splitarrayUno[1];
-           
            sessionStorage.setItem('titolo_notifica',dati.rows.item(0).titolo);
            var immagineNot ="<img src='http://magicbeep.mvclienti.com/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"' alt=''>";
            li_dati+="<h2 class='uppercase'>"+dati.rows.item(0).titolo+"</h2>";
-           li_dati+="<div class='post-author'><span>Attivo da"+data_attivo_da+" a "+data_attivo_a+"</span></div>";
-           li_dati+=" <p class='text-flow'>"+dati.rows.item(0).descrizione+"</p>";
+           li_dati+="<div class='post-author'><span>Attivo da: "+data_attivo_da+" a "+data_attivo_a+"</span></div>";
+           li_dati+=" <p class='text-flow'>"+dati.rows.item(0).descrizione+"</p><hr>";
            if(dati.rows.item(0).link!="")
            {
            li_dati+="<blockquote class='primary-border'>Link: <a href='http://"+dati.rows.item(0).link+"'>"+dati.rows.item(0).link+"</a> </blockquote>"
@@ -251,6 +250,7 @@ function successoSelectNotifica(tx,dati)
            {
            li_dati+="<div class='notizia'><b  class='titolo_notizia'>ID_utente: </b>"+dati.rows.item(0).ID_utente+"</div>";
            }*/
+           li_dati+="<hr>";
           $(".appendDettaglioNotifica").html("");
           $("#box_img_notifica").html("");
           $("#box_img_notifica").append(immagineNot);

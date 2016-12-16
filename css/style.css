@@ -1133,7 +1133,7 @@ li.your-comment {
 }
 .post-author {
     position: relative;
-    margin-bottom: 32px;
+    margin-bottom: 15px;
 }
 .post-author .avatar {
     width: 30px;
@@ -1143,7 +1143,7 @@ li.your-comment {
     top: 0;
 }
 .post-author span {
-    padding-left: 38px;
+    padding-left: 0px;
     padding-top: 4px;
     display: block;
 }
