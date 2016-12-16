@@ -459,7 +459,7 @@ function caricaNotificheFiltrate () {
                        db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
-                                         tx.executeSql("SELECT C.ID as ID_notifica,  N.*, C.* FROM notizie as N, notifiche as C WHERE C.ID_notizia=N.ID AND titolo like '%"+searchFiled+"%' AND descrizione like '%"+searchFiled+"%'",[],
+                                         tx.executeSql("SELECT C.ID as ID_notifica,  N.*, C.* FROM notizie as N, notifiche as C WHERE C.ID_notizia=N.ID AND N.titolo like '%"+searchFiled+"%' OR N.descrizione like '%"+searchFiled+"%'",[],
                                          function(tx,dati){
                                             var len = dati.rows.length;
                                            
@@ -477,7 +477,7 @@ function caricaNotificheFiltrate () {
                                                             var arrayData = new Array ();
                                                             arrayData = dataDue.split("-");
                                                             var dataCorretta = arrayData[2] + "-" + arrayData[1] + "-" + arrayData[0] + " " + splitarray[1];
-                                                            li_dati+="<div id="+dati.rows.item(i).ID_notifica+" data-itemid="+dati.rows.item(i).ID_notizia+" class='single-news animated fadeinright delay-2'><h4 class='single-news-title'><a class='detail' href='#' >"+dati.rows.item(i).titolo+"</a>";
+                                                            li_dati="<div id="+dati.rows.item(i).ID_notifica+" data-itemid="+dati.rows.item(i).ID_notizia+" class='single-news animated fadeinright delay-2'><h4 class='single-news-title'><a class='detail' href='#' >"+dati.rows.item(i).titolo+"</a>";
                                                             li_dati+="</h4><div class='margin-bottom-5'><span class='single-news-category'>"+dataCorretta+"</span></div><div class='single-news-channel'>"+dati.rows.item(i).descrizione+"</div>";
                                                             li_dati+="<div class='clr'></div></div>";
                                                             $("#lista_datiJson").html("");
