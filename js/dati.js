@@ -215,6 +215,7 @@ function successoSelectNotifica(tx,dati)
         var li_dati="";
         if(len!=0)
         {
+            alert(len);
             // Data giusta attivo_da
             var data = dati.rows.item(0).attivo_da;
             var splitarray = new Array();
