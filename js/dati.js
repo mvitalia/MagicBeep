@@ -502,9 +502,8 @@ function dinamico ()
                     $.each(dati, function (i, name) {
                     li_dati+="<div class='swiper-slide'> <div class='slider-bottom-right valign-wrapper'><div class='valign center-align width-100 p-b-5em'>";
                     li_dati+="<h2 class='uppercase'>"+name.titolo+"</h2> <p>"+name.testo+"</p></div></div></div>";
-                         alert("Dati "+li_dati);
-                         $(".swiper-wrapper").html("");
-                           $(".swiper-wrapper").append(li_dati);
+                    $(".swiper-wrapper").html("");
+                    $(".swiper-wrapper").append(li_dati);
                     });
 					 
                                 
