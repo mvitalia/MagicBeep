@@ -34,6 +34,7 @@
 	</script>
 	<script src="cordova.js"></script>
 	<script src="libs/jquery/jquery.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 	<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="js/jquery.validate.min.js"></script>
 	<script src="libs/evothings/evothings.js"></script>
@@ -900,7 +901,88 @@
     </div> <!-- End of Page Container --> 
         
     </div>
-    <!-- FINE HOME PAGE -->
+    <!-- FINE LOCALI -->
+
+     <!-- MAPPE -->
+
+	 <div  data-role="page" id="mappe">
+         <!-- Main Container -->
+         <div class="m-scene"> 
+         <!-- Sidebars -->
+         <!-- Left Sidebar -->
+        <ul id="slide-out-sei" class="side-nav collapsible">
+        <li>
+          <div class="sidenav-header primary-color">
+            <div class="nav-social">
+              <i class="ion-social-facebook"></i>
+              <i class="ion-social-twitter"></i>
+              <i class="ion-social-tumblr"></i>
+            </div>
+             <div class="nav-avatar">
+          
+              <div class="avatar-body">
+                <h3>Halo</h3>
+                <p>Material Mobile</p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="#home" class="no-child"><i class="ion-android-home"></i>Home</a></li>
+        <li><a href="#login"  data-transition="slide" class="no-child"><i class="ion-android-contact"></i>User/Login</a></li>
+        <li><a href="#database" class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
+        <li><a href="#" class="no-child"><i class="ion-map"></i>Posizioni</a></li>
+        <li><a href="#locali" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
+        <li><a href="#infoMvitalia" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
+      </ul>
+      <!-- End of Sidebars -->
+        <!-- Page Content -->
+      <div class="content page">
+
+        <!-- Toolbar -->
+        <div  class="toolbar primary-color">
+          <span class="title">Magic Beep</span>
+          <div class="open-right" id="open-right-sei" data-activates="slide-out-sei">
+            <i class="ion-android-menu"></i>
+          </div>
+        </div>
+        <!-- Main Content -->
+        <div class="animated fadeinup">
+          <!-- Project Image -->
+          <div id="map_canvas" style="width:100%;height:700px"></div>
+
+</div>
+
+          <!-- Footer -->
+          <footer class="page-footer primary-color">
+          <div class="container">
+            <div class="row">
+              <div class="col s12">
+                <p class="center-align grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                <div class="center-align">
+                  <i class="ion-social-facebook m-10 white-text"></i>
+                  <i class="ion-social-twitter m-10 white-text"></i>
+                  <i class="ion-social-pinterest m-10 white-text"></i>
+                  <i class="ion-social-dribbble m-10 white-text"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright blue darken-1">
+            <div class="container">
+            2016 Codnauts
+            <a class="grey-text text-lighten-4 right" href="#!">Privacy Policy</a>
+            </div>
+          </div>
+        </footer>
+        </div> <!-- End of Main Contents -->
+      
+         
+      </div> <!-- End of Page Content -->
+
+    </div> <!-- End of Page Container --> 
+        
+    </div>
+    <!-- FINE MAPPE -->
     <!-- BLOCCO DOVE SI APPENDONO GLI ALERT DELLE NOTIFCHE -->
     <div class="container_page">
        
@@ -969,6 +1051,7 @@ $('#search').keyup(function () {
 	caricaNotificheFiltrate();
             
 });	
+
     // Validazione e registrazione utente
 $('#registrazioneSincro').validate({
     rules: {
@@ -1283,6 +1366,166 @@ $('#inviaInfoMv').validate({
     }
 });
 
+
+// Inizio mappa
+ $(document).on("pagebeforeshow", "#mappe", function () {
+  GMap.init();
+});
+
+/* Style of the map */
+		 var styles = [
+		 {
+			stylers: [
+			  //{ "hue": "#f0f0f0" }
+	
+			]
+		 }
+		 ,{
+			  "featureType": "water",
+			  "stylers": [
+				 { "hue": "#90B8FD" },
+				 { "lightness": 0 },
+				 { "visibility": "on" }
+			  ]
+			}
+  
+ 
+  
+			
+		 ,{
+			  "featureType": "landscape",
+			  "stylers": [
+				 { "color": "#F0F0F0" },
+				
+			  ]
+			}
+		  ,{ 
+		 "featureType": "administrative.country",
+		 "elementType": "geometry",
+		 "stylers": [
+			{ "color": "#777777" },
+			{ "weight": 1 }
+		 
+		 ]
+		  }
+		 ,{
+			  "featureType": "administrative.country",
+			  "elementType": "labels.text",
+			  "stylers": [
+				 { "visibility": "simplified" }
+				 //{ "color": "#333333" }
+			  ]
+			},
+		 
+		 {
+			featureType: "road",
+			elementType: "geometry",
+			stylers: [
+			  { lightness: 100 },
+			  { visibility: "simplified" }
+			]
+		 },{
+			featureType: "road",
+			elementType: "labels",
+			stylers: [
+			  { visibility: "off" }
+			]
+		 },{
+				featureType: "poi",
+				elementType: "labels",
+				stylers: [
+				  { visibility: "off" }
+				]
+			 }
+	 
+	
+		  ];
+
+var GMap = {
+map: null,
+infoWindow: null
+};
+
+GMap.closeInfoWindow = function() {
+GMap.infoWindow.close();
+};
+
+GMap.openInfoWindow = function(marker, testo) {
+var markerLatLng = marker.getPosition();
+GMap.infoWindow.setContent(testo);
+GMap.infoWindow.open(GMap.map, marker);
+},
+
+GMap.init = function() {
+var centerLatLng = new google.maps.LatLng(45.0199796,7.6471059);
+var styledMap = new google.maps.StyledMapType(styles, {name: "titolo"});
+
+var mapOptions = {
+zoom: 11, 				//zoom level
+center: centerLatLng, 		//center position
+scrollwheel: false, 	//zoom when scroll disable
+zoomControl: true, 		//show control zoom
+
+mapTypeControlOptions: {
+mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style'] 
+}
+
+};
+
+GMap.map = new google.maps.Map(document.getElementById('map_canvas'),mapOptions);
+GMap.infoWindow = new google.maps.InfoWindow();
+
+//Associate the styled map with the MapTypeId and set it to display.
+GMap.map.mapTypes.set('map_style', styledMap);
+GMap.map.setMapTypeId('map_style');
+google.maps.event.addListener(GMap.map, 'click', GMap.closeInfoWindow);
+
+<!---loop dei progetti della zona --->
+  
+var image = 'img/marker.png';
+ /* $.getJSON("http://magicbeep.mvclienti.com/webservices/sync_negozi.aspx", function (dati) {
+                  
+                    $.each(dati, function (i, name) {
+                     alert("ok");
+                         var marker = new google.maps.Marker({
+                          map: GMap.map,
+                          position: new google.maps.LatLng(name.latitudine, name.longitudine),
+                          draggable: true,
+                          icon: image
+                          });
+
+                   
+                    });
+					  // Funzione per la selezione dei beacon da ricercare dal db dell' app
+                             
+});*/
+var marker = new google.maps.Marker({
+map: GMap.map,
+position: new google.maps.LatLng(45.02045, 7.66473),
+draggable: true,
+icon: image
+});
+
+google.maps.event.addListener(marker, 'click', function() {
+GMap.openInfoWindow(marker, '<strong>titolo</strong><br/><br/><a href="#" target="_blank">raggiungici</a>');
+});
+
+var marker2 = new google.maps.Marker({
+map: GMap.map,
+position: new google.maps.LatLng(44.9177489, 8.1323169),
+draggable: true,
+icon: image
+});
+
+google.maps.event.addListener(marker2, 'click', function() {
+GMap.openInfoWindow(marker2, '<strong>titolo</strong><br/><br/><a href="#" target="_blank">raggiungici</a>');
+});
+
+}
+
+
+
+// Fine mappa
 </script>
 <script src="app.js"></script>
 <script type="text/javascript" src="js/dati.js"></script>
@@ -1293,6 +1536,7 @@ $('#inviaInfoMv').validate({
     <script src="js/masonry.min.js"></script>
     <script src="js/chart.min.js"></script>
     <script src="js/functions.js"></script>
+  
 </body>
 
 </html>
