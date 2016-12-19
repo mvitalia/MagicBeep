@@ -232,6 +232,7 @@ google.maps.event.addListener(GMap.map, 'click', GMap.closeInfoWindow);
  
 var image = '../img/marker.png';
 var marker = new Array();
+var tendina = new Array();
   $.getJSON("http://magicbeep.mvclienti.com/webservices/sync_negozi.aspx", function (dati) {
                   
                     $.each(dati, function (i, name) {
@@ -242,8 +243,12 @@ var marker = new Array();
                           draggable: true,
                           icon: image
                           });
+                          tendina[i]="<div><h3><b>Negozio</div><strong></strong><br/><br/><a href="#" target="_blank">raggiungici</a>"
+                          tendina[i]="<div><h5><b>"+name.nome+"</b></h5><hr><p class='tendina_mappa'>"+name.citta+" ("+name.provincia+")</p><p class='tendina_mappa'>Indirizzo: "+name.indirizzo+" N° "+name.num_civico+"</p>";
+                          tendina[i]+="<p class='tendina_mappa'>"+name.descrizione+"</p>";
+                          tendina[i]+="<p><ul class='tendina_mappa'><li>Telefono: "+name.telefono+"</li><li><a href='"+name.website+"'>"+name.website+"</a></li></ul></p></div>";
                           google.maps.event.addListener(marker[i], 'click', function() {
-                          GMap.openInfoWindow(marker[i], '<strong>titolo</strong><br/><br/><a href="#" target="_blank">raggiungici</a>');
+                          GMap.openInfoWindow(marker[i], tendina[i]);
                           });
                     });
 					  // Funzione per la selezione dei beacon da ricercare dal db dell' app
@@ -267,11 +272,11 @@ position: new google.maps.LatLng(44.9177489, 8.1323169),
 draggable: true,
 icon: image
 });
-
+var tedina = "<div><h5><b>MVitalia</b></h5><hr><p class='tendina_mappa'>Alba CN</p><p class='tendina_mappa'>Via vida N° 15</p><p class='tendina_mappa'>descrizione negozio</p><p><ul class='tendina_mappa'><li>Telefono: 335676567</li><li>sito web</li></ul></p></div>";
 google.maps.event.addListener(marker2, 'click', function() {
-GMap.openInfoWindow(marker2, '<strong>titolo</strong><br/><br/><a href="#" target="_blank">raggiungici</a>');
-});
-*/
+GMap.openInfoWindow(marker2, tedina);
+});*/
+
 }
 $(document).on("click", "#page_home", function () {
   event.preventDefault();
