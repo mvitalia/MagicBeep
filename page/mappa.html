@@ -229,12 +229,12 @@ GMap.map.setMapTypeId('map_style');
 google.maps.event.addListener(GMap.map, 'click', GMap.closeInfoWindow);
 
 <!---loop dei progetti della zona --->
-  alert("ok");
+ 
 var image = '../img/marker.png';
   $.getJSON("http://magicbeep.mvclienti.com/webservices/sync_negozi.aspx", function (dati) {
                   
                     $.each(dati, function (i, name) {
-                     alert("ok");
+                   
                           marker = new google.maps.Marker({
                           map: GMap.map,
                           position: new google.maps.LatLng(name.latitudine, name.longitudine),
