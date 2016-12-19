@@ -1483,22 +1483,24 @@ google.maps.event.addListener(GMap.map, 'click', GMap.closeInfoWindow);
 <!---loop dei progetti della zona --->
   
 var image = 'img/marker.png';
- /* $.getJSON("http://magicbeep.mvclienti.com/webservices/sync_negozi.aspx", function (dati) {
+  $.getJSON("http://magicbeep.mvclienti.com/webservices/sync_negozi.aspx", function (dati) {
                   
                     $.each(dati, function (i, name) {
                      alert("ok");
-                         var marker = new google.maps.Marker({
+                          marker = new google.maps.Marker({
                           map: GMap.map,
                           position: new google.maps.LatLng(name.latitudine, name.longitudine),
                           draggable: true,
                           icon: image
                           });
-
-                   
+                          google.maps.event.addListener(marker, 'click', function() {
+                          GMap.openInfoWindow(marker, '<strong>titolo</strong><br/><br/><a href="#" target="_blank">raggiungici</a>');
+                          });
                     });
 					  // Funzione per la selezione dei beacon da ricercare dal db dell' app
                              
-});*/
+});
+/*
 var marker = new google.maps.Marker({
 map: GMap.map,
 position: new google.maps.LatLng(45.02045, 7.66473),
@@ -1520,22 +1522,20 @@ icon: image
 google.maps.event.addListener(marker2, 'click', function() {
 GMap.openInfoWindow(marker2, '<strong>titolo</strong><br/><br/><a href="#" target="_blank">raggiungici</a>');
 });
-
+*/
 }
-
-
 
 // Fine mappa
 </script>
 <script src="app.js"></script>
 <script type="text/javascript" src="js/dati.js"></script>
 <script src="js/jquery.swipebox.min.js"></script>   
-    <script src="js/materialize.min.js"></script> 
-    <script src="js/swiper.min.js"></script>  
-    <script src="js/jquery.mixitup.min.js"></script>
-    <script src="js/masonry.min.js"></script>
-    <script src="js/chart.min.js"></script>
-    <script src="js/functions.js"></script>
+<script src="js/materialize.min.js"></script> 
+<script src="js/swiper.min.js"></script>  
+<script src="js/jquery.mixitup.min.js"></script>
+<script src="js/masonry.min.js"></script>
+<script src="js/chart.min.js"></script>
+<script src="js/functions.js"></script>
   
 </body>
 
