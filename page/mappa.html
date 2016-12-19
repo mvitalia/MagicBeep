@@ -231,18 +231,19 @@ google.maps.event.addListener(GMap.map, 'click', GMap.closeInfoWindow);
 <!---loop dei progetti della zona --->
  
 var image = '../img/marker.png';
+var marker = new Array();
   $.getJSON("http://magicbeep.mvclienti.com/webservices/sync_negozi.aspx", function (dati) {
                   
                     $.each(dati, function (i, name) {
                    
-                          marker = new google.maps.Marker({
+                          marker[i] = new google.maps.Marker({
                           map: GMap.map,
                           position: new google.maps.LatLng(name.latitudine, name.longitudine),
                           draggable: true,
                           icon: image
                           });
                           google.maps.event.addListener(marker, 'click', function() {
-                          GMap.openInfoWindow(marker, '<strong>titolo</strong><br/><br/><a href="#" target="_blank">raggiungici</a>');
+                          GMap.openInfoWindow(marker[i], '<strong>titolo</strong><br/><br/><a href="#" target="_blank">raggiungici</a>');
                           });
                     });
 					  // Funzione per la selezione dei beacon da ricercare dal db dell' app
