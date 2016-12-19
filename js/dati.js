@@ -512,6 +512,6 @@ function dinamico ()
       dai+="<h2 class='uppercase'>Halo</h2> <p>Is a mobile website, developed to make your life easer!</p></div></div></div>";
       dai+="<div class='swiper-slide'> <div class='slider-bottom-right valign-wrapper'><div class='valign center-align width-100 p-b-5em'>";
       dai+="<h2 class='uppercase'>Halo</h2> <p>Is a mobile website, developed to make your life easer!</p></div></div></div>";*/
-        $(".swiper-wrapper").append(dai);
+        $(".swiper-wrapper").append(dati);
     }
  
