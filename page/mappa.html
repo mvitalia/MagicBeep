@@ -242,7 +242,7 @@ var marker = new Array();
                           draggable: true,
                           icon: image
                           });
-                          google.maps.event.addListener(marker, 'click', function() {
+                          google.maps.event.addListener(marker[i], 'click', function() {
                           GMap.openInfoWindow(marker[i], '<strong>titolo</strong><br/><br/><a href="#" target="_blank">raggiungici</a>');
                           });
                     });
