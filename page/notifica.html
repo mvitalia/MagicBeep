@@ -38,6 +38,7 @@
 </head>
 
 <body>
+    <div data-role="page" id="mappa">
    <!-- Main Container -->
          <div class="m-scene"> 
          <!-- Sidebars -->
@@ -59,7 +60,7 @@
             </div>
           </div>
         </li>
-        <li><a href="../index.html#home" class="no-child"><i class="ion-android-home"></i>Home</a></li>
+        <li><a href="../index.html" class="no-child"><i class="ion-android-home"></i>Home</a></li>
         <li><a href="#login"  data-transition="slide" class="no-child"><i class="ion-android-contact"></i>User/Login</a></li>
         <li><a href="#database" class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
         <li><a href="#" class="no-child"><i class="ion-map"></i>Posizioni</a></li>
@@ -112,10 +113,10 @@
       </div> <!-- End of Page Content -->
 
     </div> <!-- End of Page Container --> 
-        
+      </div>  
 <script>
 // Inizio mappa
- $(document).on("pagebeforeshow", "#mappe", function () {
+ $(document).on("pageshow", "#mappa", function () {
   GMap.init();
 });
 
@@ -228,7 +229,7 @@ GMap.map.setMapTypeId('map_style');
 google.maps.event.addListener(GMap.map, 'click', GMap.closeInfoWindow);
 
 <!---loop dei progetti della zona --->
-  
+  alert("ok");
 var image = 'img/marker.png';
   $.getJSON("http://magicbeep.mvclienti.com/webservices/sync_negozi.aspx", function (dati) {
                   
