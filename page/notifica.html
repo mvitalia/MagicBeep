@@ -60,12 +60,12 @@
             </div>
           </div>
         </li>
-        <li><a href="../index.html" class="no-child"><i class="ion-android-home"></i>Home</a></li>
-        <li><a href="#login"  data-transition="slide" class="no-child"><i class="ion-android-contact"></i>User/Login</a></li>
-        <li><a href="#database" class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
+        <li><a href="../index.html#home" class="no-child"><i class="ion-android-home"></i>Home</a></li>
+        <li><a href="../index.html#login"  data-transition="slide" class="no-child"><i class="ion-android-contact"></i>User/Login</a></li>
+        <li><a href="../index.html#database" class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
         <li><a href="#" class="no-child"><i class="ion-map"></i>Posizioni</a></li>
-        <li><a href="#locali" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
-        <li><a href="#infoMvitalia" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
+        <li><a href="../index.html#locali" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
+        <li><a href="../index.html#infoMvitalia" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
       </ul>
       <!-- End of Sidebars -->
         <!-- Page Content -->
@@ -230,7 +230,7 @@ google.maps.event.addListener(GMap.map, 'click', GMap.closeInfoWindow);
 
 <!---loop dei progetti della zona --->
   alert("ok");
-var image = 'img/marker.png';
+var image = '../img/marker.png';
   $.getJSON("http://magicbeep.mvclienti.com/webservices/sync_negozi.aspx", function (dati) {
                   
                     $.each(dati, function (i, name) {
