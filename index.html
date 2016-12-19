@@ -47,11 +47,13 @@
 
 <body>
  
+   <!-- HOME PAGE -->
 
 	 <div  data-role="page" id="home"  >
-         <div class="m-scene" id="main"> <!-- Main Container -->
-        <!-- Sidebars -->
-        <!-- Right Sidebar -->
+         <!-- Main Container -->
+         <div class="m-scene" id="main"> 
+         <!-- Sidebars -->
+         <!-- Left Sidebar -->
         <ul id="slide-out" class="side-nav collapsible">
         <li>
           <div class="sidenav-header primary-color">
@@ -73,7 +75,7 @@
         <li><a href="#login"  data-transition="slide" class="no-child"><i class="ion-android-contact"></i>User/Login</a></li>
         <li><a href="#database" class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
         <li><a href="#" class="no-child"><i class="ion-map"></i>Posizioni</a></li>
-        <li><a href="#" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
+        <li><a href="#locali" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
         <li><a href="#infoMvitalia" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
       </ul>
       <!-- End of Sidebars -->
@@ -146,14 +148,20 @@
           </div>
         </footer>
         </div>
-      </div> <!-- End of Page Content -->
-      
-     </div> <!-- End of Page Container -->       
+      </div> 
+      <!-- End of Page Content -->
+     </div>   
+     <!-- End of Page Container -->     
     </div>
+    <!-- FINE HOME PAGE -->
+   
+    <!-- DATABASE NOTIFICHE -->
+
 	 <div data-role="page" id="database" >
-            <div class="m-scene" id="main"> <!-- Main Container -->
+     <!-- Main Container -->
+     <div class="m-scene" id="main"> 
         <!-- Sidebars -->
-        <!-- Right Sidebar -->
+        <!-- Left Sidebar -->
         <ul id="slide-out-1" class="side-nav collapsible">
         <li>
           <div class="sidenav-header primary-color">
@@ -175,7 +183,7 @@
         <li><a href="#login"  data-transition="slide" class="no-child"><i class="ion-android-contact"></i>User/Login</a></li>
         <li><a href="#database" class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
         <li><a href="#" class="no-child"><i class="ion-map"></i>Posizioni</a></li>
-        <li><a href="#" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
+        <li><a href="#locali" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
         <li><a href="#infoMvitalia" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
       </ul>
       <!-- End of Sidebars -->
@@ -255,8 +263,13 @@
      </div> 
      <!-- End of Page Container -->
     </div>
+    <!-- FINE DATABSE NOTIFICHE -->
+
+    <!-- LOGIN -->
+
      <div data-role="page" id="login">
-            <div class="m-scene"> <!-- Main Container -->
+       <!-- Main Container -->
+            <div class="m-scene"> 
         <!-- Sidebars -->
         <!-- Right Sidebar -->
         <ul id="slide-out-2" class="side-nav collapsible">
@@ -280,7 +293,7 @@
         <li><a href="#login"  data-transition="slide" class="no-child"><i class="ion-android-contact"></i>User/Login</a></li>
         <li><a href="#database" class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
         <li><a href="#" class="no-child"><i class="ion-map"></i>Posizioni</a></li>
-        <li><a href="#" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
+        <li><a href="#locali" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
         <li><a href="#infoMvitalia" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
       </ul>
       <!-- End of Sidebars -->
@@ -314,7 +327,13 @@
          </form>
           <span>Non hai ancora un' account? <a class="primary-text" href="#registrazione">Registrati</a></span>
            <!-- Footer -->
-          <footer class="page-footer primary-color">
+         
+        </div><!-- End of Main Contents -->
+        
+      </div> <!-- End of Page Content -->
+    
+     </div> <!-- End of Page Container -->
+       <footer class="page-footer primary-color">
           <div class="container">
             <div class="row">
               <div class="col s12">
@@ -335,12 +354,11 @@
             </div>
           </div>
         </footer>
-        </div><!-- End of Main Contents -->
-      </div> <!-- End of Page Content -->
-    
-     </div> <!-- End of Page Container -->
-      
     </div>
+    <!-- FINE LOGIN -->
+
+    <!-- REGISTRAZIONE -->
+
     <div data-role="page" id="registrazione">
            <div class="m-scene"> <!-- Main Container -->
       <!-- Page Content -->
@@ -401,7 +419,10 @@
                 </div>
          </form>
           <!-- Footer -->
-          <footer class="page-footer primary-color">
+          
+        </div><!-- End of Main Contents -->
+      </div> <!-- End of Page Content -->
+    <footer class="page-footer primary-color">
           <div class="container">
             <div class="row">
               <div class="col s12">
@@ -422,12 +443,12 @@
             </div>
           </div>
         </footer>
-        </div><!-- End of Main Contents -->
-      </div> <!-- End of Page Content -->
-    
      </div> <!-- End of Page Container -->
       
     </div>
+    <!-- FINE REGISTRAZIONE -->
+
+    <!-- INVIA INFO NOTIFICA -->
    <div data-role="page" id="inviaInfo">
         <div data-role="header" class="header" data-position="fixed">
             <h1>Informazioni</h1>
@@ -468,14 +489,19 @@
             <!--Tab bar jquery mobile-->
             <div data-role="navbar" data-iconpos="top">
                  <ul>
-                    <li><a href="#home" data-icon="home"  data-transition="slide">Home</a></li>
-                    <li ><a href="#database" data-icon="eye"   data-transition="slide">Database</a></li>
-                     <li ><a href="#login" data-icon="user"   data-transition="slide">Login</a></li>
-                    <li ><a href="#infoMvitalia" data-icon="info"   data-transition="slide">Info</a></li>
+                    <li><a href="#home" class="no-child"><i class="ion-android-home"></i>Home</a></li>
+                    <li><a href="#login"  data-transition="slide" class="no-child"><i class="ion-android-contact"></i>User/Login</a></li>
+                    <li><a href="#database" class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
+                    <li><a href="#" class="no-child"><i class="ion-map"></i>Posizioni</a></li>
+                    <li><a href="#locali" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
+                    <li><a href="#infoMvitalia" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
                 </ul>
             </div>
         </div>
     </div>
+     <!-- FINE INFO NOTIFICA -->
+
+     <!-- INVIA INFO MV ITALIA -->
      <div data-role="page" id="infoMvitalia">
             <div class="m-scene"> <!-- Main Container -->
         <!-- Sidebars -->
@@ -501,7 +527,7 @@
         <li><a href="#login"  data-transition="slide" class="no-child"><i class="ion-android-contact"></i>User/Login</a></li>
         <li><a href="#database" class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
         <li><a href="#" class="no-child"><i class="ion-map"></i>Posizioni</a></li>
-        <li><a href="#" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
+        <li><a href="#locali" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
         <li><a href="#infoMvitalia" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
       </ul>
       <!-- End of Sidebars -->
@@ -588,6 +614,9 @@
      </div> <!-- End of Page Container -->
     
     </div>
+    <!-- FINE INVIO INFO MVITALIA -->
+
+    <!-- LOST RECUPERO PASSWORD -->
       <div data-role="page" id="lostPassword" data-cache="false">
         
        <!-- <div data-role="header" class="header" data-position="fixed" data-add-back-btn="true">
@@ -624,6 +653,9 @@
             </div>
         </div>-->
     </div> 
+    <!-- FINE LOST RECUPERO PASSWORD -->
+
+    <!-- DETTAGLIO NOTIFICA -->
 <div data-role="page" id="notifica" >
      <div class="m-scene" id="main"> <!-- Main Container -->
         <!-- Sidebars -->
@@ -649,7 +681,7 @@
         <li><a href="#login"  data-transition="slide" class="no-child"><i class="ion-android-contact"></i>User/Login</a></li>
         <li><a href="#database" class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
         <li><a href="#" class="no-child"><i class="ion-map"></i>Posizioni</a></li>
-        <li><a href="#" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
+        <li><a href="#locali" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
         <li><a href="#infoMvitalia" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
       </ul>
       <!-- End of Sidebars -->
@@ -729,6 +761,147 @@
  <div data-role="page" id="lostPassword" data-cache="false">
       
     </div> 
+    <!-- FINE DETTAGLIO NOTIFICA-->
+
+    <!-- LOCALI -->
+
+	 <div  data-role="page" id="locali">
+         <!-- Main Container -->
+         <div class="m-scene" id="main"> 
+         <!-- Sidebars -->
+         <!-- Left Sidebar -->
+        <ul id="slide-out-cinque" class="side-nav collapsible">
+        <li>
+          <div class="sidenav-header primary-color">
+            <div class="nav-social">
+              <i class="ion-social-facebook"></i>
+              <i class="ion-social-twitter"></i>
+              <i class="ion-social-tumblr"></i>
+            </div>
+             <div class="nav-avatar">
+          
+              <div class="avatar-body">
+                <h3>Halo</h3>
+                <p>Material Mobile</p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="#home" class="no-child"><i class="ion-android-home"></i>Home</a></li>
+        <li><a href="#login"  data-transition="slide" class="no-child"><i class="ion-android-contact"></i>User/Login</a></li>
+        <li><a href="#database" class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
+        <li><a href="#" class="no-child"><i class="ion-map"></i>Posizioni</a></li>
+        <li><a href="#locali" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
+        <li><a href="#infoMvitalia" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
+      </ul>
+      <!-- End of Sidebars -->
+        <!-- Page Content -->
+      <div class="content page">
+
+        <!-- Toolbar -->
+        <div  class="toolbar primary-color">
+          <span class="title">Magic Beep</span>
+          <div class="open-right" id="open-right-cinque" data-activates="slide-out-cinque">
+            <i class="ion-android-menu"></i>
+          </div>
+        </div>
+        <!-- Main Content -->
+        <div class="animated fadeinup">
+          <!-- Project Image -->
+          <div class="project-image z-depth-1 animated fadein delay-1">
+            <img src="img/product2.jpg" alt="">
+          </div>
+
+          <!-- Project Author -->
+          <div class="project-info">
+            <h2 class="uppercase">A single stroke</h2>
+            <span class="small">Drawing / Illustration / Painting</span>
+            <p class="m-t-10 m-b-30">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+          </div>
+          <div class="post-author m-20 animated fadeinright delay-2">
+            <img src="img/user2.jpg" alt="" class="avatar circle">
+            <span>Lora Bell</span>
+            <div class="project-social-share">
+              <i class="ion-social-facebook blue-text text-darken-4"></i>
+              <i class="ion-social-twitter blue-text"></i>
+              <i class="ion-social-pinterest red-text"></i>
+            </div>
+          </div>
+
+          <!-- Comments -->
+          <div class="comments project-comments animated fadeinup delay-3">
+            <h3 class="uppercase">5 Comments</h3>
+            <ul class="comments-list">
+              <li>
+                <img src="img/user4.jpg" alt="" class="avatar circle">
+                <div class="comment-body">
+                  <span class="author uppercase">Luke Noel</span>
+                  <p>Awesome work!!</p>
+                </div>
+              </li>
+              <li>
+                <img src="img/user.jpg" alt="" class="avatar circle">
+                <div class="comment-body">
+                  <span class="author uppercase">Joel Roksin</span>
+                  <p> You have done a great job there :)</p>
+                </div>
+              </li>
+              <li>
+                <img src="img/user3.jpg" alt="" class="avatar circle">
+                <div class="comment-body">
+                  <span class="author uppercase">Mike White</span>
+                  <p>Keep going!</p>
+                </div>
+              </li>
+              <li>
+                <img src="img/user4.jpg" alt="" class="avatar circle">
+                <div class="comment-body">
+                  <span class="author uppercase">Joel Roksin</span>
+                  <p> You have done a great job there :)</p>
+                </div>
+              </li>
+              <li>
+                <img src="img/user3.jpg" alt="" class="avatar circle">
+                <div class="comment-body">
+                  <span class="author uppercase">Mike White</span>
+                  <p>Keep going!</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Footer -->
+          <footer class="page-footer primary-color">
+          <div class="container">
+            <div class="row">
+              <div class="col s12">
+                <p class="center-align grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                <div class="center-align">
+                  <i class="ion-social-facebook m-10 white-text"></i>
+                  <i class="ion-social-twitter m-10 white-text"></i>
+                  <i class="ion-social-pinterest m-10 white-text"></i>
+                  <i class="ion-social-dribbble m-10 white-text"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright blue darken-1">
+            <div class="container">
+            2016 Codnauts
+            <a class="grey-text text-lighten-4 right" href="#!">Privacy Policy</a>
+            </div>
+          </div>
+        </footer>
+        </div> <!-- End of Main Contents -->
+      
+         
+      </div> <!-- End of Page Content -->
+
+    </div> <!-- End of Page Container --> 
+        
+    </div>
+    <!-- FINE HOME PAGE -->
+    <!-- BLOCCO DOVE SI APPENDONO GLI ALERT DELLE NOTIFCHE -->
     <div class="container_page">
        
       </div>  
