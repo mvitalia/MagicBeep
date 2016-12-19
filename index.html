@@ -75,7 +75,7 @@
         <li><a href="#home" class="no-child"><i class="ion-android-home"></i>Home</a></li>
         <li><a href="#login"  data-transition="slide" class="no-child"><i class="ion-android-contact"></i>User/Login</a></li>
         <li><a href="#database" class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
-        <li><a href="page/notifica.html" class="no-child"><i class="ion-map" data-ajax="false"></i>Posizioni</a></li>
+        <li><a href="#" class="no-child paginaMappa"><i class="ion-map" data-ajax="false"></i>Posizioni</a></li>
         <li><a href="#locali" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
         <li><a href="#infoMvitalia" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
       </ul>
@@ -1148,12 +1148,11 @@ $(document).on("click", ".detail", function () {
      
 });
 
-paginaMappa
+
 
 $(document).on("click", ".paginaMappa", function () {
-    
-     $( ":mobile-pagecontainer" ).pagecontainer( "change", "page/notifica.html", {    transition: "flip", reload:true } );
-     
+  event.preventDefault();
+  window.location.href ="page/notifica.html"  
 });
 
 $('#cancellaNot').click(function(){
