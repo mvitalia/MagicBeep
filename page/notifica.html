@@ -60,12 +60,12 @@
             </div>
           </div>
         </li>
-        <li><a href="../index.html#home" class="no-child"><i class="ion-android-home"></i>Home</a></li>
-        <li><a href="../index.html#login"  data-transition="slide" class="no-child"><i class="ion-android-contact"></i>User/Login</a></li>
-        <li><a href="../index.html#database" class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
+        <li><a href="#" id="page_home" class="no-child"><i class="ion-android-home"></i>Home</a></li>
+        <li><a href="#" id="page_login"   class="no-child"><i class="ion-android-contact"></i>User/Login</a></li>
+        <li><a href="#" id="page_notizie"  class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
         <li><a href="#" class="no-child"><i class="ion-map"></i>Posizioni</a></li>
-        <li><a href="../index.html#locali" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
-        <li><a href="../index.html#infoMvitalia" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
+        <li><a href="#" id="page_locali" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
+        <li><a href="#" id="page_infoMv" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
       </ul>
       <!-- End of Sidebars -->
         <!-- Page Content -->
@@ -272,7 +272,22 @@ GMap.openInfoWindow(marker2, '<strong>titolo</strong><br/><br/><a href="#" targe
 });
 */
 }
-
+$(document).on("click", "#page_home", function () {
+  event.preventDefault();
+  window.location.href ="../index.html#home"  
+});
+$(document).on("click", "#page_login", function () {
+  event.preventDefault();
+  window.location.href ="../index.html#login"  
+});
+$(document).on("click", "#page_notizie", function () {
+  event.preventDefault();
+  window.location.href ="../index.html#database"  
+});
+$(document).on("click", "#page_locali", function () {
+  event.preventDefault();
+  window.location.href ="../index.html#locali"  
+});
 // Fine mappa 
 </script> 
 <script src="../app.js"></script>
