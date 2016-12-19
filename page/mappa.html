@@ -102,8 +102,8 @@
           </div>
           <div class="footer-copyright blue darken-1">
             <div class="container">
-            2016 Codnauts
-            <a class="grey-text text-lighten-4 right" href="#!">Privacy Policy</a>
+            2017 Magic Beep
+            <a id="page_privacy_policy" class="grey-text text-lighten-4 right" href="#">Privacy Policy</a>
             </div>
           </div>
         </footer>
@@ -245,7 +245,7 @@ var tendina = new Array();
                           });
                           tendina[i]="<div><h5><b>"+name.nome+"</b></h5><hr><p class='tendina_mappa'>"+name.citta+" ("+name.provincia+")</p><p class='tendina_mappa'>Indirizzo: "+name.indirizzo+" N° "+name.numero_civico+"</p>";
                           tendina[i]+="<p class='tendina_mappa'>"+name.descrizione+"</p>";
-                          tendina[i]+="<p><ul class='tendina_mappa'><li>Telefono: "+name.telefono+"</li><li><a href='"+name.sito+"'>Sito web: "+name.sito+"</a></li></ul></p></div>";
+                          tendina[i]+="<p><ul class='tendina_mappa'><li>Telefono: "+name.telefono+"</li><li>Sito web: <a href='"+name.sito+"'>"+name.sito+"</a></li></ul></p></div>";
                           google.maps.event.addListener(marker[i], 'click', function() {
                           GMap.openInfoWindow(marker[i], tendina[i]);
                           });
@@ -296,6 +296,10 @@ $(document).on("click", "#page_locali", function () {
 $(document).on("click", "#page_infoMv", function () {
   event.preventDefault();
   window.location.href ="../index.html#infoMvitalia"  
+});
+$(document).on("click", "#page_privacy_policy", function () {
+  event.preventDefault();
+  window.location.href ="../index.html#privacy_policy"  
 });
 // Fine mappa 
 </script> 
