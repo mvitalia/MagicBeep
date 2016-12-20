@@ -473,8 +473,9 @@
           </div>
         </div>
           <!-- Main Content -->
-          <div class="login-form animated fadeinup delay-2 z-depth-1">
-                 <h1>Invia info notifica</h1>
+          <div class="animated fadeinup delay-1">
+            <div class="margine_form">
+                 <h1 style="text-align:center">Informazioni</h1>
           <form id="inviaInfoNotifica">
                <div class="input-field">
                     <i class="ion-person prefix"></i> 
@@ -513,6 +514,7 @@
               
                
          </form>
+         </div>
           <!-- Footer -->
             <footer class="page-footer primary-color">
           <div class="container">
@@ -539,54 +541,6 @@
       </div> <!-- End of Page Content -->
   
      </div> <!-- End of Page Container -->
-       <!-- <div data-role="header" class="header" data-position="fixed">
-            <h1>Informazioni</h1>
-             <div class="wrapper">
-            <img class="logoApp" src="img/search.jpg"/>    
-        </div>
-         <div class="LogoutUtente">
-                <a class="button_logout" href="#home" data-role="button" data-mini="true" data-icon="action" data-iconpos="right">Logout</a>
-        </div>
-        </div>
-        <div role="main" class="ui-content">
-           <h3 class="titoliForm">Invia Info </h3>
-               <form id="inviaInfoNotifica">
-                    <label for="nome">Nome:</label>
-                        <input data-clear-btn="true" name="nomeInfo" id="nomeInfo" required value="" type="text">
-                    <label for="cognome">Cognome:</label>
-                        <input data-clear-btn="true" name="cognomeInfo" id="cognomeInfo" required value="" type="text">
-                    <label for="email">E-mail:</label>
-                        <input data-clear-btn="true" name="emailInfo" id="emailInfo" required value="" type="text">
-                    <label for="lnascita">Richiesta</label>
-                        <textarea data-clear-btn="true" name="richiestaInfo" id="richiestaInfo" rows="5" > 
-                        </textarea>
-                    <hr>
-                    <div class="box_privacy">
-                        <h3>Privacy</h3>
-                        <p>Per avere ulteriori informazioni completa il modulo online con i tuoi dati (che saranno utilizzati esclusivamente per soddisfare la tua richiesta, nel più assoluto rispetto della privacy).</p>
-                        <p>Per maggiori informazioni clicca qui </p>
-                    </div>
-                      <b class="margine">Acconsento Privacy</b>   <input type="checkbox" required name="privacyInfo" id="privacyInfo" value="html"/> 
-                
-                <hr>
-                <div>
-                    <input type="submit"  class="ui-btn" value="Invia" id="submit">
-                </div>
-                </form>
-        </div>
-        <div data-role="footer" data-position="fixed">
-            <!--Tab bar jquery mobile
-            <div data-role="navbar" data-iconpos="top">
-                 <ul>
-                    <li><a href="#home" class="no-child"><i class="ion-android-home"></i>Home</a></li>
-                    <li><a href="#login"  data-transition="slide" class="no-child"><i class="ion-android-contact"></i>User/Login</a></li>
-                    <li><a href="#database" class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
-                     <li><a href="#" class="no-child paginaMappa"><i class="ion-map" data-ajax="false"></i>Posizioni</a></li>
-                    <li><a href="#locali" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
-                    <li><a href="#infoMvitalia" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
-                </ul>
-            </div>
-        </div>-->
     </div>
      <!-- FINE INFO NOTIFICA -->
 
@@ -1407,6 +1361,13 @@ $('#cancellaTutteNotifiche').click(function(){
 
 });*/
 
+ $(document).on("pagebeforeshow", "#inviaInfo", function () {
+		 $("#nomeInfo").val(""); 
+     $("#cognomeInfo").val(""); 
+     $("#emailInfo").val(""); 
+     $("#richiestaInfo").val("");   
+     $("#privacyInfo").prop('checked', false);    
+    });
 // Validazione e invio email per l' informazione della notifica
 
 $('#inviaInfoNotifica').validate({
