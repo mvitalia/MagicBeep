@@ -2248,9 +2248,9 @@ ul.faq {
 }
 .tool-login,
 .tool-signup {
-    position: absolute;
+    position: fixed;
     top: 0;
-    height: 120px !important;
+    height: 70px !important;
 }
 .login-avatar,
 .signup-avatar {
@@ -2276,7 +2276,7 @@ ul.faq {
     top: 56px;
     left: 0;
     right: 0;
-    z-index: 99;
+    z-index: 1;
 }
 .login-form h1,
 .signup-form h1 {
