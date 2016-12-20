@@ -75,6 +75,12 @@ $('#open-right-sette').sideNav({
     closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
 });
 
+$('#open-right-otto').sideNav({
+    menuWidth: 240, // Default is 240
+    edge: 'right', // Choose the horizontal origin
+    closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
+});
+
 // Left Sidebar
 $('#open-left').sideNav({
     menuWidth: 240, // Default is 240

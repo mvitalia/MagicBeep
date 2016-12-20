@@ -345,18 +345,47 @@
 
     <div data-role="page" id="registrazione">
            <div class="m-scene"> <!-- Main Container -->
+           <!-- Sidebars -->
+        <!-- Right Sidebar -->
+        <ul id="slide-out-otto" class="side-nav collapsible">
+        <li>
+          <div class="sidenav-header primary-color">
+            <div class="nav-social">
+              <i class="ion-social-facebook"></i>
+              <i class="ion-social-twitter"></i>
+              <i class="ion-social-tumblr"></i>
+            </div>
+            <div class="nav-avatar">
+          
+              <div class="avatar-body">
+                <h3>Halo</h3>
+                <p>Material Mobile</p>
+              </div>
+            </div>
+          </div>
+        </li>
+       <li><a href="#home" class="no-child"><i class="ion-android-home"></i>Home</a></li>
+        <li><a href="#login"  data-transition="slide" class="no-child"><i class="ion-android-contact"></i>User/Login</a></li>
+        <li><a href="#database" class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
+        <li><a href="#" class="no-child paginaMappa"><i class="ion-map" data-ajax="false"></i>Posizioni</a></li>
+        <li><a href="#locali" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
+        <li><a href="#infoMvitalia" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
+      </ul>
+      <!-- End of Sidebars -->
       <!-- Page Content -->
-        <div  class="content grey-blue login">
+        <div  class="content  login">
 
         <!-- Toolbar -->
-        <div  class="toolbar tool-login primary-color animated fadeindown">
-          <a href="javascript:history.back()" class="open-left">
-            <i class="ion-android-arrow-back"></i>
-          </a>
+         <div  class="toolbar primary-color">
+          <span class="title"><a class="font_colore_titolo" href="#home">Magic Beep</a></span>
+          <div class="open-right" id="open-right-otto" data-activates="slide-out-otto">
+            <i class="ion-android-menu"></i>
+          </div>
         </div>
           <!-- Main Content -->
-          <div class="login-form animated fadeinup delay-2 z-depth-1">
-                 <h1>Registrazione</h1>
+          <div class="animated fadeinup delay-1">
+             <div class="margine_form">
+                 <h1 style="text-align:center">Registrazione</h1>
           <form id="registrazioneSincro">
                <div class="input-field">
                     <i class="ion-person prefix"></i> 
@@ -402,6 +431,7 @@
                        <input type="submit" data-role="none"  class="waves-effect waves-light btn-large accent-color width-100 m-b-20 animated bouncein delay-4" value="Invia" id="btn_submit">
                 </div>
          </form>
+         </div>
           <!-- Footer -->
           
         </div><!-- End of Main Contents -->
@@ -463,7 +493,7 @@
       </ul>
       <!-- End of Sidebars -->
       <!-- Page Content -->
-        <div  class="content grey-blue login">
+        <div  class="content login">
 
         <!-- Toolbar -->
         <div  class="toolbar primary-color">
@@ -764,20 +794,23 @@
             <hr>
             <blockquote class="primary-border">"The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog."</blockquote>-->
             </div>
-            <div class="features p-20 grey-blue">
+            <div class="features p-20">
             <div class="center promo">
             <a href="#inviaInfo"><i class="ion-information-circled"></i></a>
             <h6 class="promo-caption">Informazione notifica</h6>
             <p class="paragrafo_center">Vuoi saperne di più?</p>
             </div>
             </div>
-            <!-- Share -->
+             <div class="box_submit_button">
+              <input type="submit" data-role="none"  class="waves-effect waves-light btn-large accent-color width-100 m-b-20 animated bouncein delay-4" value="Condividi Notifica" id="social">
+            </div>
+            <!-- Share 
             <div class="share center-align m-t-30">
               <h3 class="uppercase">Share it!</h3>
               <i class="ion-social-facebook p-20 blue-text text-darken-4"></i>
               <i class="ion-social-twitter p-20 blue-text"></i>
               <i class="ion-social-pinterest p-20 red-text"></i>
-            </div>
+            </div>-->
           </div>
         </div> 
         <!-- Footer -->
@@ -1123,20 +1156,11 @@ Per conoscere le norme sulla privacy di Google La preghiamo di vistare il sito I
      }
     });
 
- $(document).on("pagebeforeshow", "#registrazione", function () {
-    /*  $(':text, :password, :date', '#registrazioneSincro').val(''); 
-    });*/	 
-/*function alertDismissed() {
- alert("Partito");*/
-});
+
  
-   $(document).on("pageinit", "#database", function () {
-    /*  alert("ok");
-       $("#lista_datiJson").html("");
-       caricoDatiServerSalvoInDb ();*/
-    });
+  
 	 $(document).on("pagebeforeshow", "#database", function () {
-		// alert("ok");
+	
          $("#lista_datiJson").html("");
          selezionoDati ();
     });
@@ -1302,7 +1326,10 @@ $('#recuperoPass').validate({
         //  $('.button_logout').css("display","none");
           window.location.href = "index.html";
       });
-
+  
+  $('#social').click(function(){
+      condividiNotifica();
+  });
 
 // popolo la notifica   
 function visualizzoNotifica ()
