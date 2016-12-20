@@ -38,3 +38,13 @@
 .privacy_policy_margin{
     margin-top:200px;
 }
+
+.font_colore_titolo{
+    color: #fff !important;
+     font-size: 22px;
+    font-weight: 400 !important;
+}
+
+.grandezza_img_database{
+    width: 50% !important;
+}
