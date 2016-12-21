@@ -181,8 +181,8 @@ function loginUtente(usernameLogin,passLogin)
             localStorage.setItem('login', true);
             localStorage.setItem('Id_login',login);
             localStorage.setItem('Id_login',login);
-            var benvenuto ="Benvenuto "+localStorage.getItem("username");
-            $("#okLogin").append(benvenuto);
+            var benvenuto ="<span>Benvenuto "+localStorage.getItem("username")+"</span>";
+            $(".okLogin").append(benvenuto);
             $("#btn_box_Login").click();
         }else{
            // alert("Utente non loggato");
