@@ -450,16 +450,33 @@ function recuperoPassword(email)
         dataType: 'json',
 		success: function(data){
         var ritorno = data.d;
-		 //alert(ritorno);
-         // Creare popo per invio email
-         //   alert(uriImmagine);
-        $("#btn_box_recuperoPassword").click();
+		 alert(ritorno);
+         if(ritorno!="")
+         {
+            
+            var successo ="<div class='modal-content'><h4>Recupero Password</h4><p>Controlla la tua E-mail per recuperare la password </p></div>";
+            successo+="<div class='modal-footer'> <a href='#' class='modal-action modal-close waves-effect waves-green btn-flat'>Chiudi</a></div>";
+            $("#box_Password").html("");
+            $("#box_Password").append(successo);
+            $("#btn_box_recuperoPassword").click();
+         }else{
+            var fallito ="<div class='modal-content'><h4>Recupero Password</h4><p>Fallito!!<br>Assicurati di aver inserito l' E-mail corretta</p></div>";
+            fallito+="<div class='modal-footer'> <a href='#' class='modal-action modal-close waves-effect waves-green btn-flat'>Chiudi</a></div>";
+            $("#box_Password").html("");
+            $("#box_Password").append(fallito);
+            $("#btn_box_recuperoPassword").click();
+         }
+        
 
 		},
 		error: function(e){
 			//console.log(data);
 		//	alert('Errore'+e.status);
          //   alert('Errore2'+e.statusTest);
+           var fallito ="<div class='modal-content'><h4>Recupero Password</h4><p>Fallito!!<br>Connessione internet assente</p></div>";
+            fallito+="<div class='modal-footer'> <a href='#' class='modal-action modal-close waves-effect waves-green btn-flat'>Chiudi</a></div>";
+            $("#box_Password").html("");
+            $("#box_Password").append(fallito);
             $("#btn_box_recuperoPasswordFailed").click();
 		}
      	});
