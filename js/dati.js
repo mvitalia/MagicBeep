@@ -183,6 +183,7 @@ function loginUtente(usernameLogin,passLogin)
             localStorage.setItem('Id_login',login);
             var benvenuto ="<div class='modal-content'><h4>Login Effettuato </h4><p>Benvenuto "+localStorage.getItem("username")+"</p></div>";
             benvenuto+="<div class='modal-footer'> <a href='#home' class='modal-action modal-close waves-effect waves-green btn-flat'>Chiudi</a></div>";
+            $("#box_successoLogin").html("");
             $("#box_successoLogin").append(benvenuto);
             $("#btn_box_Login").click();
            
@@ -190,6 +191,7 @@ function loginUtente(usernameLogin,passLogin)
            // alert("Utente non loggato");
            var noBenvenuto="<div class='modal-content'><h4>Login Fallito </h4><p>Controlla di aver inserito i dati corretti o di avere una connessione internet disponibile </p></div>";
            noBenvenuto+="<div class='modal-footer'> <a href='#' class='modal-action modal-close waves-effect waves-green btn-flat'>Chiudi</a></div>";
+           $("#box_successoLogin").html("");
            $("#box_successoLogin").append(noBenvenuto);
            $("#btn_box_LoginFailed").click();
         }
@@ -200,6 +202,7 @@ function loginUtente(usernameLogin,passLogin)
             //alert('Errore2'+e.statusTest);
             var noBenvenuto="<div class='modal-content'><h4>Login Fallito </h4><p>Controlla di aver inserito i dati corretti o di avere una connessione internet disponibile </p></div>";
             noBenvenuto+="<div class='modal-footer'> <a href='#' class='modal-action modal-close waves-effect waves-green btn-flat'>Chiudi</a></div>";
+            $("#box_successoLogin").html("");
             $("#box_successoLogin").append(noBenvenuto);
             $("#btn_box_LoginFailed").click();
 		}
