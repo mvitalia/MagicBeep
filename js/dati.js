@@ -136,7 +136,7 @@ function onDbError ()
 
 function aggiungiUtente(nome,cognome,email,luogoN,dataN,citta,username,password,privacy)
 {
-    alert(nome+"-"+cognome+"-"+email+"-"+luogoN+"-"+dataN+"-"+citta+"-"+username+"-"+password);
+  //  alert(nome+"-"+cognome+"-"+email+"-"+luogoN+"-"+dataN+"-"+citta+"-"+username+"-"+password);
        $.ajax({
         type: "POST",
 		data: '{nome:"'+nome+'",cognome:"'+cognome+'",email:"'+email+'",luogo_nascita:"'+luogoN+'",data_nascita:"'+dataN+'",citta:"'+citta+'",username:"'+username+'",password:"'+password+'",privacy:"'+privacy+'"}',
@@ -361,7 +361,7 @@ function inviaInformazione(privacy,nome,cognome,email,richiesta)
 
 function inviaInformazioneMv(pMv,nMv,cMv,eMv,rMv)
 {
- alert(pMv+"-"+nMv+"-"+cMv+"-"+eMv+"-"+rMv);
+// alert(pMv+"-"+nMv+"-"+cMv+"-"+eMv+"-"+rMv);
   $.ajax({
         type: "POST",
 		data: '{nome:"'+nMv+'",cognome:"'+cMv+'",email:"'+eMv+'",richiesta:"'+rMv+'",privacy:"'+pMv+'",notizia:""}',
@@ -370,17 +370,24 @@ function inviaInformazioneMv(pMv,nMv,cMv,eMv,rMv)
         dataType: 'json',
 		success: function(data){
         var ritorno = data.d;
-		 alert('Cliente Salvato'+ritorno);
-         // Creare popo per invio email
-         //   alert(uriImmagine);
-         
-          //     $("#pop").click();
+        
+		// alert('Cliente Salvato'+ritorno);
+         var successo ="<div class='modal-content'><h4>Informazione Inviata </h4><p>Informazioni sulla notizia inviata con successo</p></div>";
+         successo+="<div class='modal-footer'> <a href='#' class='modal-action modal-close waves-effect waves-green btn-flat'>Chiudi</a></div>";
+         $("#box_infoMvitalia").html("");
+         $("#box_infoMvitalia").append(successo);
+          $("#btn_box_infoMvitalia").click();
 
 		},
 		error: function(e){
 			//console.log(data);
 		//	alert('Errore'+e.status);
           //  alert('Errore2'+e.statusTest);
+         var fallito ="<div class='modal-content'><h4>Invio Fallito </h4><p>Connessione internet assente</p></div>";
+         fallito+="<div class='modal-footer'> <a href='#' class='modal-action modal-close waves-effect waves-green btn-flat'>Chiudi</a></div>";
+         $("#box_infoMvitalia").html("");
+         $("#box_infoMvitalia").append(fallito);
+         $("#btn_box_infoMvitalia").click();
 		}
      	});
 }
