@@ -309,7 +309,9 @@
           <p class="paragrafo_center">Password dimenticata? </p>
           <a class="primary-text paragrafo_center " href="#lostPassword">Recupera</a>
            <!-- Footer -->
-         
+          <!-- Modal Trigger Bottom Sheet -->
+          <a id="btn_box_Login" class="waves-effect waves-light btn-large modal-trigger primary-color width-100 m-b-20" href="#box_successoPassword">Bottom Sheet</a>
+           <a id="btn_box_LoginFailed" class="waves-effect waves-light btn-large modal-trigger primary-color width-100 m-b-20" href="box_FailedPassword">Bottom Sheet</a>
         </div><!-- End of Main Contents -->
         
       </div> <!-- End of Page Content -->
@@ -370,7 +372,26 @@
       <!-- End of Sidebars -->
       <!-- Page Content -->
         <div  class="content  login">
-
+         <!-- Modal Structure Bottom Sheet -->
+        <div id="box_successoLogin" class="modal bottom-sheet">
+          <div class="modal-content">
+            <h4>Recupero Password</h4>
+            <p>Per il recupero della password controllare la casella di posta elettronica</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Chiudi</a>
+          </div>
+        </div>
+          <!-- Modal Structure Bottom Sheet -->
+        <div id="box_FailedLogin" class="modal bottom-sheet">
+          <div class="modal-content">
+            <h4>Recupero Password</h4>
+            <p>Non è stato possibile recuperare la password. Controlla di avere una connessione internet disponibile</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Chiudi</a>
+          </div>
+        </div>
         <!-- Toolbar -->
          <div  class="toolbar primary-color">
           <span class="title"><a class="font_colore_titolo" href="#home">Magic Beep</a></span>
@@ -713,13 +734,23 @@
       <!-- Page Content -->
         <div  class="content login">
         <!-- Modal Structure Bottom Sheet -->
-        <div id="modal3" class="modal bottom-sheet">
+        <div id="box_successoPassword" class="modal bottom-sheet">
           <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
+            <h4>Recupero Password</h4>
+            <p>Per il recupero della password controllare la casella di posta elettronica</p>
           </div>
           <div class="modal-footer">
-            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Chiudi</a>
+          </div>
+        </div>
+          <!-- Modal Structure Bottom Sheet -->
+        <div id="box_FailedPassword" class="modal bottom-sheet">
+          <div class="modal-content">
+            <h4>Recupero Password</h4>
+            <p>Non è stato possibile recuperare la password. Controlla di avere una connessione internet disponibile</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Chiudi</a>
           </div>
         </div>
         <!-- Toolbar -->
@@ -745,7 +776,8 @@
          </form>
            <!-- Footer -->
           <!-- Modal Trigger Bottom Sheet -->
-          <a id="btn_box_recuperoPassword" class="waves-effect waves-light btn-large modal-trigger primary-color width-100 m-b-20" href="#modal3">Bottom Sheet</a>
+          <a id="btn_box_recuperoPassword" class="waves-effect waves-light btn-large modal-trigger primary-color width-100 m-b-20" href="#box_successoPassword">Bottom Sheet</a>
+           <a id="btn_box_recuperoPasswordFailed" class="waves-effect waves-light btn-large modal-trigger primary-color width-100 m-b-20" href="box_FailedPassword">Bottom Sheet</a>
         </div><!-- End of Main Contents -->
         
       </div> <!-- End of Page Content -->

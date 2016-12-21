@@ -177,19 +177,20 @@ function loginUtente(usernameLogin,passLogin)
         var login = data.d;
 		if(login!="")
         {
-          //  alert("Utente Loggato"+login);
+            //alert("Utente Loggato"+login);
             localStorage.setItem('login', true);
             localStorage.setItem('Id_login',login);
-              localStorage.setItem('Id_login',login);
-            window.location.href = "#home";
+            localStorage.setItem('Id_login',login);
+           $("#btn_box_Login").click();
         }else{
-            alert("Utente non loggato");
+           // alert("Utente non loggato");
         }
 		},
 		error: function(e){
 			//console.log(data);
-			alert('Errore'+e.status);
-            alert('Errore2'+e.statusTest);
+			//alert('Errore'+e.status);
+            //alert('Errore2'+e.statusTest);
+            $("#btn_box_LoginFailed").click();
 		}
 	});
     
@@ -398,7 +399,7 @@ function condividiNotifica ()
 
 
 
-function recuperoPassword(email)
+/*function recuperoPassword(email)
 {
   
    $.ajax({
@@ -422,7 +423,7 @@ function recuperoPassword(email)
             alert('Errore2'+e.statusTest);
 		}
      	});
-}
+}*/
 
 function recuperoPassword(email)
 {
@@ -435,10 +436,9 @@ function recuperoPassword(email)
         dataType: 'json',
 		success: function(data){
         var ritorno = data.d;
-		 alert(ritorno);
+		 //alert(ritorno);
          // Creare popo per invio email
          //   alert(uriImmagine);
-         
         $("#btn_box_recuperoPassword").click();
 
 		},
@@ -446,6 +446,7 @@ function recuperoPassword(email)
 			//console.log(data);
 		//	alert('Errore'+e.status);
          //   alert('Errore2'+e.statusTest);
+            $("#btn_box_recuperoPasswordFailed").click();
 		}
      	});
 }

@@ -70,3 +70,18 @@ input.valid[type="text"], input.valid[type="text"]:focus, input.valid[type="pass
     display: none;
 }
 
+#btn_box_recuperoPasswordFailed{
+    display: none;
+}
+
+#btn_box_Login{
+    display: none;
+}
+
+#btn_box_LoginFailed{
+    display: none;
+}
+
+
+
+
