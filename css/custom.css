@@ -82,13 +82,7 @@ input.valid[type="text"], input.valid[type="text"]:focus, input.valid[type="pass
     display: none;
 }
 
-.LoginUtente{
-   padding-left: 20px;
-    padding-top: 10px;
-    color: #fff;
-    font-size: 15px;
-    display: none;
-}
+
 
 
 
