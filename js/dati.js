@@ -473,7 +473,7 @@ function recuperoPassword(email)
         dataType: 'json',
 		success: function(data){
         var ritorno = data.d;
-		 alert(ritorno);
+		// alert(ritorno);
          if(ritorno!="")
          {
             
