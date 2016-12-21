@@ -1365,13 +1365,12 @@ $('#recuperoPass').validate({
 });
 
 
-    $('.button_logout').click(function(){
+    $('.logoutApp').click(function(){
         alert("entra");
        // localStorage.removeItem("login");
           localStorage.setItem('login', false);
           localStorage.removeItem("Id_login");
-        //  $('.button_logout').css("display","none");
-          window.location.href = "index.html";
+         $(".SiLogin").hide();
       });
   
   $('#social').click(function(){
