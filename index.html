@@ -1365,22 +1365,26 @@ $('#recuperoPass').validate({
 });
 
 
-    $('.logoutApp').click(function(){
+ /*   $('.logoutApp').click(function(){
         alert("entra");
        // localStorage.removeItem("login");
           localStorage.setItem('login', false);
           localStorage.removeItem("Id_login");
          $(".SiLogin").hide();
-      });
+      });*/
   
   $('#social').click(function(){
       condividiNotifica();
   });
 
 // popolo la notifica   
-function visualizzoNotifica ()
+function logoutApp ()
 {
-     
+      alert("entra");
+       // localStorage.removeItem("login");
+          localStorage.setItem('login', false);
+          localStorage.removeItem("Id_login");
+         $(".SiLogin").hide();
 }
 
  $(document).on("click", ".storage", function () {

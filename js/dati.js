@@ -190,7 +190,7 @@ function loginUtente(usernameLogin,passLogin)
             localStorage.setItem('Id_login',login);
             var benvenuto ="<div class='modal-content'><h4>Login Effettuato </h4><p>Benvenuto "+localStorage.getItem("username")+"</p></div>";
             benvenuto+="<div class='modal-footer'> <a href='#' class='modal-action modal-close waves-effect waves-green btn-flat'>Chiudi</a></div>";
-            var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span><span class='logoutApp'><i style='font-size:15px !important;padding-left:15px;'  class='ion-log-out'></i></span>";
+            var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span><span onClick='logoutApp'><i style='font-size:15px !important;padding-left:15px;'  class='ion-log-out'></i></span>";
             $(".SiLogin").append(li_dati);
             $("#box_successoLogin").html("");
             $("#box_successoLogin").append(benvenuto);
