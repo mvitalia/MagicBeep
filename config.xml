@@ -65,8 +65,9 @@
     <splash src="splash/ios/screen-ipad-portrait-2x.png" width="1536" height="2048" />
     <splash src="splash/ios/screen-ipad-landscape-2x.png" width="2048" height="1536" />
 
+    <!-- iPhone 6s -->
     <splash src="splash/ios/screen-iphone-portrait-1920h.png" width="1080" height="1920" />
-<splash src="splash/ios/screen-iphone-landscape-1080h.png" width="1920" height="1080" />
+    <splash src="splash/ios/screen-iphone-landscape-1080h.png" width="1920" height="1080" />
 </platform>
 <platform name="android">
     <splash src="splash/android/screen-ldpi-portrait.png" qualifier="port-ldpi" />
@@ -95,7 +96,7 @@
 <plugin name="cordova-plugin-network-information" spec="1.3.1" />
 <preference name="SplashScreenDelay" value="2000"/>
 <preference name="target-device" value="universal" />
-<preference name="EnableViewportScale" value="true" />
+<preference name="EnableViewportScale" value="false" />
 <preference name="permissions" value="none"/>
 <preference name="phonegap-version" value="cli-6.3.1" />
 <platform name="android">
