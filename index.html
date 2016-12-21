@@ -1178,6 +1178,7 @@ Per conoscere le norme sulla privacy di Google La preghiamo di vistare il sito I
  $(document).on("pagebeforeshow", "#home", function () {
      
      var p = localStorage.getItem('login');
+      $(".SiLogin").htlm("");
 	    if(p=='true')
      {
       
@@ -1191,6 +1192,7 @@ Per conoscere le norme sulla privacy di Google La preghiamo di vistare il sito I
      $(document).on("pagebeforeshow", "#login", function () {
      $("#usernameLogin").val("");
      $("#passwordLogin").val("");
+      $(".SiLogin").htlm("");
       var p = localStorage.getItem('login');
 	    if(p=='true')
      {
@@ -1202,6 +1204,7 @@ Per conoscere le norme sulla privacy di Google La preghiamo di vistare il sito I
      });
 
       $(document).on("pagebeforeshow", "#database", function () {
+         $(".SiLogin").htlm("");
      var p = localStorage.getItem('login');
 	    if(p=='true')
      {
@@ -1216,6 +1219,7 @@ Per conoscere le norme sulla privacy di Google La preghiamo di vistare il sito I
 
       $(document).on("pagebeforeshow", "#notifica", function () {
      var p = localStorage.getItem('login');
+      $(".SiLogin").htlm("");
 	    if(p=='true')
      {
       
@@ -1231,7 +1235,8 @@ Per conoscere le norme sulla privacy di Google La preghiamo di vistare il sito I
      $("#cognomeInfo").val(""); 
      $("#emailInfo").val(""); 
      $("#richiestaInfo").val("");   
-     $("#privacyInfo").prop('checked', false);    
+     $("#privacyInfo").prop('checked', false);  
+      $(".SiLogin").htlm("");  
       if(p=='true')
      {
       
@@ -1241,6 +1246,22 @@ Per conoscere le norme sulla privacy di Google La preghiamo di vistare il sito I
      }
     });
 
+    $(document).on("pagebeforeshow", "#infoMvitalia", function () {
+		 $("#nomeMv").val(""); 
+     $("#cognomeMv").val(""); 
+     $("#emailMv").val("");  
+     $("#privacyMv").prop('checked', false);  
+      $(".SiLogin").htlm("");  
+      if(p=='true')
+     {
+      
+         var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
+         $(".SiLogin").append(li_dati);
+         $(".logoutApp").show();
+     }
+    });
+
+    
 
      $(document).on("pageshow", "#home", function () {
      dinamico()
@@ -1477,13 +1498,7 @@ $('#cancellaTutteNotifiche').click(function(){
 
 });*/
 
- $(document).on("pagebeforeshow", "#inviaInfo", function () {
-		 $("#nomeInfo").val(""); 
-     $("#cognomeInfo").val(""); 
-     $("#emailInfo").val(""); 
-     $("#richiestaInfo").val("");   
-     $("#privacyInfo").prop('checked', false);    
-    });
+
 // Validazione e invio email per l' informazione della notifica
 
 $('#inviaInfoNotifica').validate({
@@ -1544,6 +1559,7 @@ $('#inviaInfoNotifica').validate({
 });
 
 // Validazione e invio email Mvitalia
+
 
 $('#inviaInfoMv').validate({
     rules: {
