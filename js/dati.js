@@ -16,9 +16,7 @@ var usernameLoginApp;
 // Prelevo i dati dal server
 function caricoDatiServerSalvoInDb ()
 {
-       alert("Si");
-       var connessione = checkInternet();
-       if (connessione==true) {
+       if (checkInternet) {
           // Prima bisonga cancellare un db se già essitente è crearlo se non esiste
           db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
           db.transaction(
@@ -548,20 +546,22 @@ function caricaNotificheFiltrate () {
     });
 }
 
-function dinamico ()
+function carica_slider ()
     {
-     var li_dati = "";
-      $.getJSON("http://magicbeep.mvclienti.com/webservices/slider_home.aspx", function (dati) {
-                    
-                    $.each(dati, function (i, name) {
+        if (checkInternet) {
+            $(".bg-v-2").css('background-image','url(http://magicbeep.mvclienti.com/webservices/magicbeep_home.jpg)');
+
+            var li_dati = "";
+            $.getJSON("http://magicbeep.mvclienti.com/webservices/slider_home.aspx", function (dati) {
+                $.each(dati, function (i, name) {
                     li_dati+="<div class='swiper-slide'> <div class='slider-bottom-right valign-wrapper'><div class='valign center-align width-100 p-b-5em'>";
                     li_dati+="<h2 class='uppercase'>"+name.titolo+"</h2> <p>"+name.testo+"</p></div></div></div>";
-                    $(".swiper-wrapper").html("");
-                    $(".swiper-wrapper").append(li_dati);
-                    });
-					 
-                                
-                });
+                    
+                });               
+                $(".swiper-wrapper").html(li_dati);          
+            });
+        }
+
      /* var dai="<div class='swiper-slide'> <div class='slider-bottom-right valign-wrapper'><div class='valign center-align width-100 p-b-5em'>";
       dai+="<h2 class='uppercase'>Halo</h2> <p>Is a mobile website, developed to make your life easer!</p></div></div></div>";
       dai+="<div class='swiper-slide'> <div class='slider-bottom-right valign-wrapper'><div class='valign center-align width-100 p-b-5em'>";
