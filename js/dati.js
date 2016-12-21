@@ -439,7 +439,7 @@ function recuperoPassword(email)
          // Creare popo per invio email
          //   alert(uriImmagine);
          
-          //     $("#pop").click();
+        $("#btn_box_recuperoPassword").click();
 
 		},
 		error: function(e){

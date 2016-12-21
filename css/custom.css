@@ -66,3 +66,7 @@ input.valid[type="text"], input.valid[type="text"]:focus, input.valid[type="pass
     box-shadow: 0 0.5px 0 0 #AEAEAE;
 }
 
+#btn_box_recuperoPassword{
+    display: none;
+}
+

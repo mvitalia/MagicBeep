@@ -711,8 +711,17 @@
       </ul>
       <!-- End of Sidebars -->
       <!-- Page Content -->
-        <div  class="content grey-blue login">
-
+        <div  class="content login">
+        <!-- Modal Structure Bottom Sheet -->
+        <div id="modal3" class="modal bottom-sheet">
+          <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>A bunch of text</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+          </div>
+        </div>
         <!-- Toolbar -->
       <div  class="toolbar primary-color">
           <span class="title"><a class="font_colore_titolo" href="#home">Magic Beep</a></span>
@@ -722,7 +731,7 @@
         </div>
           <!-- Main Content -->
           <div class="login-form animated fadeinup delay-2 z-depth-1 paragrafo_center">
-               <h1>Login</h1>
+               <h1>Recupera Password</h1>
           <form id="recuperoPass">
                 <div class="input-field">
                     <i class="ion-android-contact prefix"></i> 
@@ -731,17 +740,18 @@
                 </div>
                  
                 <div class="box_submit_button">
-                       <input type="submit" data-role="none"  class="waves-effect waves-light btn-large accent-color width-100 m-b-20 animated bouncein delay-4" value="Login" id="btn_submit_recuperoPassword">
+                       <input type="submit" data-role="none"  class="waves-effect waves-light btn-large accent-color width-100 m-b-20 animated bouncein delay-4" value="Invia" id="btn_submit_recuperoPassword">
                 </div>
          </form>
            <!-- Footer -->
-         
+          <!-- Modal Trigger Bottom Sheet -->
+          <a id="btn_box_recuperoPassword" class="waves-effect waves-light btn-large modal-trigger primary-color width-100 m-b-20" href="#modal3">Bottom Sheet</a>
         </div><!-- End of Main Contents -->
         
       </div> <!-- End of Page Content -->
-    
+   
      </div> <!-- End of Page Container -->
-       <footer class="page-footer primary-color">
+      <footer class="page-footer primary-color">
           <div class="container">
             <div class="row">
               <div class="col s12">
@@ -760,39 +770,6 @@
             </div>
           </div>
         </footer>
-       <!-- <div data-role="header" class="header" data-position="fixed" data-add-back-btn="true">
-            <h1 id="app-title">Password Dimenticata</h1>
-             <div class="wrapper">
-            <img class="logoApp" src="img/search.jpg"/>    
-        </div>
-         <div class="LogoutUtente">
-                <a class="button_logout" href="#home" data-role="button" data-mini="true" data-icon="action" data-iconpos="right">Logout</a>
-        </div>
-        </div>
-        <div role="main" class="ui-content">
-            <h3 class="titoliForm">Recupero Password Form </h3>
-               <form id="recuperoPass">
-                    <label for="nome">Email:</label>
-                        <input data-clear-btn="true" name="emailRecuperoPass" id="emailRecuperoPass" value="" placeholder="Inserire la propria E-mail" type="text">
-                   
-                <div>
-                       <input type="submit"  class="ui-btn" value="Login" id="submit">
-                 
-                </div>
-                  </form>
-        </div>
-        <div data-role="footer" data-position="fixed">
-            <!--Tab bar jquery mobile
-            <div data-role="navbar" data-iconpos="top">
-                 <ul>
-                    <li><a href="#home" data-icon="home"  data-transition="slide">Home</a></li>
-                    <li ><a href="#database" data-icon="eye"   data-transition="slide">Notifiche</a></li>
-                     <li ><a href="#login" data-icon="user"   data-transition="slide">Login</a></li>
-                    <li ><a href="#infoMvitalia" data-icon="info"   data-transition="slide">Info</a></li>
-                       <li ><a href="#mappa" data-icon="location"   data-transition="slide">Info</a></li>
-                </ul>
-            </div>
-        </div>-->
     </div> 
     <!-- FINE LOST RECUPERO PASSWORD -->
 
