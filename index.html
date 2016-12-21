@@ -1177,61 +1177,75 @@ Per conoscere le norme sulla privacy di Google La preghiamo di vistare il sito I
 
  $(document).on("pagebeforeshow", "#home", function () {
      
-   var p = localStorage.getItem('login');
-   alert(p);
-	 if(p=='true')
+     var p = localStorage.getItem('login');
+	    if(p=='true')
      {
       
          var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
          $(".SiLogin").append(li_dati);
          $(".logoutApp").show();
-     }else{
-       //  selezionoDati ();
      }
      
     });
 
      $(document).on("pagebeforeshow", "#login", function () {
-     
-   var p = localStorage.getItem('login');
-   alert(p);
-	 if(p=='true')
+     $("#usernameLogin").val("");
+     $("#passwordLogin").val("");
+      var p = localStorage.getItem('login');
+	    if(p=='true')
      {
       
          var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
          $(".SiLogin").append(li_dati);
          $(".logoutApp").show();
-     }else{
-       //  selezionoDati ();
      }
-     
+     });
+
+      $(document).on("pagebeforeshow", "#database", function () {
+     var p = localStorage.getItem('login');
+	    if(p=='true')
+     {
+      
+         var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
+         $(".SiLogin").append(li_dati);
+         $(".logoutApp").show();
+     }
+       $("#lista_datiJson").html("");
+         selezionoDati ();
     });
+
+      $(document).on("pagebeforeshow", "#notifica", function () {
+     var p = localStorage.getItem('login');
+	    if(p=='true')
+     {
+      
+         var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
+         $(".SiLogin").append(li_dati);
+         $(".logoutApp").show();
+     }
+      
+    });
+
+     $(document).on("pagebeforeshow", "#inviaInfo", function () {
+		 $("#nomeInfo").val(""); 
+     $("#cognomeInfo").val(""); 
+     $("#emailInfo").val(""); 
+     $("#richiestaInfo").val("");   
+     $("#privacyInfo").prop('checked', false);    
+      if(p=='true')
+     {
+      
+         var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
+         $(".SiLogin").append(li_dati);
+         $(".logoutApp").show();
+     }
+    });
+
 
      $(document).on("pageshow", "#home", function () {
      dinamico()
     });
 
-    
-
-    $(document).on("pagebeforeshow", "#database", function () {
-     var p = localStorage.getItem('login');
-	 if(p=='true')
-     {
-         $('.LoginUtente').html("");
-         var benvenuto = "<h2>Benvenuto "+localStorage.getItem('usernameLoginApp')+"</h2>";
-         $('.LoginUtente').append(benvenuto);
-         $('.LoginUtente').addClass("benvenuto_utente");
-     }
-    });
-
-
- 
-  
-	 $(document).on("pagebeforeshow", "#database", function () {
-	
-         $("#lista_datiJson").html("");
-         selezionoDati ();
-    });
 
      $(document).on("pageshow", "#notifica", function () {
            $(".schedaNotifica").html("");
