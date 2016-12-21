@@ -554,7 +554,10 @@ function carica_slider ()
             var li_dati = "";
             $.getJSON("http://magicbeep.mvclienti.com/webservices/slider_home.aspx", function (dati) {
                 $.each(dati, function (i, name) {
-                    li_dati+="<div class='swiper-slide'> <div class='slider-bottom-right valign-wrapper'><div class='valign center-align width-100 p-b-5em'>";
+                    var classversion="slider-bottom-right";
+                    if (i %2 == 1) classversion = "slider-bottom-left";
+                    
+                    li_dati+="<div class='swiper-slide'> <div class='" + classversion + " valign-wrapper'><div class='valign center-align width-100 p-b-5em'>";
                     li_dati+="<h2 class='uppercase'>"+name.titolo+"</h2> <p>"+name.testo+"</p></div></div></div>";
                     
                 });               
