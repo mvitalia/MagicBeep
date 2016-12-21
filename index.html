@@ -1193,10 +1193,10 @@ Per conoscere le norme sulla privacy di Google La preghiamo di vistare il sito I
  $(document).on("pagebeforeshow", "#home", function () {
      
       var p = localStorage.getItem('login');
-      alert(p);
+     // alert(p);
 	 if(p=='true')
      {
-         alert("entra");
+       //  alert("entra");
          $('.LoginUtente').html("");
          var benvenuto = "<h2>Benvenuto "+localStorage.getItem('usernameLoginApp')+"</h2>";
          $('.LoginUtente').append(benvenuto);
