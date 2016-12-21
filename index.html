@@ -307,7 +307,7 @@
            <a  class="primary-text paragrafo_center" href="#registrazione">Registrati</a>
           <hr>
           <p class="paragrafo_center">Password dimenticata? </p>
-          <a class="primary-text paragrafo_center " href="#">Recupera</a>
+          <a class="primary-text paragrafo_center " href="#lostPassword">Recupera</a>
            <!-- Footer -->
          
         </div><!-- End of Main Contents -->
@@ -681,7 +681,85 @@
 
     <!-- LOST RECUPERO PASSWORD -->
       <div data-role="page" id="lostPassword" data-cache="false">
+         <!-- Main Container -->
+            <div class="m-scene"> 
+        <!-- Sidebars -->
+        <!-- Right Sidebar -->
+        <ul id="slide-out-nove" class="side-nav collapsible">
+        <li>
+          <div class="sidenav-header primary-color">
+            <div class="nav-social">
+                 <a href="https://www.facebook.com/MVitaliaWeb"> <i class="ion-social-facebook"></i> </a>
+             <a href="https://plus.google.com/u/0/b/107911645761848757909/+Mvitalia"> <i class=" ion-social-googleplus"></i> </a>
+            </div>
+            <div class="nav-avatar">
+          
+               <img class="avatar" src="img/icona_menu.jpg" alt="">
+              <div class="avatar-body">
+                <h3>Magic Beep</h3>
+                <p>Passeggia Aggiornato</p>
+              </div>
+            </div>
+          </div>
+        </li>
+       <li><a href="#home" class="no-child"><i class="ion-android-home"></i>Home</a></li>
+        <li><a href="#login"  data-transition="slide" class="no-child"><i class="ion-android-contact"></i>User/Login</a></li>
+        <li><a href="#database" class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
+        <li><a href="#" class="no-child paginaMappa"><i class="ion-map" data-ajax="false"></i>Posizioni</a></li>
+        <li><a href="#locali" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
+        <li><a href="#infoMvitalia" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
+      </ul>
+      <!-- End of Sidebars -->
+      <!-- Page Content -->
+        <div  class="content grey-blue login">
+
+        <!-- Toolbar -->
+      <div  class="toolbar primary-color">
+          <span class="title"><a class="font_colore_titolo" href="#home">Magic Beep</a></span>
+          <div class="open-right" id="open-right-nove" data-activates="slide-out-nove">
+            <i class="ion-android-menu"></i>
+          </div>
+        </div>
+          <!-- Main Content -->
+          <div class="login-form animated fadeinup delay-2 z-depth-1 paragrafo_center">
+               <h1>Login</h1>
+          <form id="recuperoPass">
+                <div class="input-field">
+                    <i class="ion-android-contact prefix"></i> 
+                   <input data-role="none" name="emailRecuperoPass" id="emailRecuperoPass" value="" type="text">
+                    <label for="usernameLogin">E-mail Account:</label>
+                </div>
+                 
+                <div class="box_submit_button">
+                       <input type="submit" data-role="none"  class="waves-effect waves-light btn-large accent-color width-100 m-b-20 animated bouncein delay-4" value="Login" id="btn_submit_recuperoPassword">
+                </div>
+         </form>
+           <!-- Footer -->
+         
+        </div><!-- End of Main Contents -->
         
+      </div> <!-- End of Page Content -->
+    
+     </div> <!-- End of Page Container -->
+       <footer class="page-footer primary-color">
+          <div class="container">
+            <div class="row">
+              <div class="col s12">
+                <p class="center-align grey-text text-lighten-4">L'esperienza di Magic Beep a contatto con gli oggetti che ti circondano.</p>
+                <div class="center-align">
+                <a href="https://www.facebook.com/MVitaliaWeb"> <i class="ion-social-facebook m-10 white-text"></i> </a>
+                <a href="https://plus.google.com/u/0/b/107911645761848757909/+Mvitalia"> <i class=" ion-social-googleplus m-10 white-text"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright blue darken-1">
+            <div class="container">
+            2017 Magic Beep
+            <a class="grey-text text-lighten-4 right" href="#privacy_policy">Privacy Policy</a>
+            </div>
+          </div>
+        </footer>
        <!-- <div data-role="header" class="header" data-position="fixed" data-add-back-btn="true">
             <h1 id="app-title">Password Dimenticata</h1>
              <div class="wrapper">
