@@ -174,6 +174,7 @@
         <!-- Toolbar -->
         <div  class="toolbar primary-color">
            <span class="title"><a class="font_colore_titolo" href="#home">Magic Beep</a></span>
+            <span class="SiLogin"></span><span><a class='logoutApp' href='#'><i style='font-size:15px !important;padding-left:15px;'  class='ion-log-out'></i></a></span>
           <div class="open-right" id="open-right-tre" data-activates="slide-out-1">
             <i class="ion-android-menu"></i>
           </div>
@@ -286,6 +287,7 @@
         <!-- Toolbar -->
       <div  class="toolbar primary-color">
           <span class="title"><a class="font_colore_titolo" href="#home">Magic Beep</a></span>
+           <span class="SiLogin"></span><span><a class='logoutApp' href='#'><i style='font-size:15px !important;padding-left:15px;'  class='ion-log-out'></i></a></span>
           <div class="open-right" id="open-right-uno" data-activates="slide-out-2">
             <i class="ion-android-menu"></i>
           </div>
@@ -383,6 +385,7 @@
         <!-- Toolbar -->
          <div  class="toolbar primary-color">
           <span class="title"><a class="font_colore_titolo" href="#home">Magic Beep</a></span>
+           <span class="SiLogin"></span><span><a class='logoutApp' href='#'><i style='font-size:15px !important;padding-left:15px;'  class='ion-log-out'></i></a></span>
           <div class="open-right" id="open-right-otto" data-activates="slide-out-otto">
             <i class="ion-android-menu"></i>
           </div>
@@ -503,6 +506,7 @@
         <!-- Toolbar -->
         <div  class="toolbar primary-color">
           <span class="title"><a class="font_colore_titolo" href="#home">Magic Beep</a></span>
+           <span class="SiLogin"></span><span><a class='logoutApp' href='#'><i style='font-size:15px !important;padding-left:15px;'  class='ion-log-out'></i></a></span>
           <div class="open-right" id="open-right-sette" data-activates="slide-out-sette">
             <i class="ion-android-menu"></i>
           </div>
@@ -616,6 +620,7 @@
         <!-- Toolbar -->
         <div  class="toolbar primary-color">
           <span class="title"><a class="font_colore_titolo" href="#home">Magic Beep</a></span>
+           <span class="SiLogin"></span><span><a class='logoutApp' href='#'><i style='font-size:15px !important;padding-left:15px;'  class='ion-log-out'></i></a></span>
           <div class="open-right" id="open-right-due" data-activates="slide-out-3">
             <i class="ion-android-menu"></i>
           </div>
@@ -735,6 +740,7 @@
         <!-- Toolbar -->
       <div  class="toolbar primary-color">
           <span class="title"><a class="font_colore_titolo" href="#home">Magic Beep</a></span>
+           <span class="SiLogin"></span><span><a class='logoutApp' href='#'><i style='font-size:15px !important;padding-left:15px;'  class='ion-log-out'></i></a></span>
           <div class="open-right" id="open-right-nove" data-activates="slide-out-nove">
             <i class="ion-android-menu"></i>
           </div>
@@ -820,6 +826,7 @@
         <!-- Toolbar -->
         <div  class="toolbar primary-color">
           <span class="title"><a class="font_colore_titolo" href="#home">Magic Beep</a></span>
+           <span class="SiLogin"></span><span><a class='logoutApp' href='#'><i style='font-size:15px !important;padding-left:15px;'  class='ion-log-out'></i></a></span>
           <div class="open-right" id="open-right-quattro" data-activates="slide-out-quattro">
             <i class="ion-android-menu"></i>
           </div>
@@ -936,6 +943,7 @@
         <!-- Toolbar -->
         <div  class="toolbar primary-color">
            <span class="title"><a class="font_colore_titolo" href="#home">Magic Beep</a></span>
+            <span class="SiLogin"></span><span><a class='logoutApp' href='#'><i style='font-size:15px !important;padding-left:15px;'  class='ion-log-out'></i></a></span>
           <div class="open-right" id="open-right-cinque" data-activates="slide-out-cinque">
             <i class="ion-android-menu"></i>
           </div>
@@ -1169,11 +1177,10 @@ Per conoscere le norme sulla privacy di Google La preghiamo di vistare il sito I
 
  $(document).on("pagebeforeshow", "#home", function () {
      
-      var p = localStorage.getItem('login');
-     // alert(p);
+   var p = localStorage.getItem('login');
 	 if(p=='true')
      {
-       //  alert("entra");
+      
          var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
          $(".SiLogin").append(li_dati);
          $(".logoutApp").show();
@@ -1367,7 +1374,8 @@ $('#recuperoPass').validate({
        // localStorage.removeItem("login");
        localStorage.setItem('login', false);
        localStorage.removeItem("Id_login");
-       
+        $(".SiLogin").hide();
+         $(".logoutApp").hide();
          
       });
   
