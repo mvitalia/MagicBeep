@@ -181,18 +181,26 @@ function loginUtente(usernameLogin,passLogin)
             localStorage.setItem('login', true);
             localStorage.setItem('Id_login',login);
             localStorage.setItem('Id_login',login);
-            var benvenuto ="<span>Benvenuto "+localStorage.getItem("username")+"</span>";
-            $(".okLogin").append(benvenuto);
+            var benvenuto ="<div class='modal-content'><h4>Login Effettuato </h4><p>Benvenuto "+localStorage.getItem("username")+"</p></div>";
+            benvenuto+="<div class='modal-footer'> <a href='#home' class='modal-action modal-close waves-effect waves-green btn-flat'>Chiudi</a></div>";
+            $("#box_successoLogin").append(benvenuto);
             $("#btn_box_Login").click();
+           
         }else{
            // alert("Utente non loggato");
-            $("#btn_box_LoginFailed").click();
+           var noBenvenuto="<div class='modal-content'><h4>Login Fallito </h4><p>Controlla di aver inserito i dati corretti o di avere una connessione internet disponibile </p></div>";
+           noBenvenuto+="<div class='modal-footer'> <a href='#' class='modal-action modal-close waves-effect waves-green btn-flat'>Chiudi</a></div>";
+           $("#box_successoLogin").append(noBenvenuto);
+           $("#btn_box_LoginFailed").click();
         }
 		},
 		error: function(e){
 			//console.log(data);
 			//alert('Errore'+e.status);
             //alert('Errore2'+e.statusTest);
+            var noBenvenuto="<div class='modal-content'><h4>Login Fallito </h4><p>Controlla di aver inserito i dati corretti o di avere una connessione internet disponibile </p></div>";
+            noBenvenuto+="<div class='modal-footer'> <a href='#' class='modal-action modal-close waves-effect waves-green btn-flat'>Chiudi</a></div>";
+            $("#box_successoLogin").append(noBenvenuto);
             $("#btn_box_LoginFailed").click();
 		}
 	});
