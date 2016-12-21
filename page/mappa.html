@@ -114,6 +114,16 @@
     </div> <!-- End of Page Container --> 
       </div>  
 <script>
+ $(document).on("pagebeforeshow", "#mappa", function () { 
+   var p = localStorage.getItem('login');
+      if(p=='true')
+     {
+         $(".SiLogin").html("");  
+         var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
+         $(".SiLogin").append(li_dati);
+         $(".logoutApp").show();
+     }
+    });
 // Inizio mappa
  $(document).on("pageshow", "#mappa", function () {
   GMap.init();
