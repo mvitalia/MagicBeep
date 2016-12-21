@@ -186,6 +186,7 @@ function loginUtente(usernameLogin,passLogin)
             $("#btn_box_Login").click();
         }else{
            // alert("Utente non loggato");
+            $("#btn_box_LoginFailed").click();
         }
 		},
 		error: function(e){
