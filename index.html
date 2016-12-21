@@ -1174,12 +1174,9 @@ Per conoscere le norme sulla privacy di Google La preghiamo di vistare il sito I
 	 if(p=='true')
      {
        //  alert("entra");
-         $('.LoginUtente').html("");
-         var benvenuto = "<h2>Benvenuto "+localStorage.getItem('usernameLoginApp')+"</h2>";
-         $('.LoginUtente').append(benvenuto);
-         $('.LoginUtente').addClass("benvenuto_utente");
-         $('.LogoutUtente').css("display","block");
-         $('.button_logout').css("float","right");
+         var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
+         $(".SiLogin").append(li_dati);
+         $(".logoutApp").show();
      }else{
        //  selezionoDati ();
      }
