@@ -56,11 +56,11 @@
          <!-- Sidebars -->
          <!-- Left Sidebar -->
         <ul id="slide-out" class="side-nav collapsible">
-        <li class="primary-color">
+      <!--  <li class="primary-color">
           <div class="LoginUtente">
         
           </div>
-        </li>
+        </li>-->
         <li>
           <div class="sidenav-header primary-color">
             <div class="nav-social">
@@ -289,7 +289,7 @@
             <p>Per il recupero della password controllare la casella di posta elettronica</p>
           </div>
           <div class="modal-footer">
-            <a href="#" id="okLogin" class="modal-action modal-close waves-effect waves-green btn-flat">Chiudi</a>
+            <a href="#home" id="okLogin" class="modal-action modal-close waves-effect waves-green btn-flat">Chiudi</a>
           </div>
         </div>
           <!-- Modal Structure Bottom Sheet -->
@@ -1428,10 +1428,7 @@ $(document).on("click", ".detail", function () {
      
 });
 
-$(document).on("click", "#okLogin", function () {
-     $( ":mobile-pagecontainer" ).pagecontainer( "change", "#home", {    transition: "flip", reload:false, allowSamePageTransition:true } );
-     
-});
+
 
 
 
