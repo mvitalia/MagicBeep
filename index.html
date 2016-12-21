@@ -85,7 +85,7 @@
         <!-- Toolbar -->
         <div  class="toolbar primary-color">
            <span class="title"><a class="font_colore_titolo" href="#home">Magic Beep</a></span>
-           <span class="SiLogin"></span>
+           <span class="SiLogin"></span><span><a class='logoutApp' href='#'><i style='font-size:15px !important;padding-left:15px;'  class='ion-log-out'></i></a></span>
           <div class="open-right" id="open-right" data-activates="slide-out">
             <i class="ion-android-menu"></i>
           </div>
@@ -1174,7 +1174,7 @@ Per conoscere le norme sulla privacy di Google La preghiamo di vistare il sito I
 	 if(p=='true')
      {
        //  alert("entra");
-         var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span><a class='logoutApp' href='#'><i style='font-size:15px !important;padding-left:15px;'  class='ion-log-out'></i></a>";
+         var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
          $(".SiLogin").append(li_dati);
          $(".logoutApp").show();
      }else{
