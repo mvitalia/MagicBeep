@@ -190,8 +190,8 @@ function loginUtente(usernameLogin,passLogin)
             localStorage.setItem('Id_login',login);
             var benvenuto ="<div class='modal-content'><h4>Login Effettuato </h4><p>Benvenuto "+localStorage.getItem("username")+"</p></div>";
             benvenuto+="<div class='modal-footer'> <a href='#' class='modal-action modal-close waves-effect waves-green btn-flat'>Chiudi</a></div>";
-            var li_dati="<i class='ion-android-person'></i>";
-            $(".title").append(li_dati);
+            var li_dati="<br><i class='ion-android-person'></i><span style='font-size:10px !important'>Benvenuto "+localStorage.getItem('username')+"</span>";
+            $(".SiLogin").append(li_dati);
             $("#box_successoLogin").html("");
             $("#box_successoLogin").append(benvenuto);
             $("#btn_box_Login").click();
