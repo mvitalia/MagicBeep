@@ -191,7 +191,7 @@ function loginUtente(usernameLogin,passLogin)
             var benvenuto ="<div class='modal-content'><h4>Login Effettuato </h4><p>Benvenuto "+localStorage.getItem("username")+"</p></div>";
             benvenuto+="<div class='modal-footer'> <a href='#' class='modal-action modal-close waves-effect waves-green btn-flat'>Chiudi</a></div>";
             var li_dati="<li><i class='ion-android-person'></i></li>";
-            $("#side-nav").append(li_dati);
+            $(".side-nav").append(li_dati);
             $("#box_successoLogin").html("");
             $("#box_successoLogin").append(benvenuto);
             $("#btn_box_Login").click();
