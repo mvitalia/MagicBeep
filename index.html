@@ -56,6 +56,11 @@
          <!-- Sidebars -->
          <!-- Left Sidebar -->
         <ul id="slide-out" class="side-nav collapsible">
+        <li class="primary-color">
+          <div class="LoginUtente">
+        
+          </div>
+        </li>
         <li>
           <div class="sidenav-header primary-color">
             <div class="nav-social">
@@ -284,7 +289,7 @@
             <p>Per il recupero della password controllare la casella di posta elettronica</p>
           </div>
           <div class="modal-footer">
-            <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Chiudi</a>
+            <a href="#" id="okLogin" class="modal-action modal-close waves-effect waves-green btn-flat">Chiudi</a>
           </div>
         </div>
           <!-- Modal Structure Bottom Sheet -->
@@ -1193,16 +1198,15 @@ Per conoscere le norme sulla privacy di Google La preghiamo di vistare il sito I
  $(document).on("pagebeforeshow", "#home", function () {
      
       var p = localStorage.getItem('login');
-      alert(p);
+     // alert(p);
 	 if(p=='true')
      {
          alert("entra");
          $('.LoginUtente').html("");
-         var benvenuto = "<h2>Benvenuto "+localStorage.getItem('usernameLoginApp')+"</h2>";
+         var benvenuto ="<p><i class="ion-android-person"></i>Benvenuto "+localStorage.getItem('usernameLoginApp')+"</p>";
          $('.LoginUtente').append(benvenuto);
-         $('.LoginUtente').addClass("benvenuto_utente");
-         $('.LogoutUtente').css("display","block");
-         $('.button_logout').css("float","right");
+         $('.LoginUtente').show();
+        
      }else{
        //  selezionoDati ();
      }
@@ -1424,7 +1428,7 @@ $(document).on("click", ".detail", function () {
      
 });
 
-$(document).on("click", "#btn_box_Login", function () {
+$(document).on("click", "#okLogin", function () {
      $( ":mobile-pagecontainer" ).pagecontainer( "change", "#home", {    transition: "flip", reload:false, allowSamePageTransition:true } );
      
 });
