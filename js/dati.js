@@ -146,17 +146,24 @@ function aggiungiUtente(nome,cognome,email,luogoN,dataN,citta,username,password,
 		success: function(data){
 		//console.log(data);
         var ID_utente = data.d;
-		   alert('Cliente Salvato'+ID_utente);
-            
+		  // alert('Cliente Salvato'+ID_utente);
          //   alert(uriImmagine);
-         
           //     $("#pop").click();
-
+            var successo ="<div class='modal-content'><h4>Registrazione Effettuata </h4><p>Registrazione al sistema effettuata con successo</p></div>";
+            successo+="<div class='modal-footer'> <a href='#' class='modal-action modal-close waves-effect waves-green btn-flat'>Chiudi</a></div>";
+            $("#box_registrazione").html("");
+            $("#box_registrazione").append(successo);
+            $("#btn_box_Registrazione").click();
 		},
 		error: function(e){
 			//console.log(data);
-			alert('Errore'+e.status);
-            alert('Errore2'+e.statusTest);
+			//alert('Errore'+e.status);
+            //alert('Errore2'+e.statusTest);
+             var fallito ="<div class='modal-content'><h4>Registrazione Fallita </h4><p>Connessione internet assente</p></div>";
+            fallito+="<div class='modal-footer'> <a href='#' class='modal-action modal-close waves-effect waves-green btn-flat'>Chiudi</a></div>";
+            $("#box_registrazione").html("");
+            $("#box_registrazione").append(fallito);
+            $("#btn_box_Registrazione").click();
 		}
 	});
 }
@@ -328,17 +335,26 @@ function inviaInformazione(privacy,nome,cognome,email,richiesta)
         dataType: 'json',
 		success: function(data){
         var ritorno = data.d;
-		 alert('Cliente Salvato'+ritorno);
+		// alert('Cliente Salvato'+ritorno);
          // Creare popo per invio email
          //   alert(uriImmagine);
          
           //     $("#pop").click();
-
+            var successo ="<div class='modal-content'><h4>Informazione Inviata </h4><p>Informazioni sulla notizia "+sessionStorage.getItem('titolo_notifica')+" inviata con successo</p></div>";
+            successo+="<div class='modal-footer'> <a href='#' class='modal-action modal-close waves-effect waves-green btn-flat'>Chiudi</a></div>";
+            $("#box_infoNotifica").html("");
+            $("#box_infoNotifica").append(successo);
+            $("#btn_box_infoNotifica").click();
 		},
 		error: function(e){
 			//console.log(data);
 			//alert('Errore'+e.status);
             //alert('Errore2'+e.statusTest);
+             var fallito ="<div class='modal-content'><h4>Invio Fallito </h4><p>Connessione internet assente</p></div>";
+            fallito+="<div class='modal-footer'> <a href='#' class='modal-action modal-close waves-effect waves-green btn-flat'>Chiudi</a></div>";
+            $("#box_infoNotifica").html("");
+            $("#box_infoNotifica").append(fallito);
+            $("#btn_box_infoNotifica").click();
 		}
      	});
 }
