@@ -1178,6 +1178,23 @@ Per conoscere le norme sulla privacy di Google La preghiamo di vistare il sito I
  $(document).on("pagebeforeshow", "#home", function () {
      
    var p = localStorage.getItem('login');
+   alert(p);
+	 if(p=='true')
+     {
+      
+         var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
+         $(".SiLogin").append(li_dati);
+         $(".logoutApp").show();
+     }else{
+       //  selezionoDati ();
+     }
+     
+    });
+
+     $(document).on("pagebeforeshow", "#login", function () {
+     
+   var p = localStorage.getItem('login');
+   alert(p);
 	 if(p=='true')
      {
       
@@ -1372,8 +1389,7 @@ $('#recuperoPass').validate({
    $('.logoutApp').click(function(){
         alert("entra");
        // localStorage.removeItem("login");
-       localStorage.setItem('login', false);
-       localStorage.removeItem("Id_login");
+       localStorage.removeItem('login');
         $(".SiLogin").hide();
          $(".logoutApp").hide();
          
