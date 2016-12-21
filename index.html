@@ -1181,11 +1181,12 @@ Per conoscere le norme sulla privacy di Google La preghiamo di vistare il sito I
     
 	    if(p=='true')
      {
-       alert("user"+localStorage.getItem('username'));
+     
         $(".SiLogin").html("");
          var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
-         alert(li_dati);
+      
          $(".SiLogin").append(li_dati);
+           $(".SiLogin").show();
          $(".logoutApp").show();
      }
      
@@ -1201,6 +1202,7 @@ Per conoscere le norme sulla privacy di Google La preghiamo di vistare il sito I
        $(".SiLogin").html("");
          var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
          $(".SiLogin").append(li_dati);
+          $(".SiLogin").show();
          $(".logoutApp").show();
      }
      });
@@ -1213,6 +1215,7 @@ Per conoscere le norme sulla privacy di Google La preghiamo di vistare il sito I
        $(".SiLogin").html("");
          var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
          $(".SiLogin").append(li_dati);
+          $(".SiLogin").show();
          $(".logoutApp").show();
      }
        $("#lista_datiJson").html("");
@@ -1227,6 +1230,7 @@ Per conoscere le norme sulla privacy di Google La preghiamo di vistare il sito I
       $(".SiLogin").html("");
          var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
          $(".SiLogin").append(li_dati);
+          $(".SiLogin").show();
          $(".logoutApp").show();
      }
       
@@ -1244,6 +1248,7 @@ Per conoscere le norme sulla privacy di Google La preghiamo di vistare il sito I
        $(".SiLogin").html("");  
          var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
          $(".SiLogin").append(li_dati);
+          $(".SiLogin").show();
          $(".logoutApp").show();
      }
     });
@@ -1259,6 +1264,7 @@ Per conoscere le norme sulla privacy di Google La preghiamo di vistare il sito I
          $(".SiLogin").html("");  
          var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
          $(".SiLogin").append(li_dati);
+          $(".SiLogin").show();
          $(".logoutApp").show();
      }
     });
