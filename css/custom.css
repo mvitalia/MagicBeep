@@ -94,6 +94,9 @@ input.valid[type="text"], input.valid[type="text"]:focus, input.valid[type="pass
     display: none;
 }
 
+.logoutApp{
+    display: none;
+}
 
 
 
