@@ -182,7 +182,7 @@ function loginUtente(usernameLogin,passLogin)
             localStorage.setItem('Id_login',login);
             localStorage.setItem('Id_login',login);
             var benvenuto ="<div class='modal-content'><h4>Login Effettuato </h4><p>Benvenuto "+localStorage.getItem("username")+"</p></div>";
-            benvenuto+="<div class='modal-footer'> <a href='#home' class='modal-action modal-close waves-effect waves-green btn-flat'>Chiudi</a></div>";
+            benvenuto+="<div class='modal-footer'> <a href='#' class='modal-action modal-close waves-effect waves-green btn-flat'>Chiudi</a></div>";
             $("#box_successoLogin").html("");
             $("#box_successoLogin").append(benvenuto);
             $("#btn_box_Login").click();
