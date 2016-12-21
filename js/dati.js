@@ -193,7 +193,7 @@ function loginUtente(usernameLogin,passLogin)
            noBenvenuto+="<div class='modal-footer'> <a href='#' class='modal-action modal-close waves-effect waves-green btn-flat'>Chiudi</a></div>";
            $("#box_successoLogin").html("");
            $("#box_successoLogin").append(noBenvenuto);
-           $("#btn_box_LoginFailed").click();
+           $("#btn_box_Login").click();
         }
 		},
 		error: function(e){
@@ -204,7 +204,7 @@ function loginUtente(usernameLogin,passLogin)
             noBenvenuto+="<div class='modal-footer'> <a href='#' class='modal-action modal-close waves-effect waves-green btn-flat'>Chiudi</a></div>";
             $("#box_successoLogin").html("");
             $("#box_successoLogin").append(noBenvenuto);
-            $("#btn_box_LoginFailed").click();
+            $("#btn_box_Login").click();
 		}
 	});
     
