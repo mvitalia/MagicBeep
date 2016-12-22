@@ -636,6 +636,7 @@ footer.page-footer {
     width: 56px;
     text-align: center;
     position: relative;
+    cursor: pointer
 }
 .toolbar i {
     font-size: 24px;
@@ -663,6 +664,12 @@ footer.page-footer {
     line-height: 48px;
     padding: 0;
     display: inline-block;
+    font-weight: normal
+}
+.nav-social a{
+    height: auto !important;
+    line-height: normal !important
+
 }
 .side-nav .no-child {
     padding: 16px;
