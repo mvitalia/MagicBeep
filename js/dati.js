@@ -505,7 +505,6 @@ function recuperoPassword(email)
 function caricaNotificheFiltrate () {
      
    var searchFiled = $("#search").val();
-  // alert(searchFiled);
    // Faccio query
     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
                        db.transaction(
@@ -565,11 +564,5 @@ function carica_slider ()
             });
         }
 
-     /* var dai="<div class='swiper-slide'> <div class='slider-bottom-right valign-wrapper'><div class='valign center-align width-100 p-b-5em'>";
-      dai+="<h2 class='uppercase'>Halo</h2> <p>Is a mobile website, developed to make your life easer!</p></div></div></div>";
-      dai+="<div class='swiper-slide'> <div class='slider-bottom-right valign-wrapper'><div class='valign center-align width-100 p-b-5em'>";
-      dai+="<h2 class='uppercase'>Halo</h2> <p>Is a mobile website, developed to make your life easer!</p></div></div></div>";*/
- 
-      
     }
  
