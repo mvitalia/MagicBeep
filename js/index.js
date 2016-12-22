@@ -175,6 +175,7 @@ $('#registrazioneSincro').validate({
     errorPlacement: function (error, element) {
         error.appendTo(element.parent().prev());
     },
+    errorElement: "span",
     submitHandler: function (form) {
      var privacy;
       if ($('#privacy').is(":checked"))
@@ -209,15 +210,16 @@ $('#loginSincro').validate({
     },
     messages: {
         usernameLogin: {
-            required: "Inserire ilusername."
+            required: "Inserire username"
         },
         passLogin: {
-            required: "Inserire password."
+            required: "Inserire password"
         }
     },
     errorPlacement: function (error, element) {
         error.appendTo(element.parent().prev());
     },
+    errorElement: "span",
     submitHandler: function (form) {
      var usernameLogin = $("#usernameLogin").val();
       var passLogin = $("#passLogin").val();
@@ -244,6 +246,7 @@ $('#recuperoPass').validate({
     errorPlacement: function (error, element) {
         error.appendTo(element.parent().prev());
     },
+    
     submitHandler: function (form) {
      var emailRecuperoPass = $("#emailRecuperoPass").val();
      recuperoPassword(emailRecuperoPass);  
@@ -373,6 +376,7 @@ $('#inviaInfoNotifica').validate({
     errorPlacement: function (error, element) {
         error.appendTo(element.parent().prev());
     },
+    errorElement: "span",
     submitHandler: function (form) {
      var pInfo
      if ($('#privacyInfo').is(":checked"))
@@ -427,6 +431,7 @@ $('#inviaInfoMv').validate({
     errorPlacement: function (error, element) {
         error.appendTo(element.parent().prev());
     },
+    errorElement: "span",
     submitHandler: function (form) {
      var pMv
      if ($('#privacyMv').is(":checked"))

@@ -100,3 +100,10 @@ input.valid[type="text"], input.valid[type="text"]:focus, input.valid[type="pass
 
 
 
+
+
+.logo_mv {width:auto !important; margin: 0 auto; text-align: center}
+.privacy h3 {font-size:14px}
+.privacy p{font-size:12px}
+
+.input-field span label {}
