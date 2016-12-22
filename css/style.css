@@ -153,13 +153,13 @@ blockquote {
 /* Colors */
 
 .accent-text {
-    color: #FF4081 !important;
+    color: #004175 !important;
 }
 .accent-color {
-    background-color: #FF4081 !important;
+    background-color: #004175 !important;
 }
 .accent-border {
-    border-color: #FF4081 !important;
+    border-color: #004175 !important;
 }
 .primary-text {
     color: #2196F3 !important;
@@ -1193,7 +1193,7 @@ li.your-comment {
 }
 .current-day {
     background: #fff;
-    color: #FF4081;
+    color: #004175;
 }
 .calendar tbody td.current-day:hover {
     background-color: rgba(255, 255, 255, 1);
