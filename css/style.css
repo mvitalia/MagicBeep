@@ -59,7 +59,7 @@ h5 {
     line-height: 1em;
 }
 p {
-    font-size: 16px;
+    font-size: 14px;
     margin: 0 0 10px;
 }
 a {
@@ -1714,7 +1714,7 @@ li.your-comment {
     margin-top: 20px;
     border-top: 1px solid #eee;
 }
-.form-inputs .remember {
+.form-inputs .remember,.registrazione-form .remember {
     margin: 20px 0;
 }
 /* Grid */
@@ -2275,6 +2275,7 @@ ul.faq {
     display: block;
 }
 .login-form,
+.registrazione-form,
 .signup-form {
     padding: 20px;
     margin: 20px;
@@ -2286,7 +2287,17 @@ ul.faq {
     right: 0;
     z-index: 1;
 }
+
+.registrazione-form {
+    position: relative;
+    top:0;
+    margin-top: 76px;
+}
+
+.privacy_page {margin-top:20px !important}
+
 .login-form h1,
+.registrazione-form h1,
 .signup-form h1 {
     margin-top: 0;
     margin-bottom: 30px;

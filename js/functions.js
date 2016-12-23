@@ -26,62 +26,7 @@ $('.collapsible').collapsible({
     accordion: true
 });
 
-// Right Sidebar
-$('#open-right').sideNav({
-    menuWidth: 240, // Default is 240
-    edge: 'right', // Choose the horizontal origin
-    closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
-});
-
-$('#open-right-uno').sideNav({
-    menuWidth: 240, // Default is 240
-    edge: 'right', // Choose the horizontal origin
-    closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
-});
-
-$('#open-right-due').sideNav({
-    menuWidth: 240, // Default is 240
-    edge: 'right', // Choose the horizontal origin
-    closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
-});
-
-$('#open-right-tre').sideNav({
-    menuWidth: 240, // Default is 240
-    edge: 'right', // Choose the horizontal origin
-    closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-});
-
-$('#open-right-quattro').sideNav({
-    menuWidth: 240, // Default is 240
-    edge: 'right', // Choose the horizontal origin
-    closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
-});
-
-$('#open-right-cinque').sideNav({
-    menuWidth: 240, // Default is 240
-    edge: 'right', // Choose the horizontal origin
-    closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
-});
-
-$('#open-right-sei').sideNav({
-    menuWidth: 240, // Default is 240
-    edge: 'right', // Choose the horizontal origin
-    closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
-});
-
-$('#open-right-sette').sideNav({
-    menuWidth: 240, // Default is 240
-    edge: 'right', // Choose the horizontal origin
-    closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
-});
-
-$('#open-right-otto').sideNav({
-    menuWidth: 240, // Default is 240
-    edge: 'right', // Choose the horizontal origin
-    closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
-});
-
-$('#open-right-nove').sideNav({
+$('.open-right').sideNav({
     menuWidth: 240, // Default is 240
     edge: 'right', // Choose the horizontal origin
     closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
