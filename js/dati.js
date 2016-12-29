@@ -566,3 +566,46 @@ function carica_slider ()
 
     }
  
+
+ function openBrowser (url) {
+    if (!url) {
+        return;
+    }
+
+    // turn my url into a scheme/intent url
+    getAvailabilityScheme(url, function (url) {
+        window.open(url, '_system');
+    });
+}
+
+function getAvailabilityScheme (url, callback) {
+    var schemeOrPackage;
+    var schemeUrl;
+
+    // check for appavaialbility plugin
+    if (!window.appAvailability) {
+        callback(url);
+    }
+
+    // facebook
+    if (url.indexOf('facebook.com/') !== -1) {
+        schemeOrPackage = isAndroid ? 'com.facebook.katana' : 'fb://'
+        schemeUrl = 'fb://profile/' + url.split('facebook.com/')[1];
+    }
+
+    // twitter
+    if (url.indexOf('twitter.com/') !== -1) {
+        schemeOrPackage = isAndroid ? null : 'twitter://'
+        schemeUrl = 'twitter://user?screen_name=' + url.split('twitter.com/')[1];
+    }
+
+    if (schemeOrPackage && schemeUrl) {
+        window.appAvailability.check(schemeOrPackage, function () {
+            callback(schemeUrl);
+        }, function () {
+            callback(url);
+        });
+    } else {
+        callback(url);
+    }
+}
