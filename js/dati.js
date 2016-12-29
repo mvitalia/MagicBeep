@@ -575,8 +575,9 @@ function carica_slider ()
 
     // turn my url into a scheme/intent url
     getAvailabilityScheme(url, function (url) {
-        alert(url);
-        window.open(url, '_system');
+       alert(url);
+       window.open(url, '_system');
+
     });
 }
 
