@@ -592,7 +592,7 @@ function getAvailabilityScheme (url, callback) {
     // facebook
     if (url.indexOf('facebook.com/') !== -1) {
         schemeOrPackage = 'com.facebook.katana';
-        schemeUrl = 'fb://pages/' + url.split('facebook.com/')[1];
+        schemeUrl = 'fb://facewebmodal/f?href=' + url;
         if(device.platform === 'iOS') {
             schemeOrPackage = 'fb://';
         }
