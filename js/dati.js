@@ -600,6 +600,8 @@ function getAvailabilityScheme (url, callback) {
         
     }
 
+   
+
     // twitter
     if (url.indexOf('twitter.com/') !== -1) {        
         schemeOrPackage = 'com.twitter.android';
