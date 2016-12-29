@@ -30,7 +30,7 @@
 	</script>
 	<script src="cordova.js"></script>
 	<script src="libs/jquery/jquery.js"></script>
- 
+
 	<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
   <script type="text/javascript" src="js/jquery.validate.min.js"></script>
 	<script src="libs/evothings/evothings.js"></script>
@@ -308,12 +308,12 @@
           <form id="loginSincro">
                 <div class="input-field">
                     <i class="ion-android-contact prefix"></i> 
-                   <input data-role="none" name="usernameLogin" id="usernameLogin" value="" type="text">
+                   <input data-role="none" name="usernameLogin" id="usernameLogin" value="" type="text" required>
                     <label for="usernameLogin">Utente</label>
                 </div>
                  <div class="input-field" style="margin-bottom:20px;">
                     <i class="ion-android-lock prefix"></i> 
-                      <input data-role="none"  name="passLogin" id="passLogin" value="" type="password">
+                      <input data-role="none"  name="passLogin" id="passLogin" value="" type="password" required>
                  <label for="passLogin">Password</label>
                  </div>
                 <div class="box_submit_button">
@@ -403,42 +403,42 @@
           <form id="registrazioneSincro">
                <div class="input-field">
                     <i class="ion-person prefix"></i> 
-                   <input data-role="none" name="nome" id="nome" value="" type="text">
+                   <input data-role="none" name="nome" id="nome" value="" type="text" required>
                     <label for="nome">Nome</label>
                 </div>
                 <div class="input-field">
                     <i class="ion-person prefix"></i> 
-                   <input data-role="none" name="cognome" id="cognome" value="" type="text">
+                   <input data-role="none" name="cognome" id="cognome" value="" type="text" required>
                     <label for="cognome">Cognome</label>
                 </div>
                 <div class="input-field">
                     <i class="ion-email prefix"></i> 
-                   <input data-role="none" name="email" id="email" value="" type="text">
+                   <input data-role="none" name="email" id="email" value="" type="text" required>
                     <label for="email">E-mail</label>
                 </div>
                 <div class="input-field">
                     <i class="ion-map prefix"></i> 
-                   <input data-role="none" name="lnascita" id="lnascita" value="" type="text">
+                   <input data-role="none" name="lnascita" id="lnascita" value="" type="text" required>
                     <label for="lnascita">Luogo di nascita</label>
                 </div>
                  <div class="input-field">
                     <i class="ion-calendar prefix"></i> 
-                   <input data-role="none" name="dataNascita" id="dataNascita" value="" type="date">
+                   <input data-role="none" name="dataNascita" id="dataNascita" value="" type="date" required>
                     <label for="dataNascita">Data di nascita</label>
                 </div>
                 <div class="input-field">
                     <i class="ion-home prefix"></i> 
-                   <input data-role="none" name="citta" id="citta" value="" type="text">
+                   <input data-role="none" name="citta" id="citta" value="" type="text" required>
                     <label for="citta">Città residenza</label>
                 </div>
                 <div class="input-field">
                     <i class="ion-android-contact prefix"></i> 
-                   <input data-role="none" name="username" id="username" value="" type="text">
+                   <input data-role="none" name="username" id="username" value="" type="text" required>
                     <label for="username">Utente</label>
                 </div>
                  <div class="input-field" style="margin-bottom:20px;">
                     <i class="ion-android-lock prefix"></i> 
-                      <input data-role="none" name="pass" id="pass" value="" type="password">
+                      <input data-role="none" name="pass" id="pass" value="" type="password" required>
                  <label for="pass">Password</label>
                  </div>
                  <div class="privacy">
@@ -447,7 +447,7 @@
                         <p>Per maggiori informazioni <a href="#privacy_policy">clicca qui</a> </p>
                 </div>
                 <p class="remember animated bouncein delay-6">
-                  <input data-role="none" type="checkbox" name="privacyMv" id="privacyMv" value="html"/> 
+                  <input data-role="none" type="checkbox" name="privacyMv" id="privacyMv" value="html" required> 
                   <label for="privacyMv">Acconsento privacy</label>
                 </p>
                 <div class="box_submit_button">
@@ -530,22 +530,22 @@
           <form id="inviaInfoNotifica">
                <div class="input-field">
                     <i class="ion-person prefix"></i> 
-                   <input data-role="none" name="nomeInfo" id="nomeInfo" value="" type="text">
+                   <input data-role="none" name="nomeInfo" id="nomeInfo" value="" type="text" required>
                     <label for="nomeInfo">Nome</label>
                 </div>
                 <div class="input-field">
                     <i class="ion-person prefix"></i> 
-                   <input data-role="none" name="cognomeInfo" id="cognomeInfo" value="" type="text">
+                   <input data-role="none" name="cognomeInfo" id="cognomeInfo" value="" type="text" required> 
                     <label for="cognomeInfo">Cognome</label>
                 </div>
                 <div class="input-field">
                     <i class="ion-email prefix"></i> 
-                   <input data-role="none" name="emailInfo" id="emailInfo" value="" type="text">
+                   <input data-role="none" name="emailInfo" id="emailInfo" value="" type="text" required>
                     <label for="emailInfo">E-mail</label>
                 </div>
                 <div class="input-field">
                     <i class="ion-edit prefix"></i> 
-                    <textarea class="materialize-textarea" id="richiestaInfo"></textarea> 
+                    <textarea data-role="none" class="materialize-textarea" id="richiestaInfo" name="richiestaInfo" required></textarea> 
                     <label for="richiestaInfo">Scrivici</label>
                 </div>
                 <div>
@@ -554,7 +554,7 @@
                         <p>Per maggiori informazioni clicca qui </p>
                 </div>
                 <p class="remember animated bouncein delay-6">
-               <input data-role="none" type="checkbox" name="privacyInfo" id="privacyInfo" value="html"/> 
+               <input data-role="none" type="checkbox" name="privacyInfo" id="privacyInfo" value="html" required/> 
               <label for="privacyInfo">Acconsento privacy</label>
             </p>
              <div class="box_submit_button">
@@ -641,20 +641,20 @@
              <form id="inviaInfoMv">
             <div>
               <div class="input-field animated fadeinright">
-                  <input data-role="none" name="nomeMv" id="nomeMv" value="" type="text">
+                  <input data-role="none" name="nomeMv" id="nomeMv" value="" type="text" required>
                 <label for="nomeMv">Nome</label>
               </div>
               <div class="input-field animated fadeinright delay-1">
-                   <input data-role="none" name="cognomeMv" id="cognomeMv" value="" type="text">
+                   <input data-role="none" name="cognomeMv" id="cognomeMv" value="" type="text" required>
                 <label for="cognomeMv">Cognome</label>
               </div>
             </div>
             <div class="input-field animated fadeinright delay-2">
-                <input data-role="none" name="emailMv" id="emailMv" value="" type="text">
+                <input data-role="none" name="emailMv" id="emailMv" value="" type="text" required>
               <label for="emailMv">E-mail</label>
             </div>
             <div class="input-field animated fadeinright delay-3">
-              <textarea class="materialize-textarea" id="richiestaMv"></textarea> 
+              <textarea data-role="none" class="materialize-textarea" id="richiestaMv" name="richiestaMv" required></textarea> 
               <label for="richiestaMv">Richiesta</label>
             </div>
             <div class="privacy">
@@ -663,7 +663,7 @@
                         <p>Per maggiori informazioni <a href="#privacy_policy">clicca qui</a> </p>
             </div>
             <p class="remember animated bouncein delay-6">
-               <input data-role="none" type="checkbox" name="privacyMv" id="privacyMv" value="html"/> 
+               <input data-role="none" type="checkbox" name="privacyMv" id="privacyMv" value="html" required/> 
               <label for="privacyMv">Acconsento privacy</label>
             </p>
              <div class="box_submit_button">
@@ -755,7 +755,7 @@
           <form id="recuperoPass">
                 <div class="input-field">
                     <i class="ion-android-contact prefix"></i> 
-                   <input data-role="none" name="emailRecuperoPass" id="emailRecuperoPass" value="" type="text">
+                   <input data-role="none" name="emailRecuperoPass" id="emailRecuperoPass" value="" type="text" required>
                     <label for="usernameLogin">Inserisci il tuo indirizzo e-mail</label>
                 </div>
                  

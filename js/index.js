@@ -138,47 +138,48 @@ $('#registrazioneSincro').validate({
         pass: {
             required: true
         },
-         privacy: {
+         privacyMv: {
             required: true
         }
     },
     messages: {
         nome: {
-            required: "Inserire il nome."
+            required: "Campo obbligatorio"
         },
         cognome: {
-            required: "Inserire il cognome."
+            required: "Campo obbligatorio"
         },
         email: {
-            required: "Inserire l' E-mail.",
-            email:"Prego inserire un E-mail corretta"
+            required: "Campo obbligatorio",
+            email:"Prego inserire un indirizzo e-mail corretto"
         },
          lnascita: {
-            required: "Inserire luogo di nascita"
+            required: "Campo obbligatorio"
         },
          dataNascita: {
-            required: "Inserire la data di nascita"
+            required: "Campo obbligatorio"
         },
          citta: {
-            required: "Inserire residenza"
+            required: "Campo obbligatorio"
         },
          username: {
-            required: "Inserire username"
+            required: "Campo obbligatorio"
         },
          pass: {
-            required: "Inserire password"
+            required: "Campo obbligatorio"
         },
-        privacy: {
-            required: "Acconsenti privacy."
+        privacyMv: {
+            required: "Acconsenti al trattamento della privacy"
         }
     },
     errorPlacement: function (error, element) {
         error.appendTo(element.parent().prev());
     },
     errorElement: "span",
+    wrapper: "p",
     submitHandler: function (form) {
      var privacy;
-      if ($('#privacy').is(":checked"))
+      if ($('#privacyMv').is(":checked"))
       {
          privacy=1
       }else{
@@ -210,16 +211,17 @@ $('#loginSincro').validate({
     },
     messages: {
         usernameLogin: {
-            required: "Inserire username"
+            required: "Campo obbligatorio"
         },
         passLogin: {
-            required: "Inserire password"
+            required: "Campo obbligatorio"
         }
     },
     errorPlacement: function (error, element) {
         error.appendTo(element.parent().prev());
     },
     errorElement: "span",
+    wrapper: "p",
     submitHandler: function (form) {
      var usernameLogin = $("#usernameLogin").val();
       var passLogin = $("#passLogin").val();
@@ -239,14 +241,15 @@ $('#recuperoPass').validate({
     },
     messages: {
         usernameLogin: {
-            required: "Inserire E-mail",
+            required: "Campo obbligatorio",
             email: "Inserire un E-mail valida"
         }
     },
     errorPlacement: function (error, element) {
         error.appendTo(element.parent().prev());
     },
-    
+    errorElement: "span",
+    wrapper: "p",
     submitHandler: function (form) {
      var emailRecuperoPass = $("#emailRecuperoPass").val();
      recuperoPassword(emailRecuperoPass);  
@@ -357,26 +360,27 @@ $('#inviaInfoNotifica').validate({
     },
     messages: {
         nomeInfo: {
-            required: "Inserire il nome."
+            required: "Campo obbligatorio"
         },
         cognomeInfo: {
-            required: "Inserire il cognome."
+            required: "Campo obbligatorio"
         },
         emailInfo: {
-            required: "Inserire l' E-mail.",
-            email:"Prego inserire un E-mail corretta"
+            required: "Campo obbligatorio",
+            email:"Inserire un indirizzo e-mail corretto"
         },
         richiestaInfo: {
-            required: "Inserire la richiesta."
+            required: "Campo obbligatorio"
         },
         privacyInfo: {
-            required: "Acconsenti privacy."
+            required: "Acconsenti il trattamento della privacy"
         }
     },
     errorPlacement: function (error, element) {
         error.appendTo(element.parent().prev());
     },
     errorElement: "span",
+    wrapper: "p",
     submitHandler: function (form) {
      var pInfo
      if ($('#privacyInfo').is(":checked"))
@@ -409,29 +413,36 @@ $('#inviaInfoMv').validate({
             required: true,
             email: true
         },
+        richiestaMv: {
+            required: true
+        },
          privacyMv: {
             required: true
         }
     },
     messages: {
         nomeMv: {
-            required: "Inserire il nome."
+            required: "Campo obbligatorio"
         },
         cognomeMv: {
-            required: "Inserire il cognome."
+            required: "Campo obbligatorio"
         },
         emailMv: {
-            required: "Inserire l' E-mail.",
-            email:"Prego inserire un E-mail corretta"
+            required: "Campo obbligatorio",
+            email:"Inserire un indirizzo e-mail corretto"
+        },
+        richiestaMv: {
+            required: "Campo obbligatorio"
         },
         privacyMv: {
-            required: "Acconsenti privacy."
+            required: "Acconsenti il trattamento della privacy"
         }
     },
     errorPlacement: function (error, element) {
         error.appendTo(element.parent().prev());
     },
     errorElement: "span",
+    wrapper: "p",
     submitHandler: function (form) {
      var pMv
      if ($('#privacyMv').is(":checked"))
