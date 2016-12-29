@@ -55,12 +55,12 @@
             </div>
           </div>
         </li>
-        <li><a href="#" id="page_home" class="no-child"><i class="ion-android-home"></i>Home</a></li>
-        <li><a href="#" id="page_login"   class="no-child"><i class="ion-android-contact"></i>User/Login</a></li>
-        <li><a href="#" id="page_notizie"  class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
+        <li><a href="../index.html#home" id="page_home" class="no-child"><i class="ion-android-home"></i>Home</a></li>
+        <li><a href="../index.html#login" id="page_login"   class="no-child"><i class="ion-android-contact"></i>User/Login</a></li>
+        <li><a href="../index.html#database" id="page_notizie"  class="no-child"><i class="ion-social-rss"></i>Notizie</a></li>
         <li><a href="#" class="no-child"><i class="ion-map"></i>Punti di interesse</a></li>
-        <li><a href="#" id="page_locali" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
-        <li><a href="#" id="page_infoMv" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
+        <li><a href="../index.html#locali" id="page_locali" class="no-child"><i class="ion-social-rss"></i>Locali</a></li>
+        <li><a href="../index.html#infoMvitalia" id="page_infoMv" class="no-child"><i class="ion-information-circled"></i>Info</a></li>
       </ul>
       <!-- End of Sidebars -->
         <!-- Page Content -->
@@ -68,7 +68,7 @@
 
         <!-- Toolbar -->
         <div  class="toolbar primary-color">
-           <span class="title"><a class="font_colore_titolo" id="page_home_titolo" href="#">Magic Beep</a></span>
+           <span class="title"><a class="font_colore_titolo" id="page_home_titolo" href="../index.html#home">Magic Beep</a></span>
             <span class="SiLogin"></span><span><a class='logoutApp' href='#'><i style='font-size:15px !important;padding-left:15px;'  class='ion-log-out'></i></a></span>
           <div class="open-right" id="open-right-sei" data-activates="slide-out-sei">
             <i class="ion-android-menu"></i>
@@ -97,7 +97,7 @@
           <div class="footer-copyright blue darken-1">
             <div class="container">
             2017 Magic Beep
-            <a id="page_privacy_policy" class="grey-text text-lighten-4 right" href="#">Privacy Policy</a>
+            <a id="page_privacy_policy" class="grey-text text-lighten-4 right" href="../index.html#privacy_policy">Privacy Policy</a>
             </div>
           </div>
         </footer>
@@ -281,34 +281,10 @@ GMap.openInfoWindow(marker2, tedina);
 });*/
 
 }
-$(document).on("click", "#page_home", function () {
-  event.preventDefault();
-  window.location.href ="../index.html#home"  
-});
-$(document).on("click", "#page_home_titolo", function () {
-  event.preventDefault();
-  window.location.href ="../index.html#home"  
-});
-$(document).on("click", "#page_login", function () {
-  event.preventDefault();
-  window.location.href ="../index.html#login"  
-});
-$(document).on("click", "#page_notizie", function () {
-  event.preventDefault();
-  window.location.href ="../index.html#database"  
-});
-$(document).on("click", "#page_locali", function () {
-  event.preventDefault();
-  window.location.href ="../index.html#locali"  
-});
-$(document).on("click", "#page_infoMv", function () {
-  event.preventDefault();
-  window.location.href ="../index.html#infoMvitalia"  
-});
-$(document).on("click", "#page_privacy_policy", function () {
-  event.preventDefault();
-  window.location.href ="../index.html#privacy_policy"  
-});
+
+
+
+
 
 // Fine mappa 
 </script> 
