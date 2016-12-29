@@ -568,6 +568,7 @@ function carica_slider ()
  
 
  function openBrowser (url) {
+     alert(url);
     if (!url) {
         return;
     }
