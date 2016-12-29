@@ -568,13 +568,14 @@ function carica_slider ()
  
 
  function openBrowser (url) {
-     alert(url);
+     
     if (!url) {
         return;
     }
 
     // turn my url into a scheme/intent url
     getAvailabilityScheme(url, function (url) {
+        alert(url + '-'+device.platform);
         window.open(url, '_system');
     });
 }
@@ -589,14 +590,19 @@ function getAvailabilityScheme (url, callback) {
     }
 
     // facebook
+    
     if (url.indexOf('facebook.com/') !== -1) {
-        schemeOrPackage = isAndroid ? 'com.facebook.katana' : 'fb://'
+        schemeOrPackage = 'com.facebook.katana';
         schemeUrl = 'fb://profile/' + url.split('facebook.com/')[1];
+        if(device.platform === 'iOS') {
+            schemeOrPackage = 'fb://';
+        }
+        
     }
 
     // twitter
     if (url.indexOf('twitter.com/') !== -1) {
-        schemeOrPackage = isAndroid ? null : 'twitter://'
+        schemeOrPackage = isAndroid ? 'com.twitter.android' : 'twitter://'
         schemeUrl = 'twitter://user?screen_name=' + url.split('twitter.com/')[1];
     }
 
