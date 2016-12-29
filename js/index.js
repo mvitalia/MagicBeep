@@ -300,15 +300,6 @@ $(document).on("click", ".detail", function () {
 });
 
 
-
-
-
-
-$(document).on("click", ".paginaMappa", function () {
-  event.preventDefault();
-  window.location.href ="page/mappa.html"  
-});
-
 $('#cancellaNot').click(function(){
         alert("entra");
       cancellaNotifica ();
