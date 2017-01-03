@@ -2142,6 +2142,8 @@ ul.faq {
     position: absolute;
     top: 2px;
     right: 12px;
+    background: none;
+    border:none
 }
 .notification-success {
     color: #3c763d;

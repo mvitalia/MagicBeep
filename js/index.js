@@ -1,115 +1,78 @@
+function check_login(){
+    var isLogin = localStorage.getItem('login');
+
+    if(isLogin)
+    {
+        $(".SiLogin").html("");
+        var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
+
+        $(".SiLogin").append(li_dati);
+        $(".SiLogin").show();
+        $(".logoutApp").show();
+    }
+}
+
+//home
 $(document).on("pagebeforeshow", "#home", function () {
-     
-     var p = localStorage.getItem('login');
+    check_login();
+});
+
+//pagina login
+$(document).on("pagebeforeshow", "#login", function () {
+    $("#usernameLogin").val("");
+    $("#passwordLogin").val("");
+
+    check_login();
     
-	    if(p=='true')
-     {
-     
-        $(".SiLogin").html("");
-         var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
-      
-         $(".SiLogin").append(li_dati);
-           $(".SiLogin").show();
-         $(".logoutApp").show();
-     }
-     
-    });
+});
 
-    //pagina login
-    $(document).on("pagebeforeshow", "#login", function () {
-        $("#usernameLogin").val("");
-        $("#passwordLogin").val("");
+//pagina notizie
+$(document).on("pagebeforeshow", "#database", function () {
+    check_login();  
+    $("#lista_datiJson").html("");
+    selezionoDati();
+});
 
-        var p = localStorage.getItem('login');
-        if(p=='true')
-        {
-            $(".SiLogin").html("");
-            var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
-            $(".SiLogin").append(li_dati);
-            $(".SiLogin").show();
-            $(".logoutApp").show();
-        }
-    });
+//pagina notifica
+$(document).on("pagebeforeshow", "#notifica", function () {
+    check_login();
+});
 
-     //pagina notizie
-    $(document).on("pagebeforeshow", "#database", function () {
-        var p = localStorage.getItem('login');
-        if(p=='true')
-        {
-        $(".SiLogin").html("");
-            var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
-            $(".SiLogin").append(li_dati);
-            $(".SiLogin").show();
-            $(".logoutApp").show();
-        }
-        $("#lista_datiJson").html("");
-        selezionoDati ();
-    });
+//pagina richiesta informazioni
+$(document).on("pagebeforeshow", "#inviaInfo", function () {
+    $("#nomeInfo").val(""); 
+    $("#cognomeInfo").val(""); 
+    $("#emailInfo").val(""); 
+    $("#richiestaInfo").val("");   
+    $("#privacyInfo").prop('checked', false);  
 
-    //pagina notifica
-    $(document).on("pagebeforeshow", "#notifica", function () {
-        var p = localStorage.getItem('login');
+    check_login();
+});
 
-        if(p=='true')
-        {
-            $(".SiLogin").html("");
-            var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
-            $(".SiLogin").append(li_dati);
-            $(".SiLogin").show();
-            $(".logoutApp").show();
-        }
-
-    });
-
-     $(document).on("pagebeforeshow", "#inviaInfo", function () {
-		 $("#nomeInfo").val(""); 
-     $("#cognomeInfo").val(""); 
-     $("#emailInfo").val(""); 
-     $("#richiestaInfo").val("");   
-     $("#privacyInfo").prop('checked', false);  
-     var p = localStorage.getItem('login');
-      if(p=='true')
-     {
-       $(".SiLogin").html("");  
-         var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
-         $(".SiLogin").append(li_dati);
-          $(".SiLogin").show();
-         $(".logoutApp").show();
-     }
-    });
-
-    $(document).on("pagebeforeshow", "#infoMvitalia", function () {
-		 $("#nomeMv").val(""); 
-     $("#cognomeMv").val(""); 
-     $("#emailMv").val("");  
-     $("#privacyMv").prop('checked', false);  
-   var p = localStorage.getItem('login');
-      if(p=='true')
-     {
-         $(".SiLogin").html("");  
-         var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
-         $(".SiLogin").append(li_dati);
-          $(".SiLogin").show();
-         $(".logoutApp").show();
-     }
-    });
+//pagina richiesta info
+$(document).on("pagebeforeshow", "#infoMvitalia", function () {
+    $("#nomeMv").val(""); 
+    $("#cognomeMv").val(""); 
+    $("#emailMv").val("");  
+    $("#privacyMv").prop('checked', false);  
+    check_login();
+});
 
     
 
-     $(document).on("pageshow", "#home", function () {
-        carica_slider();
-    });
+$(document).on("pageshow", "#home", function () {
+    carica_slider();
+});
 
 
-     $(document).on("pageshow", "#notifica", function () {
-           $(".schedaNotifica").html("");
-     caricaNotifica(); 
-     });
+$(document).on("pageshow", "#notifica", function () {
+    $(".schedaNotifica").html("");
+    caricaNotifica(); 
+});
 
 
 $('#search').keyup(function () {	
 	caricaNotificheFiltrate();
-            
 });	
 
     // Validazione e registrazione utente
@@ -260,33 +223,21 @@ $('#recuperoPass').validate({
 });
 
 
-   $('.logoutApp').click(function(){
-     
-       // localStorage.removeItem("login");
-       localStorage.removeItem('login');
-       localStorage.removeItem('username');
-        $(".SiLogin").hide();
-         $(".logoutApp").hide();
-         
-      });
-  
-  $('#social').click(function(){
-      condividiNotifica();
-  });
+$('.logoutApp').click(function(){
+    localStorage.removeItem('login');
+    localStorage.removeItem('username');
+    $(".SiLogin").hide();
+    $(".logoutApp").hide();
+    
+});
+
+$('#social').click(function(){
+    condividiNotifica();
+});
 
 // popolo la notifica   
-/*function logoutApp ()
-{
-      alert("entra");
-       // localStorage.removeItem("login");
-          localStorage.setItem('login', false);
-          localStorage.removeItem("Id_login");
-         $(".SiLogin").hide();
-}*/
-
  $(document).on("click", ".storage", function () {
      var id = $(this).parents("div").attr("id");
-     alert(id);
      sessionStorage.setItem('ID_not', id);
       cancellaNotifica ();
 });
