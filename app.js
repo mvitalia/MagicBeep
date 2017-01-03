@@ -226,8 +226,8 @@ function startScan()
                        db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
-                                            tx.executeSql("INSERT INTO dispositivi (ID,uuid, major, minor, nome, stato) VALUES (?,?,?,?,?,?)",[name.ID,name.UUID,name.major,name.minor,name.nome,name.stato]);
-                            alert('insert ' + name.UUID);
+                            	tx.executeSql("INSERT INTO dispositivi (ID,uuid, major, minor, nome, stato) VALUES (?,?,?,?,?,?)",[name.ID,name.UUID,name.major,name.minor,name.nome,name.stato]);
+                            
 							            },
                              function () {
                                              alert("Errore"+e.message);
@@ -241,7 +241,7 @@ function startScan()
                                   
                 });
 		  }
-		  selezionaBeacon (); 
+		  //selezionaBeacon (); 
 		
 		// L' oggetto delegate detiene le funzioni di callback di iBeacon plugin 
 		// Dichiarato di seguito.
@@ -507,7 +507,6 @@ function salvaLettura (proximity,dispositivo,notizia)
 		//alert('lung iniziale ' + matrice_notizie.length);
 	    var  trovato = false;
 		if(matrice_len > 0){
-			//alert(ID_dispositivo+ "-"+ ID_notizia);
 			current_id_disp = 0;
 			current_id_not = 0;
             for (var i=0; i < matrice_notizie.length; i++) {
