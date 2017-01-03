@@ -28,6 +28,7 @@ var app = (function()
 	}else{
         matrice_notizie  = JSON.parse(localStorage.getItem("matrice_notizie"));
 	}
+	alert(matrice_notizie.length);
 
 	// Dichiaro regions per trovare beacon in dinamico  
      var regions = [];
@@ -295,7 +296,7 @@ function startScan()
 								ID_dispositivo= dati.rows.item(0).ID_dispositivo;
 								ID_notizia = dati.rows.item(0).ID_notizia;	
 								notiziaEsistente=checkNotizia(ID_dispositivo,ID_notizia);
-								alert(notiziaEsistente);
+								
 								if(!notiziaEsistente)
 								{
 								  navigator.notification.beep(1);
@@ -507,7 +508,6 @@ function salvaLettura (proximity,dispositivo,notizia)
 	{
 		
 		var matrice_len = matrice_notizie.length;
-		//alert('lung iniziale ' + matrice_notizie.length);
 	    var  trovato = false;
 		if(matrice_len > 0){
 			current_id_disp = 0;
@@ -515,7 +515,7 @@ function salvaLettura (proximity,dispositivo,notizia)
             for (var i=0; i < matrice_notizie.length; i++) {
 				current_id_disp = matrice_notizie[i][0];
 				current_id_not = matrice_notizie[i][1];
-				console.log(current_id_disp+"-"+current_id_not+"Passati: "+ID_dispositivo+"-"+ID_notizia);
+				
 				if(current_id_disp== ID_dispositivo && current_id_not==ID_notizia)
 				{
 				
@@ -541,7 +541,6 @@ function salvaLettura (proximity,dispositivo,notizia)
 	}
 
 	function onConfirm(buttonIndex) {
-    //alert('You selected button ');
 	
 	if(buttonIndex==1)
 	{
