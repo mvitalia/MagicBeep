@@ -299,8 +299,7 @@ function startScan()
 								
 								if(!notiziaEsistente)
 								{
-								  navigator.notification.beep(1);
-									navigator.vibrate(3000);
+								  
 									if (inBackground)
 		   							{
 									  
@@ -318,7 +317,8 @@ function startScan()
 																							
 												
 							     	}
-								   
+								   navigator.notification.beep(1);
+									navigator.vibrate(3000);
 									
 									// Creazione data ora, per db sul server 
 									var date;
