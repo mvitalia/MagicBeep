@@ -280,7 +280,7 @@ function startScan()
 			   			function(tx,dati)
 			   			{
 				 			var len = dati.rows.length;
-							 alert(len);
+							 
         					var li_dati="";
        						if(len!=0)
         					{
@@ -295,6 +295,7 @@ function startScan()
 								ID_dispositivo= dati.rows.item(0).ID_dispositivo;
 								ID_notizia = dati.rows.item(0).ID_notizia;	
 								notiziaEsistente=checkNotizia(ID_dispositivo,ID_notizia);
+								alert(notiziaEsistente);
 								if(!notiziaEsistente)
 								{
 								  navigator.notification.beep(1);
