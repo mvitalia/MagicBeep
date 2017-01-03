@@ -213,8 +213,8 @@ function startScan()
 
 		  // Creazione della tabella Beacon  se c'è o non c'è internet 
 		  var connessione = checkInternet();
-		alert(connessione);
-		  if(connessione==true){
+		
+		  if(connessione){
               
 				// Fine della creazione delle tabella db 
 				// Prelevo dati dal server e salvo nel db
@@ -227,7 +227,8 @@ function startScan()
                             // Metodo di chiamata asincrona
                             function(tx) {
                                             tx.executeSql("INSERT INTO dispositivi (ID,uuid, major, minor, nome, stato) VALUES (?,?,?,?,?,?)",[name.ID,name.UUID,name.major,name.minor,name.nome,name.stato]);
-                                          },
+                            alert('insert ' + name.UUID);
+							            },
                              function () {
                                              alert("Errore"+e.message);
                                          },
@@ -333,9 +334,10 @@ function startScan()
 														// Se loggato o se non loggato
 														if(localStorage.getItem('login')=='true')
 														{
-															tx.executeSql("INSERT INTO notifiche (uuid, data_ora, ID_dispositivo, ID_notizia,tipologia,ID_utente) VALUES (?,?,?,?,?,?)",[uuid,date,ID_dispositivo,ID_notizia,"dispositivo",localStorage.getItem('Id_login')]);
+															alert(uuid);
+															tx.executeSql("INSERT INTO notifiche (uuid, data_ora, ID_dispositivo, ID_notizia,tipologia,ID_utente) VALUES (?,?,?,?,?,?)",[uuid,date,ID_dispositivo,ID_notizia,'dispositivo',localStorage.getItem('Id_login')]);
 														}else{
-															tx.executeSql("INSERT INTO notifiche (uuid, data_ora,ID_dispositivo, ID_notizia,tipologia) VALUES (?,?,?,?,?)",[uuid,date,ID_dispositivo,ID_notizia,"dispositivo"]); 
+															tx.executeSql("INSERT INTO notifiche (uuid, data_ora,ID_dispositivo, ID_notizia,tipologia) VALUES (?,?,?,?,?)",[uuid,date,ID_dispositivo,ID_notizia,'dispositivo']); 
 														}
 															
 														},
@@ -351,13 +353,6 @@ function startScan()
 														// $( ".popupNotifica" ).popup( "open");
 														if(!inBackground)
 														{
-															//alert(inBackground);
-														   	/*var div ="<div class='popNotifica "+ID_notizia+"' data-itemid='"+ID_notizia+"' >"+
-															"<h3>Data: "+date+"</h3>"+
-															"<p>Notifica: "+titolo_n+"</p>"+
-															"<button  class='ui-btn ApriNotifica' onclick='apriNotifica("+ID_notizia+")' >Apri</button>"+
-															"<button  class='ui-btn SalvaNotifica' onclick='salvaNotifica("+ID_notizia+")' >Salva</button>"+
-															"</div>";*/	
 															var popNitfiche = "";
 															popNitfiche+="<div id="+ID_notizia+" class='notification notification-info box_notifica '>";
 															popNitfiche+="<button onclick='salvaNotifica("+ID_notizia+")'  class='close-notification no-smoothState'><i  class='ion-android-close'></i></button>";
