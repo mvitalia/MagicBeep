@@ -213,7 +213,7 @@ function startScan()
 
 		  // Creazione della tabella Beacon  se c'è o non c'è internet 
 		  var connessione = checkInternet();
-		
+		alert(connessione);
 		  if(connessione==true){
               
 				// Fine della creazione delle tabella db 
