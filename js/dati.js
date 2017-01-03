@@ -248,11 +248,11 @@ function cancellaNotifica ()
             tx.executeSql("DELETE FROM notifiche WHERE id=?",[idNotifica]);
         },
         function(){
-            alert("Cancellazione non effettua");
+            alert("Non è stato possibile cancellare la notizia. Riprova");
             
         },
         function(){
-            alert("Cancellazione effettua");
+            //alert("Cancellazione effettua");
             
         }
     )
@@ -270,7 +270,7 @@ function cancellaAllNotifiche ()
             tx.executeSql("DELETE FROM notifiche",[]);
         },
         function(){
-            // alert("Cancellazione non effettua");
+            alert("Non è stato possibile cancellare le notizie. Riprova");
             
         },
         function(){
