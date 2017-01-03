@@ -100,7 +100,6 @@ var app = (function()
 							
 							if (name.ID_dispositivo == null || name.ID_dispositivo == ""){
 								if (!checkNotizia("",name.ID)){
-									alert("nn")
 									var date;
 										date = new Date();
 										date = date.getFullYear() + '-' +
