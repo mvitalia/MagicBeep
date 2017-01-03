@@ -106,9 +106,17 @@ var app = (function()
 						
 							
 							// carico in notifiche le notizie extra non collegate ai dispositivi
-							if (name.ID_dispositivo == null || name.ID_dispositivo == "")
-			 					tx.executeSql("INSERT INTO notifiche (uuid, data_ora, ID_dispositivo, ID_notizia,tipologia) VALUES (?,?,?,?,?)",[uuid,date,ID_dispositivo,ID_notizia,"extra"]);
-			
+							if (name.ID_dispositivo == null || name.ID_dispositivo == ""){
+								var date;
+									date = new Date();
+									date = date.getFullYear() + '-' +
+									('00' + (date.getMonth() + 1)).slice(-2) + '-' +
+									('00' + date.getDate()).slice(-2) + ' ' +
+									('00' + date.getHours()).slice(-2) + ':' +
+									('00' + date.getMinutes()).slice(-2) + ':' +
+									('00' + date.getSeconds()).slice(-2);  
+							 	tx.executeSql("INSERT INTO notifiche (uuid, data_ora, ID_dispositivo, ID_notizia,tipologia) VALUES (?,?,?,?,?)",["",date,"",name.ID,"extra"]);
+							}
 
 						},
 						function () {
