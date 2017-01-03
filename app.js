@@ -262,7 +262,7 @@ function startScan()
 				// key, la chiave identifica
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				uuid =  beacon.uuid;
-				alert(uuid);
+				
 				proximity = beacon.proximity;
 				idUUID =uuid.toUpperCase();
 				var ID_dispositivo=0, ID_notizia = 0;
@@ -280,6 +280,7 @@ function startScan()
 			   			function(tx,dati)
 			   			{
 				 			var len = dati.rows.length;
+							 alert(len);
         					var li_dati="";
        						if(len!=0)
         					{
