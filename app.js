@@ -106,7 +106,7 @@ var app = (function()
 						
 							
 							// carico in notifiche le notizie extra non collegate ai dispositivi
-							alert(name.ID_dispositivo);
+							
 							if (name.ID_dispositivo == null || name.ID_dispositivo == ""){
 								var date;
 									date = new Date();
@@ -116,9 +116,9 @@ var app = (function()
 									('00' + date.getHours()).slice(-2) + ':' +
 									('00' + date.getMinutes()).slice(-2) + ':' +
 									('00' + date.getSeconds()).slice(-2);  
-									alert(date);
 							 	tx.executeSql("INSERT INTO notifiche (uuid, data_ora, ID_dispositivo, ID_notizia,tipologia) VALUES (?,?,?,?,?)",["",date,"",name.ID,"extra"]);
-							}
+								 alert(date);
+						}
 
 						},
 						function () {
