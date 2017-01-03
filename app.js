@@ -361,7 +361,7 @@ function startScan()
 												popNitfiche+="<div id="+ID_notizia+" class='notification notification-info box_notifica '>";
 												popNitfiche+="<button onclick='salvaNotifica("+ID_notizia+")'  class='close-notification no-smoothState'><i  class='ion-android-close'></i></button>";
 												popNitfiche+="<div  class='allargaNot' onclick='apriNotifica("+ID_notizia+")' ><p>"+titolo_n+"</p>";
-												popNitfiche+="<span>"+date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear() +"</span></div></div>";
+												popNitfiche+="<span>"+date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear() +"</span></div></div>";
 												
 												$(".container_page").append(popNitfiche);
 									
