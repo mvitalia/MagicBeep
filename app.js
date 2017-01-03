@@ -23,11 +23,11 @@ var app = (function()
     
 	// Inizializzo matrice
 	var matrice_notizie = new Array();
-    if(JSON.parse(localStorage.getItem("matrice_notizie")) == null){
+    /*if(JSON.parse(localStorage.getItem("matrice_notizie")) == null){
 		
 	}else{
         matrice_notizie  = JSON.parse(localStorage.getItem("matrice_notizie"));
-	}
+	}*/
 
 	// Dichiaro regions per trovare beacon in dinamico  
      var regions = [];
@@ -317,7 +317,7 @@ function startScan()
 																							
 												
 							     	}
-								   navigator.notification.beep(1);
+								    navigator.notification.beep(1);
 									navigator.vibrate(3000);
 									
 									// Creazione data ora, per db sul server 
@@ -362,7 +362,7 @@ function startScan()
 												popNitfiche+="<button onclick='salvaNotifica("+ID_notizia+")'  class='close-notification no-smoothState'><i  class='ion-android-close'></i></button>";
 												popNitfiche+="<div  class='allargaNot' onclick='apriNotifica("+ID_notizia+")' ><p>"+titolo_n+"</p>";
 												popNitfiche+="<span>"+date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear() +"</span></div></div>";
-												alert(popNitfiche)
+												
 												$(".container_page").append(popNitfiche);
 									
 											}
