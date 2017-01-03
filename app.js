@@ -28,7 +28,6 @@ var app = (function()
 	}else{
         matrice_notizie  = JSON.parse(localStorage.getItem("matrice_notizie"));
 	}
-	alert(matrice_notizie.length);
 
 	// Dichiaro regions per trovare beacon in dinamico  
      var regions = [];
