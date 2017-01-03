@@ -68,7 +68,7 @@ var app = (function()
 					tx.executeSql("DROP TABLE IF EXISTS notizie ");
 					tx.executeSql("CREATE TABLE IF NOT EXISTS notizie (ID INTEGER PRIMARY KEY,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo)");
 				
-					//tx.executeSql("DROP TABLE IF EXISTS notifiche");// da cancellare
+					//tx.executeSql("DROP TABLE IF EXISTS notifiche");
 					tx.executeSql("CREATE TABLE IF NOT EXISTS notifiche (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, data_ora datetime, ID_dispositivo, ID_notizia, tipologia, ID_utente)");
 				
 					tx.executeSql("DROP TABLE IF EXISTS dispositivi ");
