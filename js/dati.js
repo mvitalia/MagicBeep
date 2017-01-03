@@ -85,7 +85,7 @@ function successoSelect(tx,dati)
             var dataCorretta = partedata[2] + "-" + partedata[1] + "-" + partedata[0] + " " + parteora[0] + ":" + parteora[1];
 
             li_dati+="<div id="+dati.rows.item(i).ID_notifica+" data-itemid="+dati.rows.item(i).ID_notizia+" class='single-news animated fadeinright delay-2'><h4 class='single-news-title'><a class='detail' href='#' >"+dati.rows.item(i).titolo+"</a></h4>";
-            li_dati+="<div class='margin-bottom-5'><span class='single-news-category'>"+dataCorretta+"</span></div><div class='single-news-channel'>"+dati.rows.item(i).descrizione.substring(0,100)+"...</div>";
+            li_dati+="<div><span class='single-news-category'>"+dataCorretta+"</span></div><div class='single-news-channel'>"+dati.rows.item(i).descrizione.substring(0,80)+"...</div>";
             li_dati+="<div class='storage btn_cancella_notifica'><i id='cancellaNot' class='ion-android-close'></i></div><div class='clr'></div></div>";
         }
         $("#cancellaTutteNotifiche").show();
