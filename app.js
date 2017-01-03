@@ -362,7 +362,7 @@ function startScan()
 												popNitfiche+="<button onclick='salvaNotifica("+ID_notizia+")'  class='close-notification no-smoothState'><i  class='ion-android-close'></i></button>";
 												popNitfiche+="<div  class='allargaNot' onclick='apriNotifica("+ID_notizia+")' ><p>"+titolo_n+"</p>";
 												popNitfiche+="<span>"+date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear() +"</span></div></div>";
-												
+												alert(popNitfiche)
 												$(".container_page").append(popNitfiche);
 									
 											}
