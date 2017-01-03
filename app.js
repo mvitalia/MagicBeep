@@ -104,7 +104,7 @@ var app = (function()
 						function(tx) {
 							tx.executeSql("INSERT INTO notizie (ID,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",[name.ID,name.data,name.titolo,name.descrizione,name.immagine,name.link,name.allegato,name.user,name.stato,name.data_creazione,name.attivo_da,name.attivo_a,name.ultima_modifica,name.ID_dispositivo]);
 						
-							alert(name.ID_dispositivo);
+							
 							// carico in notifiche le notizie extra non collegate ai dispositivi
 							if (name.ID_dispositivo == null || name.ID_dispositivo == "")
 			 					tx.executeSql("INSERT INTO notifiche (uuid, data_ora, ID_dispositivo, ID_notizia,tipologia) VALUES (?,?,?,?,?)",[uuid,date,ID_dispositivo,ID_notizia,"extra"]);
@@ -234,7 +234,7 @@ function startScan()
                                              alert("Errore"+e.message);
                                          },
                              function(){
-                                           // alert("Inserimento dispositivi");
+                                           alert("Inserimento dispositivi");
                                          }
                     )
                     });
@@ -272,7 +272,7 @@ function startScan()
 				// Parte per rilevare o non rilevare il Beacon, ovvero se è già stato rilevato ed ha già mostrato la notizia
 				// Select tra dispositivi e notizie
 				
-				//alert("id disp:" + uuid + " matrice:" + matrice_notizie[0]);
+				alert("id disp:" + uuid + " matrice:" + matrice_notizie[0]);
 				db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Magicbeep", 200000);
 				db.transaction(
 					function(tx)
