@@ -2138,6 +2138,7 @@ ul.faq {
 .notification span {
     font-size: 12px;
 }
+.single-news {position: relative}
 .close-notification {
     position: absolute;
     top: 2px;
