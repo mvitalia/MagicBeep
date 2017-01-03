@@ -77,10 +77,11 @@ var app = (function()
 					tx.executeSql("DROP TABLE IF EXISTS notizie ");
 					tx.executeSql("CREATE TABLE IF NOT EXISTS notizie (ID INTEGER PRIMARY KEY,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo)");
 				
-					tx.executeSql("DROP TABLE IF EXISTS letture");// da cancellare
 					tx.executeSql("DROP TABLE IF EXISTS notifiche");// da cancellare
-					tx.executeSql("CREATE TABLE IF NOT EXISTS letture (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity, data_ora_lettura, nome_beacon)");
 					tx.executeSql("CREATE TABLE IF NOT EXISTS notifiche (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, data_ora datetime, ID_dispositivo, ID_notizia, tipolgia, ID_utente)");
+				
+					tx.executeSql("DROP TABLE IF EXISTS dispositivi ");
+					tx.executeSql("CREATE TABLE IF NOT EXISTS dispositivi (ID INTEGER PRIMARY KEY ,uuid, major, minor, nome, stato)");
 				},
 				function () {
 					alert("Errore"+e.message);
@@ -103,6 +104,7 @@ var app = (function()
 						function(tx) {
 							tx.executeSql("INSERT INTO notizie (ID,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",[name.ID,name.data,name.titolo,name.descrizione,name.immagine,name.link,name.allegato,name.user,name.stato,name.data_creazione,name.attivo_da,name.attivo_a,name.ultima_modifica,name.ID_dispositivo]);
 						
+							alert(name.ID_dispositivo);
 							// carico in notifiche le notizie extra non collegate ai dispositivi
 							if (name.ID_dispositivo == null || name.ID_dispositivo == "")
 			 					tx.executeSql("INSERT INTO notifiche (uuid, data_ora, ID_dispositivo, ID_notizia,tipologia) VALUES (?,?,?,?,?)",[uuid,date,ID_dispositivo,ID_notizia,"extra"]);
@@ -140,8 +142,8 @@ var app = (function()
 
 		window.locationManager = cordova.plugins.locationManager;
 	    cordova.plugins.notification.local.registerPermission(function (granted) {
-											// console.log('Permission has been granted: ' + granted);
-										});		
+			// console.log('Permission has been granted: ' + granted);
+		});		
 		// Funzione che  inizia la ricerca dei beacon
 		startScan();
 		// Display refresh timer.
@@ -152,8 +154,6 @@ var app = (function()
 // Funzioni per il controllo del bluetooth all' avvio della applicazione
 app.startLeScan = function()
 {
-	console.log('startScan');
-
 	app.stopLeScan();
 	app.isScanning = true;
 	app.lastScanEvent = new Date();
@@ -217,24 +217,10 @@ function startScan()
 		  var connessione = checkInternet();
 		
 		  if(connessione==true){
-              // Creazione delle tabelle del db 
-         		db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Magicbeep", 200000);
-         		db.transaction(
-                            // Metodo di chiamata asincrona
-                            function(tx) {
-								               tx.executeSql("DROP TABLE IF EXISTS dispositivi ");
-                                               tx.executeSql("CREATE TABLE IF NOT EXISTS dispositivi (ID INTEGER PRIMARY KEY ,uuid, major, minor, nome, stato)");
-                                          },
-                             function () {
-                                             alert("Errore"+e.message);
-                                         },
-                             function(){
-                                          //  alert("Creazione tabella dispositivi");
-                                        }
-         						)
-		 // Fine della creazione delle tabella db 
-		 // Prelevo dati dal server e salvo nel db
-		  $.getJSON("http://magicbeep.mvclienti.com/webservices/sync_dispositivi.aspx", function (dati) {
+              
+				// Fine della creazione delle tabella db 
+				// Prelevo dati dal server e salvo nel db
+				$.getJSON("http://magicbeep.mvclienti.com/webservices/sync_dispositivi.aspx", function (dati) {
                     var li_dati = "";
                     $.each(dati, function (i, name) {
                         // Inserisco dati nel db sqllite dell' App
@@ -392,7 +378,6 @@ function startScan()
 								}
 
                                
-								//salvaLettura(beacon.proximity,ID_dispositivo,ID_notizia);
 								salvaLettura(proximity,ID_dispositivo,ID_notizia);
         			       }
 			   		    },erroreSelezione); 
@@ -480,17 +465,16 @@ function startScan()
 
 function salvaLettura (proximity,dispositivo,notizia)
 {
+	alert("salva lettura");
       var datiInviare,urlCorretto;
 	  var online = window.navigator.onLine;
 	  if(online==true)
 	  {
 		if(localStorage.getItem('Id_login')!=null)
 		{
-			//alert("ok");
 			 datiInviare = '{proximity:"'+proximity+'",Id_dispositivo:"'+dispositivo+'",Id_notizia:"'+notizia+'",Id_utente:"'+localStorage.getItem('Id_login')+'"}';
 			urlCorretto = 'http://magicbeep.mvclienti.com/webservices/CS_aggiungiLettura.aspx/letturaUtente';
 		}else{
-			//alert("Nullo");
 		    datiInviare = '{proximity:"'+proximity+'",Id_dispositivo:"'+dispositivo+'",Id_notizia:"'+notizia+'"}';
 			urlCorretto = 'http://magicbeep.mvclienti.com/webservices/CS_aggiungiLettura.aspx/lettura';
 		}
