@@ -116,8 +116,8 @@ var app = (function()
 									('00' + date.getHours()).slice(-2) + ':' +
 									('00' + date.getMinutes()).slice(-2) + ':' +
 									('00' + date.getSeconds()).slice(-2);  
-							 	tx.executeSql("INSERT INTO notifiche (uuid, data_ora, ID_dispositivo, ID_notizia,tipologia) VALUES (?,?,?,?,?)",["",date,"",name.ID,"extra"]);
-								 alert(date);
+							 	tx.executeSql("INSERT INTO notifiche (data_ora, ID_notizia,tipologia) VALUES (?,?,?)",[date,name.ID,"extra"]);
+								 
 						}
 
 						},
@@ -125,7 +125,7 @@ var app = (function()
 							alert("Errore"+e.message);
 						},
 						function(){
-							// alert("Inserimento effettuato tabelle notizie");
+							 alert("Inserimento effettuato tabelle notizie");
 						}
 					)
 				});		
