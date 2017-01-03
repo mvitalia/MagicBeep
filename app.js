@@ -329,43 +329,43 @@ function startScan()
 									// Inserisco notizie nella tabella notifche per Beacon Azzurro 
 									db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Magicbeep", 200000);
 									db.transaction(
-											// Metodo di chiamata asincrona
-											function(tx) {
-														// Se loggato o se non loggato
-														if(localStorage.getItem('login')=='true')
-														{
-															alert(uuid);
-															tx.executeSql("INSERT INTO notifiche (uuid, data_ora, ID_dispositivo, ID_notizia,tipologia,ID_utente) VALUES (?,?,?,?,?,?)",[uuid,date,ID_dispositivo,ID_notizia,'dispositivo',localStorage.getItem('Id_login')]);
-														}else{
-															tx.executeSql("INSERT INTO notifiche (uuid, data_ora,ID_dispositivo, ID_notizia,tipologia) VALUES (?,?,?,?,?)",[uuid,date,ID_dispositivo,ID_notizia,'dispositivo']); 
-														}
-															
-														},
-											function()  {
-															alert("Inserimento non  effettuato"+e.message);
-														},
-											function()  {
-														// alert(results.insertId);
-														//  localStorage.setItem('Id_notifica', ID_notizia);
-														// $.mobile.navigate("#Notifica"); 
-														// visualizza(ID_notizia);
-														//  navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
-														// $( ".popupNotifica" ).popup( "open");
-														if(!inBackground)
-														{
-															var popNitfiche = "";
-															popNitfiche+="<div id="+ID_notizia+" class='notification notification-info box_notifica '>";
-															popNitfiche+="<button onclick='salvaNotifica("+ID_notizia+")'  class='close-notification no-smoothState'><i  class='ion-android-close'></i></button>";
-															popNitfiche+="<div  class='allargaNot' onclick='apriNotifica("+ID_notizia+")' ><p>"+titolo_n+"</p>";
-															popNitfiche+="<span>"+date+"</span></div></div>";
-															alert(popNitfiche);
-															$(".container_page").append(popNitfiche);
+										// Metodo di chiamata asincrona
+										function(tx) {
+											// Se loggato o se non loggato
+											if(localStorage.getItem('login')=='true')
+											{
+												tx.executeSql("INSERT INTO notifiche (uuid, data_ora, ID_dispositivo, ID_notizia,tipologia,ID_utente) VALUES (?,?,?,?,?,?)",[uuid,date,ID_dispositivo,ID_notizia,'dispositivo',localStorage.getItem('Id_login')]);
+											}else{
+												tx.executeSql("INSERT INTO notifiche (uuid, data_ora,ID_dispositivo, ID_notizia,tipologia) VALUES (?,?,?,?,?)",[uuid,date,ID_dispositivo,ID_notizia,'dispositivo']); 
+											}
 												
-														}
-												
-														/* "<button  class='ui-btn' id='ApriNotifica' onclick='apri_notifica(this," + ID_notizia + ")'>Apri</button>"+
-														"<button  class='ui-btn' id='SalvaNotifica' onclick='salva_notifica(this," + ID_notizia + ")'>Salva</button>"+*/
-														}
+											},
+										function()  {
+												alert("Inserimento non  effettuato"+e.message);
+											},
+										function()  {
+											// alert(results.insertId);
+											//  localStorage.setItem('Id_notifica', ID_notizia);
+											// $.mobile.navigate("#Notifica"); 
+											// visualizza(ID_notizia);
+											//  navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
+											// $( ".popupNotifica" ).popup( "open");
+											alert(inBackground);
+											if(!inBackground)
+											{
+												var popNitfiche = "";
+												popNitfiche+="<div id="+ID_notizia+" class='notification notification-info box_notifica '>";
+												popNitfiche+="<button onclick='salvaNotifica("+ID_notizia+")'  class='close-notification no-smoothState'><i  class='ion-android-close'></i></button>";
+												popNitfiche+="<div  class='allargaNot' onclick='apriNotifica("+ID_notizia+")' ><p>"+titolo_n+"</p>";
+												popNitfiche+="<span>"+date+"</span></div></div>";
+												alert(popNitfiche);
+												$(".container_page").append(popNitfiche);
+									
+											}
+									
+											/* "<button  class='ui-btn' id='ApriNotifica' onclick='apri_notifica(this," + ID_notizia + ")'>Apri</button>"+
+											"<button  class='ui-btn' id='SalvaNotifica' onclick='salva_notifica(this," + ID_notizia + ")'>Salva</button>"+*/
+											}
 									)
 								}
 
