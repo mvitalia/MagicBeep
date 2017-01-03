@@ -241,7 +241,7 @@ function startScan()
                      selezionaBeacon ();             
                 });
 		  }
-		  alert("ciao");
+		  
 		
 		// L' oggetto delegate detiene le funzioni di callback di iBeacon plugin 
 		// Dichiarato di seguito.
@@ -262,6 +262,7 @@ function startScan()
 				// key, la chiave identifica
 				// Queto if permette di idetificare il Beacon a seconda della distanza
 				uuid =  beacon.uuid;
+				alert(uuid);
 				proximity = beacon.proximity;
 				idUUID =uuid.toUpperCase();
 				var ID_dispositivo=0, ID_notizia = 0;
@@ -295,7 +296,8 @@ function startScan()
 								notiziaEsistente=checkNotizia(ID_dispositivo,ID_notizia);
 								if(!notiziaEsistente)
 								{
-								  
+								  navigator.notification.beep(1);
+									navigator.vibrate(3000);
 									if (inBackground)
 		   							{
 									  
@@ -313,9 +315,8 @@ function startScan()
 																							
 												
 							     	}
-								   //ok
-									navigator.notification.beep(1);
-									navigator.vibrate(3000);
+								   
+									
 									// Creazione data ora, per db sul server 
 									var date;
 									date = new Date();
@@ -350,7 +351,7 @@ function startScan()
 											// visualizza(ID_notizia);
 											//  navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
 											// $( ".popupNotifica" ).popup( "open");
-											alert(inBackground);
+											
 											if(!inBackground)
 											{
 												var popNitfiche = "";
