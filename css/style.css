@@ -1753,7 +1753,7 @@ li.your-comment {
 /* searchbar */
 
 nav .input-field label i {
-    color: rgba(0, 0, 0, 0.3);
+    color: rgba(0, 0, 0, 0.3) !important;
 }
 /* accordion popout */
 
