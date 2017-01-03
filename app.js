@@ -234,7 +234,7 @@ function startScan()
                                              alert("Errore"+e.message);
                                          },
                              function(){
-                                           alert("Inserimento dispositivi");
+                                           //alert("Inserimento dispositivi");
                                          }
                     )
                     });
@@ -272,7 +272,6 @@ function startScan()
 				// Parte per rilevare o non rilevare il Beacon, ovvero se è già stato rilevato ed ha già mostrato la notizia
 				// Select tra dispositivi e notizie
 				
-				alert("id disp:" + uuid + " matrice:" + matrice_notizie[0]);
 				db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Magicbeep", 200000);
 				db.transaction(
 					function(tx)
@@ -308,7 +307,6 @@ function startScan()
 											text: 'Notifica '+titolo_n+', clicca qui per aprire.'
 									    });
 										cordova.plugins.notification.local.on("click", function (notification) {
-											//alert(notification.id);
 											 localStorage.removeItem("Id_notifica");
 											 localStorage.setItem('Id_notifica', notification.id);
 											 $( ":mobile-pagecontainer" ).pagecontainer( "change", "#notifica", {    transition: "flip", reload:false } );
