@@ -125,7 +125,7 @@ var app = (function()
 							alert("Errore"+e.message);
 						},
 						function(){
-							 alert("Inserimento effettuato tabelle notizie");
+							 //alert("Inserimento effettuato tabelle notizie");
 						}
 					)
 				});		
@@ -223,7 +223,7 @@ function startScan()
 {
 		  // Inizio scansione dei vari beacon
 
-		  // Creazione della tabella Beacon e notifiche se c'è o non c'è internet 
+		  // Creazione della tabella Beacon  se c'è o non c'è internet 
 		  var connessione = checkInternet();
 		
 		  if(connessione==true){
@@ -249,11 +249,10 @@ function startScan()
                     )
                     });
 					  // Funzione per la selezione dei beacon da ricercare dal db dell' app
-                     selezionaBeacon ();              
+                                  
                 });
-		  }else{
-			  //Seleziono beacon e notifiche da db interno app
 		  }
+		  selezionaBeacon (); 
 		
 		// L' oggetto delegate detiene le funzioni di callback di iBeacon plugin 
 		// Dichiarato di seguito.
@@ -375,6 +374,7 @@ function startScan()
 															popNitfiche+="<button onclick='salvaNotifica("+ID_notizia+")'  class='close-notification no-smoothState'><i  class='ion-android-close'></i></button>";
 															popNitfiche+="<div  class='allargaNot' onclick='apriNotifica("+ID_notizia+")' ><p>"+titolo_n+"</p>";
 															popNitfiche+="<span>"+date+"</span></div></div>";
+															alert(popNitfiche);
 															$(".container_page").append(popNitfiche);
 												
 														}
