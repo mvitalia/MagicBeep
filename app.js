@@ -463,7 +463,6 @@ function startScan()
 
 function salvaLettura (proximity,dispositivo,notizia)
 {
-	alert("salva lettura");
       var datiInviare,urlCorretto;
 	  var online = window.navigator.onLine;
 	  if(online==true)
