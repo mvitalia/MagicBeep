@@ -76,6 +76,11 @@ var app = (function()
 				function(tx) {
 					tx.executeSql("DROP TABLE IF EXISTS notizie ");
 					tx.executeSql("CREATE TABLE IF NOT EXISTS notizie (ID INTEGER PRIMARY KEY,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo)");
+				
+					tx.executeSql("DROP TABLE IF EXISTS letture");// da cancellare
+					tx.executeSql("DROP TABLE IF EXISTS notifiche");// da cancellare
+					tx.executeSql("CREATE TABLE IF NOT EXISTS letture (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity, data_ora_lettura, nome_beacon)");
+					tx.executeSql("CREATE TABLE IF NOT EXISTS notifiche (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, data_ora datetime, ID_dispositivo, ID_notizia, tipolgia, ID_utente)");
 				},
 				function () {
 					alert("Errore"+e.message);
@@ -84,6 +89,7 @@ var app = (function()
 					//  alert("Creazione tabella notizie");
 				}
 			)
+			
 			// Fine della creazione delle tabella db 
 			// Prelevo dati dal server e salvo nel db
 		  	$.getJSON("http://magicbeep.mvclienti.com/webservices/sync_notizie.aspx", function (dati) {
@@ -122,24 +128,7 @@ var app = (function()
 			  localStorage.setItem('login', false);
 		}
 
-		// Creazione delle tabelle letture e notifiche del db interno alla app.. L' unica che sarà visualizzata all' utente è la tabella notifiche
-         db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Magicbeep", 200000);
-         db.transaction(
-			// Metodo di chiamata asincrona
-			function(tx) {
-				
-				tx.executeSql("DROP TABLE IF EXISTS letture");// da cancellare
-				tx.executeSql("DROP TABLE IF EXISTS notifiche");// da cancellare
-				tx.executeSql("CREATE TABLE IF NOT EXISTS letture (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity, data_ora_lettura, nome_beacon)");
-				tx.executeSql("CREATE TABLE IF NOT EXISTS notifiche (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, data_ora datetime, ID_dispositivo, ID_notizia, tipolgia, ID_utente)");
-			},
-			function () {
-				alert("Errore"+e.message);
-			},
-			function(){
-			// alert("Creazione tabella notifiche e letture");
-			}
-         )
+		
 		 // Fine della creazione delle tabella db 
 
 		 
