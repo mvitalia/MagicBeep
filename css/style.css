@@ -1846,7 +1846,8 @@ ul.faq {
     font-size: 20px;
     margin-top: 0px;
     line-height: 1.3;
-    padding-bottom: 5px
+    padding-bottom: 5px;
+    margin-bottom:0
 }
 .single-news-title a{
     font-weight: normal;
@@ -1855,10 +1856,10 @@ ul.faq {
     font-size: 12px;
 }
 .single-news-category {
-  
+    display:block;
     font-size: 12px;
     border-bottom: 1px solid #9e9e9e;
-    padding-bottom:5px
+    margin-bottom:5px
 }
 .news .comments.collection {
     margin: 0;
