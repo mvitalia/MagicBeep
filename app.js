@@ -65,52 +65,54 @@ var app = (function()
 
 	function onDeviceReady()
 	{
-       // alert("ok");
 		// Parte l' onDeviceReady
 		//Popolo la tebella notizie direttamente scaricate dal server se c'è la connessione
-		  var conn = checkInternet();
-		//  alert(conn);
-		  if(conn==true){
-              // Creazione delle tabelle del db 
-         		db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-         		db.transaction(
-                            // Metodo di chiamata asincrona
-                            function(tx) {
-								               tx.executeSql("DROP TABLE IF EXISTS notizie ");
-                                               tx.executeSql("CREATE TABLE IF NOT EXISTS notizie (ID INTEGER PRIMARY KEY,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo)");
-                                          },
-                             function () {
-                                             alert("Errore"+e.message);
-                                         },
-                             function(){
-                                          //  alert("Creazione tabella notizie");
-                                        }
-         						)
-		 // Fine della creazione delle tabella db 
-		 // Prelevo dati dal server e salvo nel db
-		  $.getJSON("http://magicbeep.mvclienti.com/webservices/sync_notizie.aspx", function (dati) {
-                    var li_dati = "";
-                    $.each(dati, function (i, name) {
-                        // Inserisco dati nel db sqllite dell' App
-	
-                       db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
-                       db.transaction(
-                            // Metodo di chiamata asincrona
-                            function(tx) {
-                                            tx.executeSql("INSERT INTO notizie (ID,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",[name.ID,name.data,name.titolo,name.descrizione,name.immagine,name.link,name.allegato,name.user,name.stato,name.data_creazione,name.attivo_da,name.attivo_a,name.ultima_modifica,name.ID_dispositivo]);
-                                          },
-                             function () {
-                                             alert("Errore"+e.message);
-                                         },
-                             function(){
-                                           // alert("Inserimento effettuato tabelle notizie");
-                                         }
-                    )
-                    });
-					 
-                                
-                });
-		  }else{
+		var conn = checkInternet();
+		if(conn==true){
+			// Creazione delle tabelle del db 
+			db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Magicbeep", 200000);
+			db.transaction(
+				// Metodo di chiamata asincrona
+				function(tx) {
+					tx.executeSql("DROP TABLE IF EXISTS notizie ");
+					tx.executeSql("CREATE TABLE IF NOT EXISTS notizie (ID INTEGER PRIMARY KEY,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo)");
+				},
+				function () {
+					alert("Errore"+e.message);
+				},
+				function(){
+					//  alert("Creazione tabella notizie");
+				}
+			)
+			// Fine della creazione delle tabella db 
+			// Prelevo dati dal server e salvo nel db
+		  	$.getJSON("http://magicbeep.mvclienti.com/webservices/sync_notizie.aspx", function (dati) {
+				var li_dati = "";
+				$.each(dati, function (i, name) {
+					// Inserisco dati nel db sqllite dell' App
+
+					db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Magicbeep", 200000);
+					db.transaction(
+						// Metodo di chiamata asincrona
+						function(tx) {
+							tx.executeSql("INSERT INTO notizie (ID,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",[name.ID,name.data,name.titolo,name.descrizione,name.immagine,name.link,name.allegato,name.user,name.stato,name.data_creazione,name.attivo_da,name.attivo_a,name.ultima_modifica,name.ID_dispositivo]);
+						
+							// carico in notifiche le notizie extra non collegate ai dispositivi
+							if (name.ID_dispositivo == null || name.ID_dispositivo == "")
+			 					tx.executeSql("INSERT INTO notifiche (uuid, data_ora, ID_dispositivo, ID_notizia,tipologia) VALUES (?,?,?,?,?)",[uuid,date,ID_dispositivo,ID_notizia,"extra"]);
+			
+
+						},
+						function () {
+							alert("Errore"+e.message);
+						},
+						function(){
+							// alert("Inserimento effettuato tabelle notizie");
+						}
+					)
+				});		
+			});
+		  } else{
 			  //Seleziono notizie da db interno
 		  }
 
@@ -121,24 +123,26 @@ var app = (function()
 		}
 
 		// Creazione delle tabelle letture e notifiche del db interno alla app.. L' unica che sarà visualizzata all' utente è la tabella notifiche
-         db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+         db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Magicbeep", 200000);
          db.transaction(
-                            // Metodo di chiamata asincrona
-                            function(tx) {
-								             //  tx.executeSql("DROP TABLE IF EXISTS letture");
-								             //  tx.executeSql("DROP TABLE IF EXISTS notifiche");
-                                               tx.executeSql("CREATE TABLE IF NOT EXISTS letture (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity, data_ora_lettura, nome_beacon)");
-									           tx.executeSql("CREATE TABLE IF NOT EXISTS notifiche (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, data_ora datetime, ID_dispositivo, ID_notizia, ID_utente)");
-                                          },
-                             function () {
-                                             alert("Errore"+e.message);
-                                         },
-                             function(){
-                                           // alert("Creazione tabella notifiche e letture");
-                                        }
+			// Metodo di chiamata asincrona
+			function(tx) {
+				
+				tx.executeSql("DROP TABLE IF EXISTS letture");// da cancellare
+				tx.executeSql("DROP TABLE IF EXISTS notifiche");// da cancellare
+				tx.executeSql("CREATE TABLE IF NOT EXISTS letture (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, major, minor, data_ora, proximity, data_ora_lettura, nome_beacon)");
+				tx.executeSql("CREATE TABLE IF NOT EXISTS notifiche (id INTEGER PRIMARY KEY AUTOINCREMENT,uuid, data_ora datetime, ID_dispositivo, ID_notizia, tipolgia, ID_utente)");
+			},
+			function () {
+				alert("Errore"+e.message);
+			},
+			function(){
+			// alert("Creazione tabella notifiche e letture");
+			}
          )
 		 // Fine della creazione delle tabella db 
 
+		 
 		 // Controllo se bluetooth è accesso
 	     ble = evothings.ble;
 		 app.startLeScan();
@@ -222,10 +226,10 @@ function startScan()
 
 		  // Creazione della tabella Beacon e notifiche se c'è o non c'è internet 
 		  var connessione = checkInternet();
-		 // alert(connessione);
+		
 		  if(connessione==true){
               // Creazione delle tabelle del db 
-         		db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+         		db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Magicbeep", 200000);
          		db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
@@ -245,7 +249,7 @@ function startScan()
                     var li_dati = "";
                     $.each(dati, function (i, name) {
                         // Inserisco dati nel db sqllite dell' App
-                       db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+                       db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Magicbeep", 200000);
                        db.transaction(
                             // Metodo di chiamata asincrona
                             function(tx) {
@@ -294,7 +298,7 @@ function startScan()
 				// Select tra dispositivi e notizie
 				
 				//alert("id disp:" + uuid + " matrice:" + matrice_notizie[0]);
-				db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+				db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Magicbeep", 200000);
 				db.transaction(
 					function(tx)
 					{
@@ -351,16 +355,16 @@ function startScan()
 									('00' + date.getSeconds()).slice(-2);  
 									// Fine creazione data_ora
 									// Inserisco notizie nella tabella notifche per Beacon Azzurro 
-									db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+									db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Magicbeep", 200000);
 									db.transaction(
 											// Metodo di chiamata asincrona
 											function(tx) {
 														// Se loggato o se non loggato
 														if(localStorage.getItem('login')=='true')
 														{
-															tx.executeSql("INSERT INTO notifiche (uuid, data_ora, ID_dispositivo, ID_notizia,ID_utente) VALUES (?,?,?,?,?)",[uuid,date,ID_dispositivo,ID_notizia,localStorage.getItem('Id_login')]);
+															tx.executeSql("INSERT INTO notifiche (uuid, data_ora, ID_dispositivo, ID_notizia,tipologia,ID_utente) VALUES (?,?,?,?,?,?)",[uuid,date,ID_dispositivo,ID_notizia,"dispositivo",localStorage.getItem('Id_login')]);
 														}else{
-															tx.executeSql("INSERT INTO notifiche (uuid, data_ora,ID_dispositivo, ID_notizia) VALUES (?,?,?,?)",[uuid,date,ID_dispositivo,ID_notizia]); 
+															tx.executeSql("INSERT INTO notifiche (uuid, data_ora,ID_dispositivo, ID_notizia,tipologia) VALUES (?,?,?,?,?)",[uuid,date,ID_dispositivo,ID_notizia,"dispositivo"]); 
 														}
 															
 														},
@@ -588,7 +592,7 @@ function salvaLettura (proximity,dispositivo,notizia)
  function selezionaBeacon ()
    {
 	     
-	     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+	     db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Magicbeep", 200000);
          db.transaction(selezione,successoSelezione);     
    }
 
@@ -643,7 +647,7 @@ function salvaLettura (proximity,dispositivo,notizia)
  function selezionaDispositiviNotizie (idUUID)
    {
 	  
-	    db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Database prova", 200000);
+	    db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Magicbeep", 200000);
 		db.transaction(
 			function(tx)
 			{

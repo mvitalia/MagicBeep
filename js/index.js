@@ -15,48 +15,50 @@ $(document).on("pagebeforeshow", "#home", function () {
      
     });
 
-     $(document).on("pagebeforeshow", "#login", function () {
-     $("#usernameLogin").val("");
-     $("#passwordLogin").val("");
-     
-      var p = localStorage.getItem('login');
-	    if(p=='true')
-     {
-       $(".SiLogin").html("");
-         var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
-         $(".SiLogin").append(li_dati);
-          $(".SiLogin").show();
-         $(".logoutApp").show();
-     }
-     });
+    //pagina login
+    $(document).on("pagebeforeshow", "#login", function () {
+        $("#usernameLogin").val("");
+        $("#passwordLogin").val("");
 
-      $(document).on("pagebeforeshow", "#database", function () {
-        
-     var p = localStorage.getItem('login');
-	    if(p=='true')
-     {
-       $(".SiLogin").html("");
-         var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
-         $(".SiLogin").append(li_dati);
-          $(".SiLogin").show();
-         $(".logoutApp").show();
-     }
-       $("#lista_datiJson").html("");
-         selezionoDati ();
+        var p = localStorage.getItem('login');
+        if(p=='true')
+        {
+            $(".SiLogin").html("");
+            var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
+            $(".SiLogin").append(li_dati);
+            $(".SiLogin").show();
+            $(".logoutApp").show();
+        }
     });
 
-      $(document).on("pagebeforeshow", "#notifica", function () {
-     var p = localStorage.getItem('login');
-      
-	    if(p=='true')
-     {
-      $(".SiLogin").html("");
-         var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
-         $(".SiLogin").append(li_dati);
-          $(".SiLogin").show();
-         $(".logoutApp").show();
-     }
-      
+     //pagina notizie
+    $(document).on("pagebeforeshow", "#database", function () {
+        var p = localStorage.getItem('login');
+        if(p=='true')
+        {
+        $(".SiLogin").html("");
+            var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
+            $(".SiLogin").append(li_dati);
+            $(".SiLogin").show();
+            $(".logoutApp").show();
+        }
+        $("#lista_datiJson").html("");
+        selezionoDati ();
+    });
+
+    //pagina notifica
+    $(document).on("pagebeforeshow", "#notifica", function () {
+        var p = localStorage.getItem('login');
+
+        if(p=='true')
+        {
+            $(".SiLogin").html("");
+            var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";
+            $(".SiLogin").append(li_dati);
+            $(".SiLogin").show();
+            $(".logoutApp").show();
+        }
+
     });
 
      $(document).on("pagebeforeshow", "#inviaInfo", function () {
