@@ -1,7 +1,7 @@
 function check_login(){
     var isLogin = localStorage.getItem('login');
 
-    if(isLogin)
+    if(isLogin && localStorage.getItem('username') != null)
     {
         $(".SiLogin").html("");
         var li_dati="<span style='font-size:11px !important; color:#fff; padding-left:10px;'>"+localStorage.getItem('username')+"</span>";

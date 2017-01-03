@@ -306,8 +306,8 @@ function startScan()
 						               cordova.plugins.notification.local.schedule(
 									   {
 											id: ID_notizia,
-											title: 'Beacon trovato',
-											text: 'Notifica '+titolo_n+', clicca qui per aprire.'
+											title: 'Nuova notizia',
+											text: 'MagicBeep: '+titolo_n+', clicca qui per aprire.'
 									    });
 										cordova.plugins.notification.local.on("click", function (notification) {
 											 localStorage.removeItem("Id_notifica");
@@ -360,15 +360,12 @@ function startScan()
 												popNitfiche+="<div id="+ID_notizia+" class='notification notification-info box_notifica '>";
 												popNitfiche+="<button onclick='salvaNotifica("+ID_notizia+")'  class='close-notification no-smoothState'><i  class='ion-android-close'></i></button>";
 												popNitfiche+="<div  class='allargaNot' onclick='apriNotifica("+ID_notizia+")' ><p>"+titolo_n+"</p>";
-												popNitfiche+="<span>"+date+"</span></div></div>";
+												popNitfiche+="<span>"+date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear() +"</span></div></div>";
 												
 												$(".container_page").append(popNitfiche);
 									
 											}
-									
-											/* "<button  class='ui-btn' id='ApriNotifica' onclick='apri_notifica(this," + ID_notizia + ")'>Apri</button>"+
-											"<button  class='ui-btn' id='SalvaNotifica' onclick='salva_notifica(this," + ID_notizia + ")'>Salva</button>"+*/
-											}
+										}
 									)
 								}
 
