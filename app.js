@@ -238,10 +238,10 @@ function startScan()
                     )
                     });
 					  // Funzione per la selezione dei beacon da ricercare dal db dell' app
-                                  
+                     selezionaBeacon ();             
                 });
 		  }
-		  //selezionaBeacon (); 
+		  alert("ciao");
 		
 		// L' oggetto delegate detiene le funzioni di callback di iBeacon plugin 
 		// Dichiarato di seguito.
