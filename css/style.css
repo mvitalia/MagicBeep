@@ -23,6 +23,7 @@ body {
     background: #fff;
     color: #76838f;
     overflow-x: hidden;
+    position: relative
 }
 [class^="mdi-"],
 [class*="mdi-"] {
