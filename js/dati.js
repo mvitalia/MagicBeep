@@ -80,7 +80,7 @@ function successoSelect(tx,dati)
             var data = dati.rows.item(i).data_ora;
             splitdata = data.split(" ");
             var partedata = splitdata[0].split("-");
-            var parteora = splitarray[1].split(":");
+            var parteora = splitdata[1].split(":");
 
             var dataCorretta = partedata[2] + "-" + partedata[1] + "-" + partedata[0] + " " + parteora[0] + ":" + parteora[1];
 
