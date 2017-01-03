@@ -4,7 +4,7 @@ var countDue = 0;
 var countTre = 0;
 var uuid = new String();
 var millisecondi = 0;
-var provaIDNotifica
+var provaIDNotifica;
 // Variabili globali per la selezione una tantum dei diversi beacon
 
 
@@ -21,23 +21,14 @@ var app = (function()
 	app.isScanning = false;
 	app.lastScanEvent = 0;
     
-	// Inizializzo matrico
-	var  matrice_notizie = new Array();
+	// Inizializzo matrice
+	var matrice_notizie = new Array();
     if(JSON.parse(localStorage.getItem("matrice_notizie")) == null){
 		
 	}else{
-      var  matrice_notizie  = JSON.parse(localStorage.getItem("matrice_notizie"));
+        matrice_notizie  = JSON.parse(localStorage.getItem("matrice_notizie"));
 	}
-	// I beacon da rilevare in modo statico 
-	/*var regions =
-	[
-		// Estimote Beacon factory UUID.
-		{uuid:'B9407F30-F5F8-466E-AFF9-25556B57FE6D'},//blu
-		// Sample UUIDs for beacons in our lab.
-		{uuid:'5F4DF8FB-3EC2-60B1-DB6F-6E7013122EE0'}, //azzurro
-		{uuid:'937BD9F3-5C44-971C-F389-35152A80C632'},	// verde
-	];*/
-	
+
 	// Dichiaro regions per trovare beacon in dinamico  
      var regions = [];
 	
@@ -140,9 +131,6 @@ var app = (function()
 			  localStorage.setItem('login', false);
 		}
 
-		
-		 // Fine della creazione delle tabella db 
-
 		 
 		 // Controllo se bluetooth è accesso
 	     ble = evothings.ble;
@@ -167,7 +155,7 @@ app.startLeScan = function()
 	app.stopLeScan();
 	app.isScanning = true;
 	app.lastScanEvent = new Date();
-	//app.runScanTimer();
+	app.runScanTimer();
 
 	ble.startScan(function(r)
 	{
@@ -590,7 +578,7 @@ function salvaLettura (proximity,dispositivo,notizia)
    function successoSelezione(tx,dati)
    {
     var len = dati.rows.length;
-	alert(len);
+	
         var li_dati="";
         if(len!=0)
         {
