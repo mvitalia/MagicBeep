@@ -65,7 +65,7 @@ function selezionoDati ()
 
 function select(tx)
 {
-    tx.executeSql("SELECT C.ID as ID_notifica,  N.*, C.* FROM notizie as N, notifiche as C WHERE C.ID_notizia=N.ID",[], successoSelect,erroreSelect);     
+    tx.executeSql("SELECT C.ID as ID_notifica,  N.*, C.* FROM notizie as N, notifiche as C WHERE C.ID_notizia=N.ID order by data_ora desc",[], successoSelect,erroreSelect);     
 }
 
 function successoSelect(tx,dati)
