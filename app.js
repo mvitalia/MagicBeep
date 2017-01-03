@@ -263,7 +263,7 @@ function startScan()
 		{
 		
 			//alert('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
-            alert(pluginResult.beacons);
+            
 			for (var i in pluginResult.beacons)
 			{
 				// Se trova il Beacon lo inserisce nella var beacon.
@@ -280,7 +280,7 @@ function startScan()
 				var restituito=true;
 				// Parte per rilevare o non rilevare il Beacon, ovvero se è già stato rilevato ed ha già mostrato la notizia
 				// Select tra dispositivi e notizie
-				alert(idUUID);
+				
 				db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Magicbeep", 200000);
 				db.transaction(
 					function(tx)
@@ -590,6 +590,7 @@ function salvaLettura (proximity,dispositivo,notizia)
    function successoSelezione(tx,dati)
    {
     var len = dati.rows.length;
+	alert(len);
         var li_dati="";
         if(len!=0)
         {
