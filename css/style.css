@@ -1153,12 +1153,8 @@ li.your-comment {
     top: 0;
 }
 .post-author span {
-  color: #2196f3;
-    display: block;
-    font-size: 13px;
-    font-weight: 600;
-    padding-left: 0;
-    padding-top: 4px;
+    margin-bottom: 32px;
+    position: relative;
 }
 /* Calendar */
 
