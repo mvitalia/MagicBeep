@@ -85,7 +85,7 @@ var app = (function()
 			
 			//sincronizzo notizie ogni minuto
 			sincronizza_notizie();
-			sinc = setInterval(sincronizza_notizie,10000);
+			sinc = setInterval(sincronizza_notizie,20000);
 		} else{
 			  //Seleziono notizie da db interno
 		}
