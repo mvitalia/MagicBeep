@@ -384,8 +384,16 @@ function condividiNotifica ()
             if(len!=0)
             {
                 var immagine = "http://magicbeep.mvclienti.com/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"";
-                var notifica = "Notifica:"+dati.rows.item(0).titolo+"Descrizione:"+dati.rows.item(0).descrizione;
-                window.plugins.socialsharing.share(notifica, 'The subject',immagine);
+                var notifica = dati.rows.item(0).titolo +"\n\n" + dati.rows.item(0).descrizione;
+                
+                if(dati.rows.item(0).allegato!="")
+                    notifica+="<a href='http://magicbeep.mvclienti.com/public/upload_gallery/immagini/"+dati.rows.item(0).allegato+"' target='_blank'>"+dati.rows.item(0).allegato+"</a><br><br>";
+        
+                // link
+                if(dati.rows.item(0).link!="")
+                    notifica+="<a href='"+dati.rows.item(0).link+"' target='_blank'>"+dati.rows.item(0).allegato+"</a>";
+
+                window.plugins.socialsharing.share(notifica, 'MagicBeep condividi notizia',immagine);
             }
             },
             function () {
