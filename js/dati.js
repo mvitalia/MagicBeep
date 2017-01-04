@@ -451,17 +451,23 @@ function caricaNotificheFiltrate () {
                 
                     for(var i=0; i<len; i++)
                     {
-                    
                         var data = dati.rows.item(i).data_ora;
-                        var splitarray = new Array();
-                        splitarray = data.split(" ");
-                        var dataDue = splitarray[0];
-                        var arrayData = new Array ();
-                        arrayData = dataDue.split("-");
-                        var dataCorretta = arrayData[2] + "-" + arrayData[1] + "-" + arrayData[0] + " " + splitarray[1];
-                        li_dati="<div id="+dati.rows.item(i).ID_notifica+" data-itemid="+dati.rows.item(i).ID_notizia+" class='single-news animated fadeinright delay-2'><h4 class='single-news-title'><a class='detail' href='#' >"+dati.rows.item(i).titolo+"</a>";
-                        li_dati+="</h4><div class='margin-bottom-5'><span class='single-news-category'>"+dataCorretta+"</span></div><div class='single-news-channel'>"+dati.rows.item(i).descrizione+"</div>";
-                        li_dati+="<div class='clr'></div></div>";
+                        splitdata = data.split(" ");
+                        var partedata = splitdata[0].split("-");
+                        var parteora = splitdata[1].split(":");
+
+                        var dataCorretta = partedata[2] + "/" + partedata[1] + "/" + partedata[0] + " " + parteora[0] + ":" + parteora[1];
+
+                        li_dati+="<div id="+dati.rows.item(i).ID_notifica+" data-itemid="+dati.rows.item(i).ID_notizia+" class='tipo_"+dati.rows.item(i).tipologia+" single-news animated fadeinright delay-2'>";
+                        li_dati+="<h4 class='single-news-title'><a class='detail' href='#' >"+dati.rows.item(i).titolo+"</a></h4>";
+                        li_dati+="<span class='single-news-category'>"+dataCorretta+"</span><div class='single-news-channel'>"+dati.rows.item(i).descrizione.replace("<p>","").replace("</p>","").substring(0,30)+"...</div>";
+                        li_dati+="<div class='storage btn_cancella_notifica'><i id='cancellaNot' class='ion-android-close'></i></div>";
+
+                        var icona_notifica = "ion-social-rss";
+                        if (dati.rows.item(i).tipologia == "dispositivo")
+                            icona_notifica = "ion-android-walk";
+                        li_dati+="<div class='btn_tipologia_notifica'><i class='"+icona_notifica+"'></i></div><div class='clr'></div></div>";
+                        
                         $("#lista_datiJson").html("");
                         $("#lista_datiJson").append(li_dati);
                     }
