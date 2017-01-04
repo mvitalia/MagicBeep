@@ -317,7 +317,7 @@ function startScan()
 																							
 												
 							     	}
-									 alert(inBackground);
+									 
 								    navigator.notification.beep(1);
 									navigator.vibrate(3000);
 									
@@ -344,10 +344,10 @@ function startScan()
 												tx.executeSql("INSERT INTO notifiche (uuid, data_ora,ID_dispositivo, ID_notizia,tipologia) VALUES (?,?,?,?,?)",[uuid,date,ID_dispositivo,ID_notizia,'dispositivo']); 
 											}
 												
-											},
+										},
 										function()  {
-												alert("Inserimento non  effettuato"+e.message);
-											},
+											alert("Inserimento non  effettuato"+e.message);
+										},
 										function()  {
 											// alert(results.insertId);
 											//  localStorage.setItem('Id_notifica', ID_notizia);
@@ -355,7 +355,7 @@ function startScan()
 											// visualizza(ID_notizia);
 											//  navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
 											// $( ".popupNotifica" ).popup( "open");
-											
+											alert(ID_notizia);
 											if(!inBackground)
 											{
 												var popNitfiche = "";
@@ -367,6 +367,7 @@ function startScan()
 												$(".container_page").append(popNitfiche);
 									
 											}
+											alert("dopo appende");
 										}
 									)
 								}
