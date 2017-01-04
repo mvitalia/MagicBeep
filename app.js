@@ -112,8 +112,7 @@ var app = (function()
 		// Display refresh timer.
 		//updateTimer = setInterval(displayBeaconList, 500);
 
-		//sincronizzo notizie ogni minuto
-		sinc = setInterval(sincronizza_notizie(),300);
+		
 	}
 
 function sincronizza_notizie(){
@@ -231,7 +230,9 @@ function startScan()
 		  var connessione = checkInternet();
 		
 		  if(connessione){
-              
+              	//sincronizzo notizie ogni minuto
+				sincronizza_notizie();
+				
 				// Fine della creazione delle tabella db 
 				// Prelevo dati dal server e salvo nel db
 				$.getJSON("http://magicbeep.mvclienti.com/webservices/sync_dispositivi.aspx", function (dati) {
