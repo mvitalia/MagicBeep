@@ -1,14 +1,16 @@
 /* Button*/
 .box_submit_button {text-align:center}
-.box_submit_button input{
+.box_submit_button a{
     background: none !important;
     border: none !important;
     font-style: normal !important;
-    width: 200px !important;
     text-transform: uppercase;
-    font-size:15px
-
+    font-size:15px;
+    color:#fff;
+    line-height: 54px;
+    height: 54px
 }
+.box_submit_button a i {}
 
 
 .margin-bottom-5{
