@@ -83,10 +83,16 @@ function successoSelect(tx,dati)
             var parteora = splitdata[1].split(":");
 
             var dataCorretta = partedata[2] + "/" + partedata[1] + "/" + partedata[0] + " " + parteora[0] + ":" + parteora[1];
-
-            li_dati+="<div id="+dati.rows.item(i).ID_notifica+" data-itemid="+dati.rows.item(i).ID_notizia+" class='single-news animated fadeinright delay-2'><h4 class='single-news-title'><a class='detail' href='#' >"+dati.rows.item(i).titolo+"</a></h4>";
+                
+            li_dati+="<div id="+dati.rows.item(i).ID_notifica+" data-itemid="+dati.rows.item(i).ID_notizia+" class='tipo_"+dati.rows.item(i).tipologia+" single-news animated fadeinright delay-2'>";
+            li_dati+="<h4 class='single-news-title'><a class='detail' href='#' >"+dati.rows.item(i).titolo+"</a></h4>";
             li_dati+="<span class='single-news-category'>"+dataCorretta+"</span><div class='single-news-channel'>"+dati.rows.item(i).descrizione.replace("<p>","").replace("</p>","").substring(0,80)+"...</div>";
-            li_dati+="<div class='storage btn_cancella_notifica'><i id='cancellaNot' class='ion-android-close'></i></div><div class='clr'></div></div>";
+            li_dati+="<div class='storage btn_cancella_notifica'><i id='cancellaNot' class='ion-android-close'></i></div>";
+
+            var icona_notifica = "ion-social-rss";
+            if (dati.rows.item(i).tipologia == "dispositivo")
+                icona_notifica = "ion-android-walk";
+            li_dati+="<div class='btn_tipologia_notifica'><i class='"+icona_notifica+"'></i></div><div class='clr'></div></div>";
         }
         $("#cancellaTutteNotifiche").show();
         $("#noNotifiche").hide();
