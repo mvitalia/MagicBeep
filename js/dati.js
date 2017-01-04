@@ -224,7 +224,7 @@ function successoSelectNotifica(tx,dati)
         
         // descrizione notifica + linea
         var primaLettera = dati.rows.item(0).descrizione.replace("<p>","").substring(0,1);
-        dettaglio_notifica +="<div class='text-flow'><span class='dropcap'>"+primaLetterea+"</span> "+dati.rows.item(0).descrizione+"</div><hr>";
+        dettaglio_notifica +="<div class='text-flow'><span class='dropcap'>"+primaLettera+"</span> "+dati.rows.item(0).descrizione+"</div><hr>";
 
         // link
         if(dati.rows.item(0).link!="")
@@ -242,8 +242,8 @@ function successoSelectNotifica(tx,dati)
         $("#box_img_notifica").html("");
 
         // appendo i nuovi dati
-        $("#box_img_notifica").append(immagineNot);
-        $(".appendDettaglioNotifica").append(dettaglio_notifica);
+        $("#box_img_notifica").html(immagineNot);
+        $(".appendDettaglioNotifica").html(dettaglio_notifica);
     }
      
 }
