@@ -317,6 +317,7 @@ function startScan()
 																							
 												
 							     	}
+									 alert(inBackground);
 								    navigator.notification.beep(1);
 									navigator.vibrate(3000);
 									
