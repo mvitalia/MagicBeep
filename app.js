@@ -110,35 +110,9 @@ var app = (function()
 										('00' + date.getSeconds()).slice(-2);  
 									tx.executeSql("INSERT INTO notifiche (data_ora, ID_notizia,tipologia) VALUES (?,?,?)",[date,name.ID,"extra"]);
 								
-									cordova.plugins.notification.local.schedule(
-									{
-										id: name.ID,
-										title: 'MagicBeep',
-										text: name.titolo+', clicca qui per aprire.'
-									});
-									cordova.plugins.notification.local.on("click", function (notification) {
-											localStorage.removeItem("Id_notifica");
-											localStorage.setItem('Id_notifica', notification.id);
-											$( ":mobile-pagecontainer" ).pagecontainer( "change", "#notifica", {    transition: "flip", reload:false } );
-									});
-
-									 
-								    navigator.notification.beep(1);
-									navigator.vibrate(3000);
-									if(!inBackground)
-									{
-										var data = new Date();
-										data = ('00' + data.getDate()).slice(-2) + "/" + ('00' + (data.getMonth() + 1)).slice(-2) + "/" + data.getFullYear() + " " + ('00' + data.getHours()).slice(-2) + ":" + ('00' + data.getMinutes()).slice(-2);
-
-										var popNotifica = "";
-										popNotifica+="<div id="+name.ID+" class='notification notification-info box_notifica box_notifica_extra'>";
-										popNotifica+="<button onclick='salvaNotifica("+name.ID+")'  class='close-notification no-smoothState'><i  class='ion-android-close'></i></button>";
-										popNotifica+="<div  class='allargaNot' onclick='apriNotifica("+name.ID+")' ><p>"+name.titolo+"</p>";
-										popNotifica+="<span>"+ data +"</span></div></div>";
-										
-										$(".container_page").append(popNotifica);
-							
-									}
+									pushNotifica(name.ID,name.titolo,"extra");
+									popNotifica(name.ID,name.titolo,"extra");
+								
 							}
 						}
 
@@ -331,18 +305,8 @@ function startScan()
 								{
 								  
 									//if (inBackground){
-									  // notifica 
-						               cordova.plugins.notification.local.schedule(
-									   {
-											id: ID_notizia,
-											title: 'MagicBeep',
-											text: titolo_n+', clicca qui per aprire.'
-									    });
-										cordova.plugins.notification.local.on("click", function (notification) {
-											 localStorage.removeItem("Id_notifica");
-											 localStorage.setItem('Id_notifica', notification.id);
-											 $( ":mobile-pagecontainer" ).pagecontainer( "change", "#notifica", {    transition: "flip", reload:false } );
-										});
+									  // notifica push
+						              pushNotifica(ID_notizia,titolo_n,"dispositivo");
 																							
 												
 							     	//}
@@ -378,21 +342,8 @@ function startScan()
 										},
 										function()  {
 											// $.mobile.navigate("#Notifica"); 
+											popNotifica(ID_notizia,titolo_n,"dispositivo");
 											
-											if(!inBackground)
-											{
-												var data = new Date();
-												data = ('00' + data.getDate()).slice(-2) + "/" + ('00' + (data.getMonth() + 1)).slice(-2) + "/" + data.getFullYear() + " " + ('00' + data.getHours()).slice(-2) + ":" + ('00' + data.getMinutes()).slice(-2);
-
-												var popNotifica = "";
-												popNotifica+="<div id="+ID_notizia+" class='notification notification-info box_notifica '>";
-												popNotifica+="<button onclick='salvaNotifica("+ID_notizia+")'  class='close-notification no-smoothState'><i  class='ion-android-close'></i></button>";
-												popNotifica+="<div  class='allargaNot' onclick='apriNotifica("+ID_notizia+")' ><p>"+titolo_n+"</p>";
-												popNotifica+="<span>"+ data +"</span></div></div>";
-												
-												$(".container_page").append(popNotifica);
-									
-											}
 											
 										}
 									)
@@ -737,6 +688,42 @@ function salvaLettura (proximity,dispositivo,notizia)
 				//$('#found-beacons').append(element);
 			}
 		});
+	}
+
+
+	function pushNotifica(ID_notifica,titolo,tipologia){
+		cordova.plugins.notification.local.schedule(
+		{
+			id: ID_notifica,
+			title: 'MagicBeep',
+			text: titolo+', clicca qui per aprire.'
+		});
+		cordova.plugins.notification.local.on("click", function (notification) {
+				localStorage.removeItem("Id_notifica");
+				localStorage.setItem('Id_notifica', notification.id);
+				$( ":mobile-pagecontainer" ).pagecontainer( "change", "#notifica", {    transition: "flip", reload:false } );
+		});
+
+			
+		navigator.notification.beep(1);
+		navigator.vibrate(3000);
+		
+	}
+	function popNotifica(ID_notifica,titolo,tipologia){
+		if(!inBackground)
+		{
+			var data = new Date();
+			data = ('00' + data.getDate()).slice(-2) + "/" + ('00' + (data.getMonth() + 1)).slice(-2) + "/" + data.getFullYear() + " " + ('00' + data.getHours()).slice(-2) + ":" + ('00' + data.getMinutes()).slice(-2);
+
+			var popNotifica = "";
+			popNotifica+="<div id="+ID_notifica+" class='notification notification-info box_notifica box_notifica_"+tipologia+"'>";
+			popNotifica+="<button onclick='salvaNotifica("+ID_notifica+")'  class='close-notification no-smoothState'><i  class='ion-android-close'></i></button>";
+			popNotifica+="<div  class='allargaNot' onclick='apriNotifica("+ID_notifica+")' ><p>"+titolo+"</p>";
+			popNotifica+="<span>"+ data +"</span></div></div>";
+			
+			$(".container_page").append(popNotifica);
+
+		}
 	}
 
 	return app;
