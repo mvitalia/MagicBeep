@@ -84,8 +84,9 @@ var app = (function()
 			// Fine della creazione delle tabella db 
 			
 			//sincronizzo notizie 
-			sincronizza_notizie();
-
+			//sincronizza_notizie();
+			//sincronizzo notizie ogni minuto
+			sinc = setInterval(sincronizza_notizie,300);
 		} else{
 			  //Seleziono notizie da db interno
 		}
@@ -170,7 +171,7 @@ app.startLeScan = function()
 	app.stopLeScan();
 	app.isScanning = true;
 	app.lastScanEvent = new Date();
-	app.runScanTimer();
+	//app.runScanTimer();
 
 	ble.startScan(function(r)
 	{
@@ -230,9 +231,7 @@ function startScan()
 		  var connessione = checkInternet();
 		
 		  if(connessione){
-              	//sincronizzo notizie ogni minuto
-				sincronizza_notizie();
-				
+              
 				// Fine della creazione delle tabella db 
 				// Prelevo dati dal server e salvo nel db
 				$.getJSON("http://magicbeep.mvclienti.com/webservices/sync_dispositivi.aspx", function (dati) {
