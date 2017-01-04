@@ -145,8 +145,8 @@ function sincronizza_notizie(){
 							
 								if (inBackground)
 									pushNotifica(name.ID,name.titolo,"extra");
-								
-								popNotifica(name.ID,name.titolo,"extra");
+								else
+									popNotifica(name.ID,name.titolo,"extra");
 							
 						}
 					}
@@ -320,8 +320,7 @@ function startScan()
 												
 							     	}
 									 
-								    navigator.notification.beep(1);
-									navigator.vibrate(3000);
+								    
 									
 									// Creazione data ora, per db sul server 
 									var date = new Date();
