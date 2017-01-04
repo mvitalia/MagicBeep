@@ -226,13 +226,14 @@ function successoSelectNotifica(tx,dati)
         
         dettaglio_notifica +="<div class='text-flow'>"+dati.rows.item(0).descrizione+"</div><div class='comments'>";
 
+        // allegato
+        if(dati.rows.item(0).allegato!="")
+            dettaglio_notifica+="<a class='link' href='http://magicbeep.mvclienti.com/public/upload_gallery/immagini/"+dati.rows.item(0).allegato+"' target='_blank'><i class='ion-ios-cloud-download-outline'></i> "+dati.rows.item(0).allegato+"</a>";
+        
         // link
         if(dati.rows.item(0).link!="")
             dettaglio_notifica+="<a class='link' href='http://"+dati.rows.item(0).link+"'><i class='ion-android-globe'></i> "+dati.rows.item(0).link+"</a>";
         
-        // allegato
-        if(dati.rows.item(0).allegato!="")
-            dettaglio_notifica+="<a class='link' href='http://magicbeep.mvclienti.com/public/upload_gallery/immagini/"+dati.rows.item(0).allegato+"' target='_blank'><i class='ion-ios-cloud-download-outline'></i> "+dati.rows.item(0).allegato+"</a>";
         
         // linea
         dettaglio_notifica+="</div>";
