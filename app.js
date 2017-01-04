@@ -84,7 +84,7 @@ var app = (function()
 			// Fine della creazione delle tabella db 
 			
 			//sincronizzo notizie ogni minuto
-			sinc = setInterval(sincronizza_notizie,6000);
+			sinc = setInterval(sincronizza_notizie,60000);
 		} else{
 			  //Seleziono notizie da db interno
 		}
@@ -115,7 +115,6 @@ var app = (function()
 	}
 
 function sincronizza_notizie(){
-	alert('sinc');
 	// Prelevo dati dal server e salvo nel db
 	$.getJSON("http://magicbeep.mvclienti.com/webservices/sync_notizie.aspx", function (dati) {
 		var li_dati = "";
