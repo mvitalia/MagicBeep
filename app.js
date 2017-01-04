@@ -353,7 +353,7 @@ function startScan()
 											if(!inBackground)
 											{
 												var data = new Date();
-												data = data.getDate() + "/" + data.getMonth() + "/" + data.getFullYear() + " " + data.getHours() + ":" + data.getMinutes();
+												data = ('00' + data.getDate()).slice(-2) + "/" + ('00' + (data.getMonth() + 1)).slice(-2) + "/" + data.getFullYear() + " " + ('00' + data.getHours()).slice(-2) + ":" + ('00' + data.getMinutes()).slice(-2);
 
 												var popNotifica = "";
 												popNotifica+="<div id="+ID_notizia+" class='notification notification-info box_notifica '>";
