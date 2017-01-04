@@ -301,12 +301,12 @@ function startScan()
 								{
 								  
 									//if (inBackground){
-									  
+									  // notifica
 						               cordova.plugins.notification.local.schedule(
 									   {
 											id: ID_notizia,
-											title: 'Nuova notizia',
-											text: 'MagicBeep: '+titolo_n+', clicca qui per aprire.'
+											title: 'MagicBeep',
+											text: titolo_n+', clicca qui per aprire.'
 									    });
 										cordova.plugins.notification.local.on("click", function (notification) {
 											 localStorage.removeItem("Id_notifica");
