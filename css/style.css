@@ -1142,8 +1142,8 @@ li.your-comment {
     margin-bottom: 0;
 }
 .post-author {
+    margin-bottom: 32px;
     position: relative;
-    margin-bottom: 15px;
 }
 .post-author .avatar {
     width: 30px;
@@ -1153,8 +1153,10 @@ li.your-comment {
     top: 0;
 }
 .post-author span {
-    margin-bottom: 32px;
-    position: relative;
+
+    display: block;
+    padding-left: 38px;
+    padding-top: 4px;
 }
 /* Calendar */
 
