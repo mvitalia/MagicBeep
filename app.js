@@ -58,8 +58,7 @@ var app = (function()
 	{
 		// Parte l' onDeviceReady
 		//Popolo la tebella notizie direttamente scaricate dal server se c'è la connessione
-		var conn = checkInternet();
-		if(conn==true){
+		if(checkInternet()){
 			// Creazione delle tabelle del db 
 			db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Magicbeep", 200000);
 			db.transaction(
@@ -116,52 +115,53 @@ var app = (function()
 	}
 
 function sincronizza_notizie(){
-	// Prelevo dati dal server e salvo nel db
-	$.getJSON("http://magicbeep.mvclienti.com/webservices/sync_notizie.aspx", function (dati) {
-		var li_dati = "";
-		$.each(dati, function (i, name) {
-			// Inserisco dati nel db sqllite dell' App
+	if(checkInternet()){
+		// Prelevo dati dal server e salvo nel db
+		$.getJSON("http://magicbeep.mvclienti.com/webservices/sync_notizie.aspx", function (dati) {
+			var li_dati = "";
+			$.each(dati, function (i, name) {
+				// Inserisco dati nel db sqllite dell' App
 
-			db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Magicbeep", 200000);
-			db.transaction(
-				// Metodo di chiamata asincrona
-				function(tx) {
-					tx.executeSql("INSERT INTO notizie (ID,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",[name.ID,name.data,name.titolo,name.descrizione,name.immagine,name.link,name.allegato,name.user,name.stato,name.data_creazione,name.attivo_da,name.attivo_a,name.ultima_modifica,name.ID_dispositivo]);
-				
+				db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Magicbeep", 200000);
+				db.transaction(
+					// Metodo di chiamata asincrona
+					function(tx) {
+						tx.executeSql("INSERT INTO notizie (ID,data, titolo, descrizione, immagine, link, allegato, user, stato, data_creazione, attivo_da, attivo_a, ultima_modifica, ID_dispositivo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",[name.ID,name.data,name.titolo,name.descrizione,name.immagine,name.link,name.allegato,name.user,name.stato,name.data_creazione,name.attivo_da,name.attivo_a,name.ultima_modifica,name.ID_dispositivo]);
 					
-					// carico in notifiche le notizie extra non collegate ai dispositivi
-					
-					if (name.ID_dispositivo == null || name.ID_dispositivo == ""){
-						if (!checkNotizia("",name.ID)){
-							var date;
-								date = new Date();
-								date = date.getFullYear() + '-' +
-								('00' + (date.getMonth() + 1)).slice(-2) + '-' +
-								('00' + date.getDate()).slice(-2) + ' ' +
-								('00' + date.getHours()).slice(-2) + ':' +
-								('00' + date.getMinutes()).slice(-2) + ':' +
-								('00' + date.getSeconds()).slice(-2);  
-							tx.executeSql("INSERT INTO notifiche (data_ora, ID_notizia,tipologia) VALUES (?,?,?)",[date,name.ID,"extra"]);
 						
-							if (inBackground)
-								pushNotifica(name.ID,name.titolo,"extra");
+						// carico in notifiche le notizie extra non collegate ai dispositivi
+						
+						if (name.ID_dispositivo == null || name.ID_dispositivo == ""){
+							if (!checkNotizia("",name.ID)){
+								var date;
+									date = new Date();
+									date = date.getFullYear() + '-' +
+									('00' + (date.getMonth() + 1)).slice(-2) + '-' +
+									('00' + date.getDate()).slice(-2) + ' ' +
+									('00' + date.getHours()).slice(-2) + ':' +
+									('00' + date.getMinutes()).slice(-2) + ':' +
+									('00' + date.getSeconds()).slice(-2);  
+								tx.executeSql("INSERT INTO notifiche (data_ora, ID_notizia,tipologia) VALUES (?,?,?)",[date,name.ID,"extra"]);
 							
-							popNotifica(name.ID,name.titolo,"extra");
-						
+								if (inBackground)
+									pushNotifica(name.ID,name.titolo,"extra");
+								
+								popNotifica(name.ID,name.titolo,"extra");
+							
+						}
 					}
-				}
 
-				},
-				function () {
-					alert("Errore"+e.message);
-				},
-				function(){
-						//alert("Inserimento effettuato tabelle notizie");
-				}
-			)
-		});		
-	});
-		  
+					},
+					function () {
+						alert("Errore"+e.message);
+					},
+					function(){
+							//alert("Inserimento effettuato tabelle notizie");
+					}
+				)
+			});		
+		});
+	}
 }
 // Funzioni per il controllo del bluetooth all' avvio della applicazione
 app.startLeScan = function()
