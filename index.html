@@ -506,17 +506,17 @@
         </div>
         <!-- Toolbar -->
         <div  class="toolbar primary-color">
-          <span class="title"><a class="font_colore_titolo" href="#home">Magic Beep</a></span>
-           <span class="SiLogin"></span><span><a class='logoutApp' href='#'><i style='font-size:15px !important;padding-left:15px;'  class='ion-log-out'></i></a></span>
+          <a href="javascript:history.back()" class="open-left">
+            <i class="ion-android-arrow-back"></i>
+          </a>
           <div class="open-right" id="open-right-sette" data-activates="slide-out-sette">
             <i class="ion-android-menu"></i>
           </div>
         </div>
           <!-- Main Content -->
-          <div class="animated fadeinup delay-1">
-            <div class="margine_form">
-                 <h1 style="text-align:center">Informazioni</h1>
-          <form id="inviaInfoNotifica">
+         <div class="registrazione-form animated fadeinup delay-2 z-depth-1 paragrafo_center">
+            <h1>Richiesta informazioni</h1>
+            <form id="inviaInfoNotifica">
                <div class="input-field">
                     <i class="ion-person prefix"></i> 
                    <input data-role="none" name="nomeInfo" id="nomeInfo" value="" type="text" required>
@@ -535,19 +535,20 @@
                 <div class="input-field">
                     <i class="ion-edit prefix"></i> 
                     <textarea data-role="none" class="materialize-textarea" id="richiestaInfo" name="richiestaInfo" required></textarea> 
-                    <label for="richiestaInfo">Scrivici</label>
+                    <label for="richiestaInfo">Richiesta</label>
                 </div>
-                <div>
+                <div class="privacy">
                         <h3>Privacy</h3>
                         <p>Per avere ulteriori informazioni completa il modulo online con i tuoi dati (che saranno utilizzati esclusivamente per soddisfare la tua richiesta, nel più assoluto rispetto della privacy).</p>
-                        <p>Per maggiori informazioni clicca qui </p>
+                        <p>Per maggiori informazioni <a href="#privacy_policy">clicca qui</a> </p>
                 </div>
                 <p class="remember animated bouncein delay-6">
-               <input data-role="none" type="checkbox" name="privacyInfo" id="privacyInfo" value="html" required/> 
-              <label for="privacyInfo">Acconsento privacy</label>
+                  <input data-role="none" type="checkbox" name="privacyInfo" id="privacyInfo" value="html" required> 
+                  <label for="privacyInfo">Acconsento privacy</label>
+                </p>
             </p>
-             <div class="box_submit_button">
-                       <input type="submit" data-role="none"  class="waves-effect waves-light btn-large accent-color m-b-20 animated bouncein delay-4" value="Invia" id="btn_submit_infoNotifica">
+            <div class="box_submit_button">
+                  <input type="submit" data-role="none"  class="waves-effect waves-light btn-large accent-color m-b-20 animated bouncein delay-4" value="Invia" id="btn_submit_infoNotifica">
             </div>
              
              
