@@ -34,8 +34,8 @@
     margin-right: 20px;
 }
 
-.tipo_dispositivo h4 a, .tipo_dispositivo i{color:#3c763d !important}
-.tipo_extra h4 a, .tipo_extra i{color:#004175 !important}
+.tipo_dispositivo h4 a, .tipo_dispositivo i{color:#004175 !important}
+.tipo_extra h4 a, .tipo_extra i{color:#3c763d !important}
 
 .btn_cancella_notifica{
     position: absolute;
@@ -44,7 +44,11 @@
     padding: 10px;
     font-style: 20px
 }
-
+.box_notifica_extra{
+    background-color: #dff0d8 !important;
+    border-color: #d6e9c6 !important;
+    color: #3c763d !important;
+}
 .btn_tipologia_notifica{position:absolute; bottom:5px;right:10px;padding: 10px}
 
 .tendina_mappa{
