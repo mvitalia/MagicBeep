@@ -23,11 +23,11 @@ var app = (function()
     
 	// Inizializzo matrice
 	var matrice_notizie = new Array();
-    /*if(JSON.parse(localStorage.getItem("matrice_notizie")) == null){
+    if(JSON.parse(localStorage.getItem("matrice_notizie")) == null){
 		
 	}else{
         matrice_notizie  = JSON.parse(localStorage.getItem("matrice_notizie"));
-	}*/
+	}
 
 	// Dichiaro regions per trovare beacon in dinamico  
      var regions = [];
@@ -301,7 +301,7 @@ function startScan()
 								{
 								  
 									//if (inBackground){
-									  // notifica
+									  // notifica 
 						               cordova.plugins.notification.local.schedule(
 									   {
 											id: ID_notizia,
