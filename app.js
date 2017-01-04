@@ -116,6 +116,7 @@ var app = (function()
 	}
 
 function sincronizza_notizie(){
+	alert('sinc');
 	// Prelevo dati dal server e salvo nel db
 	$.getJSON("http://magicbeep.mvclienti.com/webservices/sync_notizie.aspx", function (dati) {
 		var li_dati = "";
