@@ -682,6 +682,8 @@ function salvaLettura (proximity,dispositivo,notizia)
 
 
 	function pushNotifica(ID_notifica,titolo,tipologia){
+		navigator.notification.beep(1);
+		navigator.vibrate(3000);
 		cordova.plugins.notification.local.schedule(
 		{
 			id: ID_notifica,
