@@ -213,7 +213,7 @@ function successoSelectNotifica(tx,dati)
         
         //immagine notifica
         var immagineNot ="<img src='img/placeholder_notifica.jpg' alt='"+dati.rows.item(0).titolo+"'>";
-        if (checkInternet)
+        if (checkInternet && dati.rows.item(0).immagine!="")
             immagineNot ="<img src='http://magicbeep.mvclienti.com/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"' alt='"+dati.rows.item(0).titolo+"'>";
 
         // titolo notifica
