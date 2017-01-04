@@ -313,12 +313,12 @@ function startScan()
 								if(!notiziaEsistente)
 								{
 								  
-									//if (inBackground){
+									if (inBackground){
 									  // notifica push
 						              pushNotifica(ID_notizia,titolo_n,"dispositivo");
 																							
 												
-							     	//}
+							     	}
 									 
 								    navigator.notification.beep(1);
 									navigator.vibrate(3000);
