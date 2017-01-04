@@ -84,7 +84,8 @@ var app = (function()
 			// Fine della creazione delle tabella db 
 			
 			//sincronizzo notizie ogni minuto
-			sinc = setInterval(sincronizza_notizie,60000);
+			sincronizza_notizie();
+			sinc = setInterval(sincronizza_notizie,10000);
 		} else{
 			  //Seleziono notizie da db interno
 		}
