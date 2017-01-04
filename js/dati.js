@@ -223,19 +223,19 @@ function successoSelectNotifica(tx,dati)
         dettaglio_notifica +="<div class='post-author'><i class='ion-android-calendar avatar circle'></i><span>Attivo dal "+data_attivo_da+" al "+data_attivo_a+"</span></div>";
         
         // descrizione notifica + linea
-        var primaLettera = dati.rows.item(0).descrizione.replace("<p>","").substring(0,1);
-        dettaglio_notifica +="<div class='text-flow'><span class='dropcap'>"+primaLettera+"</span> "+dati.rows.item(0).descrizione+"</div><hr>";
+        
+        dettaglio_notifica +="<div class='text-flow'>"+dati.rows.item(0).descrizione+"</div><div class='comments'>";
 
         // link
         if(dati.rows.item(0).link!="")
-            dettaglio_notifica+="<blockquote class='primary-border'><a href='http://"+dati.rows.item(0).link+"'><i class='ion-android-globe'></i> "+dati.rows.item(0).link+"</a> </blockquote>"
+            dettaglio_notifica+="<a class='link' href='http://"+dati.rows.item(0).link+"'><i class='ion-android-globe'></i> "+dati.rows.item(0).link+"</a>";
         
         // allegato
         if(dati.rows.item(0).allegato!="")
-            dettaglio_notifica+="<blockquote class='primary-border'><a href='http://magicbeep.mvclienti.com/public/upload_gallery/immagini/"+dati.rows.item(0).allegato+"' target='_blank'><i class='ion-ios-cloud-download-outline'></i> "+dati.rows.item(0).allegato+"</a>  </blockquote>"
+            dettaglio_notifica+="<a class='link' href='http://magicbeep.mvclienti.com/public/upload_gallery/immagini/"+dati.rows.item(0).allegato+"' target='_blank'><i class='ion-ios-cloud-download-outline'></i> "+dati.rows.item(0).allegato+"</a>";
         
         // linea
-        dettaglio_notifica+="<hr>";
+        dettaglio_notifica+="</div>";
         
         // pulisco i box contenitori
         $(".appendDettaglioNotifica").html("");

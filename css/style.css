@@ -103,7 +103,7 @@ img {
 h1.uppercase,
 h2.uppercase,
 h3.uppercase {
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     margin-right: -3px;
 }
 h4.uppercase,
@@ -1146,8 +1146,8 @@ li.your-comment {
     position: relative;
 }
 .post-author .avatar {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     position: absolute;
     left: 0;
     top: 0;
@@ -1155,9 +1155,10 @@ li.your-comment {
 .post-author span {
 
     display: block;
-    padding-left: 38px;
-    padding-top: 4px;
+    padding-left: 30px;
+    padding-top: 6px;
 }
+.text-flow {color:#333}
 /* Calendar */
 
 .calendar table {
