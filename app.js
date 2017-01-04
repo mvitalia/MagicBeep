@@ -83,8 +83,8 @@ var app = (function()
 			)
 			// Fine della creazione delle tabella db 
 			
-			//sincronizzo notizie ogni minuto
-			setInterval(sincronizza_notizie(),3000);
+			//sincronizzo notizie 
+			sincronizza_notizie();
 
 		} else{
 			  //Seleziono notizie da db interno
@@ -111,7 +111,9 @@ var app = (function()
 		startScan();
 		// Display refresh timer.
 		//updateTimer = setInterval(displayBeaconList, 500);
-	
+
+		//sincronizzo notizie ogni minuto
+		sinc = setInterval(sincronizza_notizie(),300);
 	}
 
 function sincronizza_notizie(){
