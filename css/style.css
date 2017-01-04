@@ -23,9 +23,9 @@ body {
     background: #fff;
     color: #76838f;
     overflow-x: hidden;
-    position: relative
 }
-.container_page {border:1px solid red}
+
+
 [class^="mdi-"],
 [class*="mdi-"] {
     font-family: "Ionicons";

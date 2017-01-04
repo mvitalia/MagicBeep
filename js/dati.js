@@ -189,10 +189,10 @@ function successoSelectNotifica(tx,dati)
 {
     var len = dati.rows.length;
        
-    var li_dati="";
+    var dettaglio_notifica="";
     if(len!=0)
     {
-
+        // formattazione date
         // Data giusta attivo_da
         var data = dati.rows.item(0).attivo_da;
         var splitarray = new Array();
@@ -210,24 +210,40 @@ function successoSelectNotifica(tx,dati)
         arrayDataDue = dataQuattro.split("-");
         var data_attivo_a = arrayDataDue[2] + "-" + arrayDataDue[1] + "-" + arrayDataDue[0]; // aggiungere anche ora + " " + splitarrayUno[1];
         sessionStorage.setItem('titolo_notifica',dati.rows.item(0).titolo);
-        var immagineNot ="<img src='http://magicbeep.mvclienti.com/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"' alt=''>";
-        li_dati+="<h2 class='uppercase'>"+dati.rows.item(0).titolo+"</h2>";
-        li_dati+="<div class='post-author'><span>Attivo dal "+data_attivo_da+" al "+data_attivo_a+"</span></div>";
-        li_dati+=" <p class='text-flow'>"+dati.rows.item(0).descrizione+"</p><hr>";
-        if(dati.rows.item(0).link!="")
-        {
-            li_dati+="<blockquote class='primary-border'>Link: <a href='http://"+dati.rows.item(0).link+"'>"+dati.rows.item(0).link+"</a> </blockquote>"
-        }
+        
+        //immagine notifica
+        var immagineNot ="<img src='img/placeholder_notifica.jpg' alt='"+dati.rows.item(0).titolo+"'>";
+        if (checkInternet)
+            immagineNot ="<img src='http://magicbeep.mvclienti.com/public/upload_gallery/immagini/"+dati.rows.item(0).immagine+"' alt='"+dati.rows.item(0).titolo+"'>";
 
+        // titolo notifica
+        dettaglio_notifica +="<h2 class='uppercase'>"+dati.rows.item(0).titolo+"</h2>";
+        
+        // data notifica
+        dettaglio_notifica +="<div class='post-author'><i class='ion-android-calendar'></i><span>Attivo dal "+data_attivo_da+" al "+data_attivo_a+"</span></div>";
+        
+        // descrizione notifica + linea
+        var primaLettera = dati.rows.item(0).descrizione.replace("<p>","").substring(0,1);
+        dettaglio_notifica +="<div class='text-flow'><span class='dropcap'>"+primaLetterea+"</span> "+dati.rows.item(0).descrizione+"</div><hr>";
+
+        // link
+        if(dati.rows.item(0).link!="")
+            dettaglio_notifica+="<blockquote class='primary-border'><a href='http://"+dati.rows.item(0).link+"'><i class='ion-android-globe'></i> "+dati.rows.item(0).link+"</a> </blockquote>"
+        
+        // allegato
         if(dati.rows.item(0).allegato!="")
-        {
-            li_dati+="<blockquote class='primary-border'>Allegato: <a href='http://magicbeep.mvclienti.com/public/upload_gallery/immagini/"+dati.rows.item(0).allegato+"' target='_blank'>"+dati.rows.item(0).allegato+"</a>  </blockquote>"
-        }
-        li_dati+="<hr>";
+            dettaglio_notifica+="<blockquote class='primary-border'><a href='http://magicbeep.mvclienti.com/public/upload_gallery/immagini/"+dati.rows.item(0).allegato+"' target='_blank'><i class='ion-ios-cloud-download-outline'></i> "+dati.rows.item(0).allegato+"</a>  </blockquote>"
+        
+        // linea
+        dettaglio_notifica+="<hr>";
+        
+        // pulisco i box contenitori
         $(".appendDettaglioNotifica").html("");
         $("#box_img_notifica").html("");
+
+        // appendo i nuovi dati
         $("#box_img_notifica").append(immagineNot);
-        $(".appendDettaglioNotifica").append(li_dati);
+        $(".appendDettaglioNotifica").append(dettaglio_notifica);
     }
      
 }
