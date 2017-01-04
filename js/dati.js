@@ -220,7 +220,7 @@ function successoSelectNotifica(tx,dati)
         dettaglio_notifica +="<h2 class='uppercase'>"+dati.rows.item(0).titolo+"</h2>";
         
         // data notifica
-        dettaglio_notifica +="<div class='post-author'><i class='ion-android-calendar avatar circle'></i><span>Attivo dal "+data_attivo_da+" al "+data_attivo_a+"</span></div>";
+        dettaglio_notifica +="<div class='post-author'><i class='ion-android-calendar avatar circle'></i><span>Valido dal "+data_attivo_da+" al "+data_attivo_a+"</span></div>";
         
         // descrizione notifica + linea
         

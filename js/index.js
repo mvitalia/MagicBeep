@@ -231,9 +231,6 @@ $('.logoutApp').click(function(){
     
 });
 
-$('#social').click(function(){
-    condividiNotifica();
-});
 
 // popolo la notifica   
  $(document).on("click", ".storage", function () {

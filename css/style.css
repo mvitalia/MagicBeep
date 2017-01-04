@@ -1101,7 +1101,8 @@ h6.promo-caption {
 /* Comments */
 
 .comments {
-    padding: 20px;
+    margin-top:10px;
+    padding: 20px 0;
     border-top: 1px solid #ddd;
 }
 .comments h3 {
