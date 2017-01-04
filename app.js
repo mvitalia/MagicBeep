@@ -322,8 +322,7 @@ function startScan()
 									navigator.vibrate(3000);
 									
 									// Creazione data ora, per db sul server 
-									var date;
-									date = new Date();
+									var date = new Date();
 									date = date.getFullYear() + '-' +
 									('00' + (date.getMonth() + 1)).slice(-2) + '-' +
 									('00' + date.getDate()).slice(-2) + ' ' +
@@ -349,25 +348,23 @@ function startScan()
 											alert("Inserimento non  effettuato"+e.message);
 										},
 										function()  {
-											// alert(results.insertId);
-											//  localStorage.setItem('Id_notifica', ID_notizia);
 											// $.mobile.navigate("#Notifica"); 
-											// visualizza(ID_notizia);
-											//  navigator.notification.confirm("Data: "+date, onConfirm,'Notifica: '+titolo_n,['Guarda','Salva']);
-											// $( ".popupNotifica" ).popup( "open");
-											alert(ID_notizia);
+											
 											if(!inBackground)
 											{
-												var popNitfiche = "";
-												popNitfiche+="<div id="+ID_notizia+" class='notification notification-info box_notifica '>";
-												popNitfiche+="<button onclick='salvaNotifica("+ID_notizia+")'  class='close-notification no-smoothState'><i  class='ion-android-close'></i></button>";
-												popNitfiche+="<div  class='allargaNot' onclick='apriNotifica("+ID_notizia+")' ><p>"+titolo_n+"</p>";
-												popNitfiche+="<span>"+date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear() +"</span></div></div>";
+												var data = new Date();
+												data = date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear();
+
+												var popNotifica = "";
+												popNotifica+="<div id="+ID_notizia+" class='notification notification-info box_notifica '>";
+												popNotifica+="<button onclick='salvaNotifica("+ID_notizia+")'  class='close-notification no-smoothState'><i  class='ion-android-close'></i></button>";
+												popNotifica+="<div  class='allargaNot' onclick='apriNotifica("+ID_notizia+")' ><p>"+titolo_n+"</p>";
+												popNotifica+="<span>"+ data +"</span></div></div>";
 												
-												$(".container_page").append(popNitfiche);
+												$(".container_page").append(popNotifica);
 									
 											}
-											alert("dopo appende");
+											
 										}
 									)
 								}
