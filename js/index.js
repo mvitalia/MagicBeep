@@ -67,6 +67,7 @@ $(document).on("pageshow", "#home", function () {
 
 $(document).on("pageshow", "#notifica", function () {
     $(".schedaNotifica").html("");
+    cordova.plugins.notification.badge.decrease();
     caricaNotifica(); 
 });
 

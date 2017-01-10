@@ -359,15 +359,16 @@ function inviaInformazioneMv(pMv,nMv,cMv,eMv,rMv)
 
 function apriNotifica(id)
 {
-    var prova = id;
-     localStorage.setItem('Id_notifica', prova);
+     localStorage.setItem('Id_notifica', id);
+     
     $('#'+id+'').hide();
-    cordova.plugins.notification.badge.decrease();
+    
     $( ":mobile-pagecontainer" ).pagecontainer( "change", "#notifica", {    transition: "flip", reload:false, allowSamePageTransition:true } );
 }
 
 function salvaNotifica(id)
 {
+      
       $('#'+id+'').hide();
 }
 
