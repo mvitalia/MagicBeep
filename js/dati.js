@@ -362,6 +362,7 @@ function apriNotifica(id)
     var prova = id;
      localStorage.setItem('Id_notifica', prova);
     $('#'+id+'').hide();
+    cordova.plugins.notification.badge.decrease();
     $( ":mobile-pagecontainer" ).pagecontainer( "change", "#notifica", {    transition: "flip", reload:false, allowSamePageTransition:true } );
 }
 
