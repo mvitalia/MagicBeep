@@ -686,9 +686,9 @@ function salvaLettura (proximity,dispositivo,notizia)
 		{
 			id: ID_notifica,
 			title: 'MagicBeep',
-			text: titolo+', continua a leggere',
-			badge: 1
+			text: titolo+', continua a leggere'		
 		});
+		cordova.plugins.notification.badge.set(1);
 		cordova.plugins.notification.local.on("click", function (notification) {
 				localStorage.removeItem("Id_notifica");
 				localStorage.setItem('Id_notifica', notification.id);
