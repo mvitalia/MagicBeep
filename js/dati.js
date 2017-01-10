@@ -398,7 +398,7 @@ function condividiNotifica ()
             });
     });
 }
-fdgfdgdfgd
+
 
 function recuperoPassword(email)
 {
