@@ -256,7 +256,7 @@ var tendina = new Array();
                           if (name.sito != "")  
                             tendina[i]+="<li>Web: <a href='"+name.sito+"' target='_blank'>"+name.sito+"</a></li>";
                           
-                          tendina[i]+="</ul><br><br><a href='http://maps.google.com/maps?&daddr='" + name.latitudine + "," + name.longitudine +"'>Raggiungici</a></div>";
+                          tendina[i]+="</ul><br><br><a href='http://maps.google.com/maps?&daddr=" + name.latitudine + "," + name.longitudine +"'>Raggiungici</a></div>";
 
                           google.maps.event.addListener(marker[i], 'click', function() {
                           GMap.openInfoWindow(marker[i], tendina[i]);
