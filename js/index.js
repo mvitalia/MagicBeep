@@ -252,8 +252,7 @@ $(document).on("click", ".detail", function () {
 
 
 $('#cancellaNot').click(function(){
-      if (confirm("Sei sicuro di voler cancellare la notifica?"))  
-        cancellaNotifica ();
+      cancellaNotifica ();
 });
 
 $('#noCancellanot').click(function(){

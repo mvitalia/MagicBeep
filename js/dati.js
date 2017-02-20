@@ -257,26 +257,28 @@ function successoSelectNotifica(tx,dati)
 
 function cancellaNotifica ()
 {
-    // Cancellare notifica in base all 'id'
-    var idNotifica = sessionStorage.getItem('ID_not');
-    db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Magicbeep", 200000);
-    db.transaction(
-        // Metodo di chiamata asincrona
-        function(tx) {
-            tx.executeSql("DELETE FROM notifiche WHERE id=?",[idNotifica]);
-        },
-        function(){
-            alert("Non è stato possibile cancellare la notizia. Riprova");
-            
-        },
-        function(){
-            //alert("Cancellazione effettua");
-            
-        }
-    )
-      $("#purchase").popup( "close" );
-      $("#lista_datiJson").html("");
-      selezionoDati();
+    if (confirm("Sei sicuro di voler cancellare la notifica?"))  {
+        // Cancellare notifica in base all 'id'
+        var idNotifica = sessionStorage.getItem('ID_not');
+        db = window.openDatabase("DatabaseSqlliteApp", "1.0", "Magicbeep", 200000);
+        db.transaction(
+            // Metodo di chiamata asincrona
+            function(tx) {
+                tx.executeSql("DELETE FROM notifiche WHERE id=?",[idNotifica]);
+            },
+            function(){
+                alert("Non è stato possibile cancellare la notizia. Riprova");
+                
+            },
+            function(){
+                //alert("Cancellazione effettua");
+                
+            }
+        )
+        $("#purchase").popup( "close" );
+        $("#lista_datiJson").html("");
+        selezionoDati();
+    }
 }
 
 function cancellaAllNotifiche ()
