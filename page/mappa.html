@@ -247,9 +247,17 @@ var tendina = new Array();
                           draggable: true,
                           icon: image
                           });
-                          tendina[i]="<div><h5><b>"+name.nome+"</b></h5><hr><p class='tendina_mappa'>"+name.citta+" ("+name.provincia+")</p><p class='tendina_mappa'>Indirizzo: "+name.indirizzo+" N° "+name.numero_civico+"</p>";
-                          tendina[i]+="<p class='tendina_mappa'>"+name.descrizione+"</p>";
-                          tendina[i]+="<p><ul class='tendina_mappa'><li>Telefono: "+name.telefono+"</li><li>Sito web: <a href='"+name.sito+"'>"+name.sito+"</a></li></ul></p></div>";
+                          tendina[i]="<div><h5><b>"+name.nome+"</b></h5><hr><p class='tendina_mappa'>"+name.citta+" ("+name.provincia+")</p><p class='tendina_mappa'>"+name.indirizzo+" "+name.numero_civico+"</p>";
+                          tendina[i]+="<div class='tendina_mappa'>"+name.descrizione+"</div><ul class='tendina_mappa'>";
+                          
+                          if (name.telefono != "")
+                            tendina[i]+="<li>Tel.: <a href='tel:"+name.telefono+"'>"+name.telefono+"</a></li>";
+                          
+                          if (name.sito != "")  
+                            tendina[i]+="<li>Web: <a href='"+name.sito+"' target='_blank'>"+name.sito+"</a></li>";
+                          
+                          tendina[i]+="</ul><br><br><a href='http://maps.google.com/maps?&daddr='" + name.latitudine + "," + name.longitudine +"'>Raggiungici</a></div>";
+
                           google.maps.event.addListener(marker[i], 'click', function() {
                           GMap.openInfoWindow(marker[i], tendina[i]);
                           });
