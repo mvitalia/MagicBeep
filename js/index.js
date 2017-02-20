@@ -252,9 +252,9 @@ $(document).on("click", ".detail", function () {
 
 
 $('#cancellaNot').click(function(){
-        alert("entra");
-      cancellaNotifica ();
-      });
+      if (confirm("Sei sicuro di voler cancellare la notizia?"))  
+        cancellaNotifica ();
+});
 
 $('#noCancellanot').click(function(){
         $("#purchase").popup( "close" );
