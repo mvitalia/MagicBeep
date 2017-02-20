@@ -6,7 +6,7 @@
    xmlns:gap="http://phonegap.com/ns/1.0">
 
 <name>Magic Beep</name>
-<description>Passeggia aggiornato</description>
+<description>Raggiungi gli utenti vicino all'azienda, guidali all'interno del locale e informali a distanza</description>
 <author email="info@mvitalia.com" href="http://www.mvitalia.com">MVitalia</author>
 <content src="index.html" />
 
@@ -103,7 +103,7 @@
 <preference name="target-device" value="universal" />
 <preference name="EnableViewportScale" value="false" />
 <preference name="permissions" value="none"/>
-<preference name="phonegap-version" value="cli-6.3.1" />
+<preference name="phonegap-version" value="cli-6.5.0" />
 <platform name="android">
    <allow-intent href="market:*" />
    <access origin="*" /> 
