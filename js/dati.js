@@ -545,7 +545,7 @@ $(document).on("pagebeforeshow", "#locali", function () {
                     elenco_indoor += '<div class="m-20 comments project-comments animated fadeinup delay-3"><h3 class="uppercase">Indoor</h3><ul class="comments-list">';
                 }  
                 
-                elenco_indoor += '<li><a href="#popup'+i+'" data-rel="popup" data-position-to="window" data-transition="fade"><i class="ion-android-compass blue-text avatar circle"></i> <div class="comment-body"><span class="author uppercase">'+name.titolo_indoor+'</span><p>'+name.desc_indoor+'</p></div></a></li><div data-role="popup" id="popup'+i+'" data-overlay-theme="a" data-theme="d" data-corners="false"><a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a><img class="popphoto" src="http://magicbeep.mvclienti.com/public/upload_gallery/immagini/'+name.allegato_indoor+'"></div>';
+                elenco_indoor += '<li><a href="#popup'+i+'" class="waves-effect waves-light btn-large modal-trigger primary-color width-100 m-b-20"><i class="ion-android-compass blue-text avatar circle"></i> <div class="comment-body"><span class="author uppercase">'+name.titolo_indoor+'</span></div></a></li><div id="popup'+i+'" class="modal"><div class="modal-content"><h4>'+name.titolo_indoor+'</h4><p>'+name.desc_indoor+'</p><img width="100%" src="http://magicbeep.mvclienti.com/public/upload_gallery/immagini/'+name.allegato_indoor+'"></div></div>';
                 
                 if (current_ID_negozio != name.ID){    
                     elenco_indoor += '</ul></div>';
