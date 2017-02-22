@@ -1151,6 +1151,7 @@ li.your-comment {
 .post-author {
     margin-bottom: 32px;
     position: relative;
+    clear:both
 }
 .post-author .avatar {
     width: 20px;

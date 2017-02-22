@@ -541,7 +541,7 @@ $(document).on("pagebeforeshow", "#locali", function () {
                         elenco_indoor += '<a href="http://maps.google.com/maps?&daddr=' + name.latitudine + ',' + name.longitudine +'" target="_blank"><i class="ion-android-navigate blue-text"></i></a>';                    
                     elenco_indoor += '</div></div>';
                     
-                    elenco_indoor += '<div class="comments project-comments animated fadeinup delay-3"><h3 class="uppercase">Indoor</h3><ul class="comments-list">';
+                    elenco_indoor += '<div class="m-20 comments project-comments animated fadeinup delay-3"><h3 class="uppercase">Indoor</h3><ul class="comments-list">';
                 }  
                 
                 elenco_indoor += '<li><i class="ion-android-compass blue-text avatar circle"></i> <div class="comment-body"><span class="author uppercase">'+name.titolo_indoor+'</span><p>'+name.desc_indoor+'</p></div></li>';
