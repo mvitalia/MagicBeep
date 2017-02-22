@@ -520,7 +520,7 @@ $(document).on("pagebeforeshow", "#locali", function () {
         $.getJSON("http://magicbeep.mvclienti.com/webservices/get_indoorlocation.aspx", function (dati) {
             $.each(dati, function (i, name) {
                 if (current_ID_negozio != name.ID){
-                    elenco_indoor += '<div class="project-info"><h2 class="uppercase">'+ name.nome +'</h2><span class="small">'+ name.citta +' ('+name.provincia+')</span><p class="m-t-10 m-b-30">'+name.descrizione+'</p></div>';
+                    elenco_indoor += '<div class="project-info"><h2 class="uppercase">'+ name.nome +'</h2><span class="small">'+ name.citta +' ('+name.provincia+')</span></div>';
                     elenco_indoor += '<div class="post-author m-20 animated fadeinright delay-2"><div class="project-social-share">';
 
                     if (name.website != "")
