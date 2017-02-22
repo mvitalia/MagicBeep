@@ -511,3 +511,46 @@ function carica_slider ()
     }
 
 }
+
+//indoor navigation
+$(document).on("pagebeforeshow", "#locali", function () { 
+    if (checkInternet) {
+        var elenco_indoor = "";
+        $.getJSON("http://magicbeep.mvclienti.com/webservices/sync_negozi.aspx", function (dati) {
+            $.each(dati, function (i, name) {
+                elenco_indoor += '<div class="project-info"><h2 class="uppercase">'+ name.nome +'</h2><span class="small">'+ name.citta +' ('+name.provincia+')</span><p class="m-t-10 m-b-30">'+name.descrizione+'</p></div>';
+                elenco_indoor += '<div class="post-author m-20 animated fadeinright delay-2"><div class="project-social-share">';
+
+                if (name.website != "")
+                    elenco_indoor += '<a href="'+name.website+'" target="_blank"><i class="ion-android-globe blue-text text-darken-4"></i></a>';
+                if (name.facebook != "")
+                    elenco_indoor += '<a href="'+name.facebook+'" target="_blank"><i class="ion-social-facebook blue-text text-darken-4"></i></a>';
+                if (name.twitter != "")
+                    elenco_indoor += '<a href="'+name.twitter+'" target="_blank"><i class="ion-social-twitter blue-text"></i></a>';
+                if (name.googleplus != "")
+                    elenco_indoor += '<a href="'+name.googleplus+'" target="_blank"><i class="ion-social-googleplus blue-text"></i></a>';
+                if (name.instagram != "")
+                    elenco_indoor += '<a href="'+name.instagram+'" target="_blank"><i class="ion-social-instagram blue-text"></i></a>';
+                if (name.youtube != "")
+                    elenco_indoor += '<a href="'+name.youtube+'" target="_blank"><i class="ion-social-youtube blue-text"></i></a>';
+                if (name.vimeo != "")
+                    elenco_indoor += '<a href="'+name.vimeo+'" target="_blank"><i class="ion-social-vimeo blue-text"></i></a>';
+                if (name.latitudine != "")
+                    elenco_indoor += '<a href="http://maps.google.com/maps?&daddr=' + name.latitudine + ',' + name.longitudine +'" target="_blank"><i class="ion-android-navigate blue-text"></i></a>';                    
+                elenco_indoor += '</div></div>';
+                    
+                $.getJSON("http://magicbeep.mvclienti.com/webservices/get_indoorlocation.aspx?ID_negozio="+name.ID, function (indoor) {
+                    elenco_indoor += '<div class="comments project-comments animated fadeinup delay-3"><h3 class="uppercase">Indoor</h3><ul class="comments-list">';
+                    $.each(indoor, function (y, location) {
+                        elenco_indoor += '<li><i class="ion-android-compass blue-text avatar circle"></i> <div class="comment-body"><span class="author uppercase">'+location.titolo+'</span><p>'+location.descrizione+'</p></div></li>';
+                    });
+                    elenco_indoor += '</ul></div>';
+                });
+                    
+            });
+            $("#lista_indoornavigation").html(elenco_indoor);
+        }); 
+    } else {
+        $("#lista_indoornavigation").html("Connessione internet assente");
+    }                           
+});
