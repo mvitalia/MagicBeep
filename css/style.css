@@ -1084,9 +1084,7 @@ h6.promo-caption {
     margin-bottom: 0;
 }
 .project-social-share {
-    position: absolute;
-    right: 0;
-    top: -4px;
+    float:right
 }
 .project-social-share i {
     margin-left: 10px;
@@ -1110,7 +1108,6 @@ h6.promo-caption {
     margin-top:10px;
     padding: 20px 0;
     border-top: 1px solid #ddd;
-    clear:both
 }
 .comments h3 {
     font-size: 16px;
@@ -1152,7 +1149,8 @@ li.your-comment {
 .post-author {
     margin-bottom: 32px;
     position: relative;
-    float:left;
+    clear:both;
+    height:30px
 }
 .post-author .avatar {
     width: 20px;
