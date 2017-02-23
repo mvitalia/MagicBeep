@@ -525,9 +525,9 @@ $(document).on("pagebeforeshow", "#locali", function () {
                     elenco_indoor += '<div class="post-author m-20 animated fadeinright delay-2"><div class="project-social-share">';
 
                     if (name.website != "")
-                        elenco_indoor += '<a href="'+name.website+'" target="_blank"><i class="ion-android-globe blue-text text-darken-4"></i></a>';
+                        elenco_indoor += '<a href="'+name.website+'" target="_blank"><i class="ion-android-globe blue-text"></i></a>';
                     if (name.facebook != "")
-                        elenco_indoor += '<a href="'+name.facebook+'" target="_blank"><i class="ion-social-facebook blue-text text-darken-4"></i></a>';
+                        elenco_indoor += '<a href="'+name.facebook+'" target="_blank"><i class="ion-social-facebook blue-text"></i></a>';
                     if (name.twitter != "")
                         elenco_indoor += '<a href="'+name.twitter+'" target="_blank"><i class="ion-social-twitter blue-text"></i></a>';
                     if (name.googleplus != "")
@@ -547,7 +547,7 @@ $(document).on("pagebeforeshow", "#locali", function () {
                 
                 elenco_indoor += '<li><a href="http://magicbeep.mvclienti.com/public/upload_gallery/immagini/'+name.allegato_indoor+'"><i class="ion-android-compass blue-text avatar circle"></i> <div class="comment-body"><span class="author uppercase">'+name.titolo_indoor+'</span><p>'+name.desc_indoor+'</p><img width="100%" src="http://magicbeep.mvclienti.com/public/upload_gallery/immagini/'+name.allegato_indoor+'"></div></a></li>';
                 
-                if (current_ID_negozio != name.ID){    
+                if (current_ID_negozio != name.ID && current_ID_negozio != 0){    
                     elenco_indoor += '</ul></div>';
                     current_ID_negozio = name.ID;
                 }    
