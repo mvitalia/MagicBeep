@@ -521,6 +521,9 @@ $(document).on("pagebeforeshow", "#locali", function () {
         $.getJSON("http://magicbeep.mvclienti.com/webservices/get_indoorlocation.aspx", function (dati) {
             $.each(dati, function (i, name) {
                 if (current_ID_negozio != name.ID){
+                    if (current_ID_negozio != 0)
+                        elenco_indoor += '</ul></div>';
+                        
                     elenco_indoor += '<div class="project-info"><h2 class="uppercase">'+ name.nome +'</h2><span class="small">'+ name.citta +' ('+name.provincia+')</span></div>';
                     elenco_indoor += '<div class="post-author m-20 animated fadeinright delay-2"><div class="project-social-share">';
 
@@ -547,10 +550,8 @@ $(document).on("pagebeforeshow", "#locali", function () {
                 
                 elenco_indoor += '<li><a href="http://magicbeep.mvclienti.com/public/upload_gallery/immagini/'+name.allegato_indoor+'"><i class="ion-android-compass blue-text avatar circle"></i> <div class="comment-body"><span class="author uppercase">'+name.titolo_indoor+'</span><p>'+name.desc_indoor+'</p><img width="100%" src="http://magicbeep.mvclienti.com/public/upload_gallery/immagini/'+name.allegato_indoor+'"></div></a></li>';
                 
-                if (current_ID_negozio != name.ID && current_ID_negozio != 0){    
-                    elenco_indoor += '</ul></div>';
-                    current_ID_negozio = name.ID;
-                }    
+                current_ID_negozio = name.ID;
+                  
                 i++;
             });
             $("#lista_indoornavigation").html(elenco_indoor);
