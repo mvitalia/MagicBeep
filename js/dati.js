@@ -545,7 +545,7 @@ $(document).on("pagebeforeshow", "#locali", function () {
                     elenco_indoor += '<div class="m-20 comments project-comments animated fadeinup delay-3"><h3 class="uppercase">Indoor</h3><ul class="comments-list">';
                 }  
                 
-                elenco_indoor += '<li><a href="#popup'+i+'" class="waves-effect waves-light modal-trigger m-b-20"><i class="ion-android-compass blue-text avatar circle"></i> <div class="comment-body"><span class="author uppercase">'+name.titolo_indoor+'</span><p>'+name.desc_indoor+'</p></div></a><div id="popup'+i+'" class="modal"><div class="modal-content"><h4>'+name.titolo_indoor+'</h4><p>'+name.desc_indoor+'</p><img width="100%" src="http://magicbeep.mvclienti.com/public/upload_gallery/immagini/'+name.allegato_indoor+'"></div></div></li>';
+                elenco_indoor += '<li><a href="#popupIndoor" class="waves-effect waves-light modal-trigger m-b-20"><i class="ion-android-compass blue-text avatar circle"></i> <div class="comment-body"><span class="author uppercase">'+name.titolo_indoor+'</span><p>'+name.desc_indoor+'</p></div></a></li>';
                 
                 if (current_ID_negozio != name.ID){    
                     elenco_indoor += '</ul></div>';
