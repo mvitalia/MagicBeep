@@ -31,7 +31,8 @@ $('#scan_read').click( function()
 {
     cordova.plugins.barcodeScanner.scan(
     function (result) {
-        window.open(result.text, '_blank');
+        if (result.text != "")
+            window.open(result.text, '_blank');
         /*alert("We got a barcode\n" +
                 "Result: " + result.text + "\n" +
                 "Format: " + result.format + "\n" +
