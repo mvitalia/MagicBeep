@@ -494,7 +494,7 @@ function caricaNotificheFiltrate () {
 function carica_slider ()
 {
     if (checkInternet) {
-        $(".bg-v-2").css('background-image','url(http://magicbeep.mvclienti.com/webservices/magicbeep_home.jpg)');
+        $("#sfondo_custom").css('background-image','url(http://magicbeep.mvclienti.com/webservices/magicbeep_home.jpg)');
 
         var li_dati = "";
         $.getJSON("http://magicbeep.mvclienti.com/webservices/slider_home.aspx", function (dati) {
