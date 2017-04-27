@@ -238,7 +238,7 @@ function successoSelectNotifica(tx,dati)
         
         // link
         if(dati.rows.item(0).link!="")
-            dettaglio_notifica+="<a class='link' href='"+dati.rows.item(0).link+"' target='_blank'><i class='ion-android-globe'></i> "+dati.rows.item(0).link+"</a>";
+            dettaglio_notifica+="<a class='link' href='http://"+dati.rows.item(0).link+"' target='_blank'><i class='ion-android-globe'></i> "+dati.rows.item(0).link+"</a>";
         
         
         // linea
